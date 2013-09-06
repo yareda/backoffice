@@ -1,0 +1,3 @@
+﻿ALTER TABLE [hrm].[training_feedback]
+    ADD CONSTRAINT [PK_training_feedback] PRIMARY KEY CLUSTERED ([training_feedback_id] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF);
+

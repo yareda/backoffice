@@ -1,0 +1,3 @@
+﻿ALTER TABLE [hrm].[employee_medical_record]
+    ADD CONSTRAINT [pk_medical_record] PRIMARY KEY CLUSTERED ([medical_id] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF);
+

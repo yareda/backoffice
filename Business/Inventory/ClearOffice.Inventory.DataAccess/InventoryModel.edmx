@@ -1,0 +1,2949 @@
+﻿
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ClearOfficeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ClearOfficeModelStoreContainer">
+          <EntitySet Name="adjustment" EntityType="ClearOfficeModel.Store.adjustment" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="adjustment_detail" EntityType="ClearOfficeModel.Store.adjustment_detail" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="category" EntityType="ClearOfficeModel.Store.category" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="issue" EntityType="ClearOfficeModel.Store.issue" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="issue_detail" EntityType="ClearOfficeModel.Store.issue_detail" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="item" EntityType="ClearOfficeModel.Store.item" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="lookup" EntityType="ClearOfficeModel.Store.lookup" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="lookup_item" EntityType="ClearOfficeModel.Store.lookup_item" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="measurement_unit" EntityType="ClearOfficeModel.Store.measurement_unit" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="receiving" EntityType="ClearOfficeModel.Store.receiving" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="receiving_detail" EntityType="ClearOfficeModel.Store.receiving_detail" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="return" EntityType="ClearOfficeModel.Store.return" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="return_detail" EntityType="ClearOfficeModel.Store.return_detail" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="sequence_counter" EntityType="ClearOfficeModel.Store.sequence_counter" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="stock_status" EntityType="ClearOfficeModel.Store.stock_status" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="stock_transaction" EntityType="ClearOfficeModel.Store.stock_transaction" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="sub_category" EntityType="ClearOfficeModel.Store.sub_category" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="supplier" EntityType="ClearOfficeModel.Store.supplier" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="transaction_status" EntityType="ClearOfficeModel.Store.transaction_status" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="transaction_type" EntityType="ClearOfficeModel.Store.transaction_type" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="transfer" EntityType="ClearOfficeModel.Store.transfer" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="transfer_detail" EntityType="ClearOfficeModel.Store.transfer_detail" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="warehouse" EntityType="ClearOfficeModel.Store.warehouse" store:Type="Tables" Schema="stock" />
+          <EntitySet Name="adjustment_info" EntityType="ClearOfficeModel.Store.adjustment_info" store:Type="Views" store:Schema="stock" store:Name="adjustment_info">
+            <DefiningQuery>SELECT 
+      [adjustment_info].[adjustment_id] AS [adjustment_id], 
+      [adjustment_info].[status_id] AS [status_id], 
+      [adjustment_info].[adjustment_no] AS [adjustment_no], 
+      [adjustment_info].[reason] AS [reason], 
+      [adjustment_info].[created_by] AS [created_by], 
+      [adjustment_info].[created_date] AS [created_date], 
+      [adjustment_info].[posted_by] AS [posted_by], 
+      [adjustment_info].[posted_date] AS [posted_date], 
+      [adjustment_info].[status] AS [status], 
+      [adjustment_info].[warehouse_text] AS [warehouse_text]
+      FROM [stock].[adjustment_info] AS [adjustment_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="issue_info" EntityType="ClearOfficeModel.Store.issue_info" store:Type="Views" store:Schema="stock" store:Name="issue_info">
+            <DefiningQuery>SELECT 
+      [issue_info].[issue_id] AS [issue_id], 
+      [issue_info].[status_id] AS [status_id], 
+      [issue_info].[warehouse_id] AS [warehouse_id], 
+      [issue_info].[issue_no] AS [issue_no], 
+      [issue_info].[issue_date] AS [issue_date], 
+      [issue_info].[issued_by] AS [issued_by], 
+      [issue_info].[posted_date] AS [posted_date], 
+      [issue_info].[posted_by] AS [posted_by], 
+      [issue_info].[remark] AS [remark], 
+      [issue_info].[issued_to] AS [issued_to], 
+      [issue_info].[status_name] AS [status_name], 
+      [issue_info].[warehouse_text] AS [warehouse_text]
+      FROM [stock].[issue_info] AS [issue_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="item_info" EntityType="ClearOfficeModel.Store.item_info" store:Type="Views" store:Schema="stock" store:Name="item_info">
+            <DefiningQuery>SELECT 
+      [item_info].[item_id] AS [item_id], 
+      [item_info].[unit_id] AS [unit_id], 
+      [item_info].[category_id] AS [category_id], 
+      [item_info].[sub_category_id] AS [sub_category_id], 
+      [item_info].[item_no] AS [item_no], 
+      [item_info].[description] AS [description], 
+      [item_info].[remark] AS [remark], 
+      [item_info].[image] AS [image], 
+      [item_info].[unit_name] AS [unit_name], 
+      [item_info].[category_name] AS [category_name], 
+      [item_info].[sub_category_name] AS [sub_category_name]
+      FROM [stock].[item_info] AS [item_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="receiving_info" EntityType="ClearOfficeModel.Store.receiving_info" store:Type="Views" store:Schema="stock" store:Name="receiving_info">
+            <DefiningQuery>SELECT 
+      [receiving_info].[receiving_id] AS [receiving_id], 
+      [receiving_info].[grn] AS [grn], 
+      [receiving_info].[airwaybill_no] AS [airwaybill_no], 
+      [receiving_info].[invoice_no] AS [invoice_no], 
+      [receiving_info].[received_by] AS [received_by], 
+      [receiving_info].[received_date] AS [received_date], 
+      [receiving_info].[status_id] AS [status_id], 
+      [receiving_info].[posted_date] AS [posted_date], 
+      [receiving_info].[posted_by] AS [posted_by], 
+      [receiving_info].[remark] AS [remark], 
+      [receiving_info].[status_name] AS [status_name], 
+      [receiving_info].[warehouse_name] AS [warehouse_name], 
+      [receiving_info].[supplier_name] AS [supplier_name]
+      FROM [stock].[receiving_info] AS [receiving_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="return_info" EntityType="ClearOfficeModel.Store.return_info" store:Type="Views" store:Schema="stock" store:Name="return_info">
+            <DefiningQuery>SELECT 
+      [return_info].[return_id] AS [return_id], 
+      [return_info].[status_id] AS [status_id], 
+      [return_info].[warehouse_id] AS [warehouse_id], 
+      [return_info].[return_no] AS [return_no], 
+      [return_info].[reason] AS [reason], 
+      [return_info].[accepted_by] AS [accepted_by], 
+      [return_info].[accepted_date] AS [accepted_date], 
+      [return_info].[posted_by] AS [posted_by], 
+      [return_info].[posted_date] AS [posted_date], 
+      [return_info].[remark] AS [remark], 
+      [return_info].[status_name] AS [status_name], 
+      [return_info].[warehouse_text] AS [warehouse_text]
+      FROM [stock].[return_info] AS [return_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="status_info" EntityType="ClearOfficeModel.Store.status_info" store:Type="Views" store:Schema="stock" store:Name="status_info">
+            <DefiningQuery>SELECT 
+      [status_info].[item_id] AS [item_id], 
+      [status_info].[item_no] AS [item_no], 
+      [status_info].[quantity] AS [quantity], 
+      [status_info].[warehouse_text] AS [warehouse_text]
+      FROM [stock].[status_info] AS [status_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="stock_status_info" EntityType="ClearOfficeModel.Store.stock_status_info" store:Type="Views" store:Schema="stock" store:Name="stock_status_info">
+            <DefiningQuery>SELECT 
+      [stock_status_info].[item_id] AS [item_id], 
+      [stock_status_info].[warehouse_id] AS [warehouse_id], 
+      [stock_status_info].[quantity] AS [quantity], 
+      [stock_status_info].[item_no] AS [item_no], 
+      [stock_status_info].[unit_name] AS [unit_name], 
+      [stock_status_info].[category_name] AS [category_name], 
+      [stock_status_info].[warehouse_text] AS [warehouse_text]
+      FROM [stock].[stock_status_info] AS [stock_status_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="transfer_info" EntityType="ClearOfficeModel.Store.transfer_info" store:Type="Views" store:Schema="stock" store:Name="transfer_info">
+            <DefiningQuery>SELECT 
+      [transfer_info].[transfer_id] AS [transfer_id], 
+      [transfer_info].[status_id] AS [status_id], 
+      [transfer_info].[transfer_no] AS [transfer_no], 
+      [transfer_info].[transfer_date] AS [transfer_date], 
+      [transfer_info].[transfer_by] AS [transfer_by], 
+      [transfer_info].[posted_date] AS [posted_date], 
+      [transfer_info].[posted_by] AS [posted_by], 
+      [transfer_info].[warehouse_from] AS [warehouse_from], 
+      [transfer_info].[warehouse_to] AS [warehouse_to], 
+      [transfer_info].[remark] AS [remark], 
+      [transfer_info].[status] AS [status], 
+      [transfer_info].[source_warehouse] AS [source_warehouse], 
+      [transfer_info].[destination_warehouse] AS [destination_warehouse]
+      FROM [stock].[transfer_info] AS [transfer_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="warehouse_item_info" EntityType="ClearOfficeModel.Store.warehouse_item_info" store:Type="Views" store:Schema="stock" store:Name="warehouse_item_info">
+            <DefiningQuery>SELECT 
+      [warehouse_item_info].[item_id] AS [item_id], 
+      [warehouse_item_info].[item_no] AS [item_no], 
+      [warehouse_item_info].[description] AS [description], 
+      [warehouse_item_info].[unit_name] AS [unit_name], 
+      [warehouse_item_info].[category_name] AS [category_name], 
+      [warehouse_item_info].[sub_category_name] AS [sub_category_name], 
+      [warehouse_item_info].[warehouse_id] AS [warehouse_id]
+      FROM [stock].[warehouse_item_info] AS [warehouse_item_info]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="fk_adjustme_reference_adjustme" Association="ClearOfficeModel.Store.fk_adjustme_reference_adjustme">
+            <End Role="adjustment" EntitySet="adjustment" />
+            <End Role="adjustment_detail" EntitySet="adjustment_detail" />
+          </AssociationSet>
+          <AssociationSet Name="fk_adjustme_reference_item" Association="ClearOfficeModel.Store.fk_adjustme_reference_item">
+            <End Role="item" EntitySet="item" />
+            <End Role="adjustment_detail" EntitySet="adjustment_detail" />
+          </AssociationSet>
+          <AssociationSet Name="fk_adjustme_reference_transact" Association="ClearOfficeModel.Store.fk_adjustme_reference_transact">
+            <End Role="transaction_status" EntitySet="transaction_status" />
+            <End Role="adjustment" EntitySet="adjustment" />
+          </AssociationSet>
+          <AssociationSet Name="fk_adjustme_reference_warehous" Association="ClearOfficeModel.Store.fk_adjustme_reference_warehous">
+            <End Role="warehouse" EntitySet="warehouse" />
+            <End Role="adjustment" EntitySet="adjustment" />
+          </AssociationSet>
+          <AssociationSet Name="fk_issue_de_reference_issue" Association="ClearOfficeModel.Store.fk_issue_de_reference_issue">
+            <End Role="issue" EntitySet="issue" />
+            <End Role="issue_detail" EntitySet="issue_detail" />
+          </AssociationSet>
+          <AssociationSet Name="fk_issue_de_reference_item" Association="ClearOfficeModel.Store.fk_issue_de_reference_item">
+            <End Role="item" EntitySet="item" />
+            <End Role="issue_detail" EntitySet="issue_detail" />
+          </AssociationSet>
+          <AssociationSet Name="fk_issue_reference_transact" Association="ClearOfficeModel.Store.fk_issue_reference_transact">
+            <End Role="transaction_status" EntitySet="transaction_status" />
+            <End Role="issue" EntitySet="issue" />
+          </AssociationSet>
+          <AssociationSet Name="fk_issue_reference_warehous" Association="ClearOfficeModel.Store.fk_issue_reference_warehous">
+            <End Role="warehouse" EntitySet="warehouse" />
+            <End Role="issue" EntitySet="issue" />
+          </AssociationSet>
+          <AssociationSet Name="fk_item_reference_category" Association="ClearOfficeModel.Store.fk_item_reference_category">
+            <End Role="category" EntitySet="category" />
+            <End Role="item" EntitySet="item" />
+          </AssociationSet>
+          <AssociationSet Name="fk_item_reference_measurem" Association="ClearOfficeModel.Store.fk_item_reference_measurem">
+            <End Role="measurement_unit" EntitySet="measurement_unit" />
+            <End Role="item" EntitySet="item" />
+          </AssociationSet>
+          <AssociationSet Name="fk_item_reference_sub_cate" Association="ClearOfficeModel.Store.fk_item_reference_sub_cate">
+            <End Role="sub_category" EntitySet="sub_category" />
+            <End Role="item" EntitySet="item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lookup_item_lookup" Association="ClearOfficeModel.Store.FK_lookup_item_lookup">
+            <End Role="lookup" EntitySet="lookup" />
+            <End Role="lookup_item" EntitySet="lookup_item" />
+          </AssociationSet>
+          <AssociationSet Name="fk_receivin_reference_item" Association="ClearOfficeModel.Store.fk_receivin_reference_item">
+            <End Role="item" EntitySet="item" />
+            <End Role="receiving_detail" EntitySet="receiving_detail" />
+          </AssociationSet>
+          <AssociationSet Name="fk_receivin_reference_receivin" Association="ClearOfficeModel.Store.fk_receivin_reference_receivin">
+            <End Role="receiving" EntitySet="receiving" />
+            <End Role="receiving_detail" EntitySet="receiving_detail" />
+          </AssociationSet>
+          <AssociationSet Name="fk_receivin_reference_supplier" Association="ClearOfficeModel.Store.fk_receivin_reference_supplier">
+            <End Role="supplier" EntitySet="supplier" />
+            <End Role="receiving" EntitySet="receiving" />
+          </AssociationSet>
+          <AssociationSet Name="fk_receivin_reference_transact" Association="ClearOfficeModel.Store.fk_receivin_reference_transact">
+            <End Role="transaction_status" EntitySet="transaction_status" />
+            <End Role="receiving" EntitySet="receiving" />
+          </AssociationSet>
+          <AssociationSet Name="fk_receivin_reference_warehous" Association="ClearOfficeModel.Store.fk_receivin_reference_warehous">
+            <End Role="warehouse" EntitySet="warehouse" />
+            <End Role="receiving" EntitySet="receiving" />
+          </AssociationSet>
+          <AssociationSet Name="fk_return_d_reference_item" Association="ClearOfficeModel.Store.fk_return_d_reference_item">
+            <End Role="item" EntitySet="item" />
+            <End Role="return_detail" EntitySet="return_detail" />
+          </AssociationSet>
+          <AssociationSet Name="fk_return_d_reference_return" Association="ClearOfficeModel.Store.fk_return_d_reference_return">
+            <End Role="return" EntitySet="return" />
+            <End Role="return_detail" EntitySet="return_detail" />
+          </AssociationSet>
+          <AssociationSet Name="fk_return_reference_transact" Association="ClearOfficeModel.Store.fk_return_reference_transact">
+            <End Role="transaction_status" EntitySet="transaction_status" />
+            <End Role="return" EntitySet="return" />
+          </AssociationSet>
+          <AssociationSet Name="fk_return_reference_warehous" Association="ClearOfficeModel.Store.fk_return_reference_warehous">
+            <End Role="warehouse" EntitySet="warehouse" />
+            <End Role="return" EntitySet="return" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stock_st_reference_item" Association="ClearOfficeModel.Store.fk_stock_st_reference_item">
+            <End Role="item" EntitySet="item" />
+            <End Role="stock_status" EntitySet="stock_status" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stock_st_reference_warehous" Association="ClearOfficeModel.Store.fk_stock_st_reference_warehous">
+            <End Role="warehouse" EntitySet="warehouse" />
+            <End Role="stock_status" EntitySet="stock_status" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stock_tr_reference_item" Association="ClearOfficeModel.Store.fk_stock_tr_reference_item">
+            <End Role="item" EntitySet="item" />
+            <End Role="stock_transaction" EntitySet="stock_transaction" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stock_tr_reference_transact" Association="ClearOfficeModel.Store.fk_stock_tr_reference_transact">
+            <End Role="transaction_type" EntitySet="transaction_type" />
+            <End Role="stock_transaction" EntitySet="stock_transaction" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stock_tr_reference_warehous" Association="ClearOfficeModel.Store.fk_stock_tr_reference_warehous">
+            <End Role="warehouse" EntitySet="warehouse" />
+            <End Role="stock_transaction" EntitySet="stock_transaction" />
+          </AssociationSet>
+          <AssociationSet Name="fk_sub_cate_reference_category" Association="ClearOfficeModel.Store.fk_sub_cate_reference_category">
+            <End Role="category" EntitySet="category" />
+            <End Role="sub_category" EntitySet="sub_category" />
+          </AssociationSet>
+          <AssociationSet Name="fk_transfer_ref_sourc_warehous" Association="ClearOfficeModel.Store.fk_transfer_ref_sourc_warehous">
+            <End Role="lookup_item" EntitySet="lookup_item" />
+            <End Role="transfer" EntitySet="transfer" />
+          </AssociationSet>
+          <AssociationSet Name="fk_transfer_reference_item" Association="ClearOfficeModel.Store.fk_transfer_reference_item">
+            <End Role="item" EntitySet="item" />
+            <End Role="transfer_detail" EntitySet="transfer_detail" />
+          </AssociationSet>
+          <AssociationSet Name="fk_transfer_reference_transact" Association="ClearOfficeModel.Store.fk_transfer_reference_transact">
+            <End Role="transaction_status" EntitySet="transaction_status" />
+            <End Role="transfer" EntitySet="transfer" />
+          </AssociationSet>
+          <AssociationSet Name="fk_transfer_reference_transfer" Association="ClearOfficeModel.Store.fk_transfer_reference_transfer">
+            <End Role="transfer" EntitySet="transfer" />
+            <End Role="transfer_detail" EntitySet="transfer_detail" />
+          </AssociationSet>
+          <AssociationSet Name="fk_transfer_reference_warehous" Association="ClearOfficeModel.Store.fk_transfer_reference_warehous">
+            <End Role="lookup_item" EntitySet="lookup_item" />
+            <End Role="transfer" EntitySet="transfer" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="adjustment">
+          <Key>
+            <PropertyRef Name="adjustment_id" />
+          </Key>
+          <Property Name="adjustment_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="status_id" Type="int" />
+          <Property Name="warehouse_id" Type="int" />
+          <Property Name="adjustment_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="reason" Type="nvarchar(max)" />
+          <Property Name="created_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="created_date" Type="datetime" />
+          <Property Name="posted_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="posted_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="adjustment_detail">
+          <Key>
+            <PropertyRef Name="adjustment_detail_id" />
+          </Key>
+          <Property Name="adjustment_detail_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="adjustment_id" Type="int" />
+          <Property Name="item_id" Type="int" />
+          <Property Name="current_quantity" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="adjusted_quantity" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Name="category_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" MaxLength="200" />
+          <Property Name="description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="issue">
+          <Key>
+            <PropertyRef Name="issue_id" />
+          </Key>
+          <Property Name="issue_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="status_id" Type="int" />
+          <Property Name="warehouse_id" Type="int" />
+          <Property Name="issue_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="issue_date" Type="datetime" />
+          <Property Name="issued_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="posted_date" Type="datetime" />
+          <Property Name="posted_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="remark" Type="nvarchar(max)" />
+          <Property Name="issued_to" Type="nvarchar" MaxLength="200" />
+          <Property Name="issue_reason" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="issue_detail">
+          <Key>
+            <PropertyRef Name="issue_detail_id" />
+          </Key>
+          <Property Name="issue_detail_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="issue_id" Type="int" />
+          <Property Name="item_id" Type="int" />
+          <Property Name="quantity" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="unit_price" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="item">
+          <Key>
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Name="item_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="unit_id" Type="int" />
+          <Property Name="category_id" Type="int" />
+          <Property Name="sub_category_id" Type="int" />
+          <Property Name="item_no" Type="nvarchar" MaxLength="100" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="remark" Type="nvarchar(max)" />
+          <Property Name="image" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="lookup">
+          <Key>
+            <PropertyRef Name="lookup_id" />
+          </Key>
+          <Property Name="lookup_id" Type="int" Nullable="false" />
+          <Property Name="lookup_name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="lookup_item">
+          <Key>
+            <PropertyRef Name="lookup_item_id" />
+          </Key>
+          <Property Name="lookup_item_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="lookup_id" Type="int" />
+          <Property Name="item_name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="measurement_unit">
+          <Key>
+            <PropertyRef Name="unit_id" />
+          </Key>
+          <Property Name="unit_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="receiving">
+          <Key>
+            <PropertyRef Name="receiving_id" />
+          </Key>
+          <Property Name="receiving_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="warehouse_id" Type="int" Nullable="false" />
+          <Property Name="supplier_id" Type="int" />
+          <Property Name="grn" Type="nvarchar" MaxLength="50" />
+          <Property Name="airwaybill_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="invoice_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="received_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="received_date" Type="datetime" />
+          <Property Name="status_id" Type="int" Nullable="false" />
+          <Property Name="posted_date" Type="datetime" />
+          <Property Name="posted_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="receiving_detail">
+          <Key>
+            <PropertyRef Name="receiving_detail_id" />
+          </Key>
+          <Property Name="receiving_detail_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="item_id" Type="int" />
+          <Property Name="receiving_id" Type="int" />
+          <Property Name="unit_price" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="quantity" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="return">
+          <Key>
+            <PropertyRef Name="return_id" />
+          </Key>
+          <Property Name="return_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="status_id" Type="int" />
+          <Property Name="warehouse_id" Type="int" />
+          <Property Name="return_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="reason" Type="nvarchar(max)" />
+          <Property Name="accepted_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="accepted_date" Type="datetime" />
+          <Property Name="posted_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="posted_date" Type="datetime" />
+          <Property Name="remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="return_detail">
+          <Key>
+            <PropertyRef Name="return_detail_id" />
+          </Key>
+          <Property Name="return_detail_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="return_id" Type="int" />
+          <Property Name="item_id" Type="int" />
+          <Property Name="quantity" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="unit_price" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="sequence_counter">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="int" Nullable="false" />
+          <Property Name="grn" Type="nvarchar" MaxLength="20" />
+          <Property Name="issue_no" Type="nvarchar" MaxLength="20" />
+          <Property Name="transfer_no" Type="nvarchar" MaxLength="20" />
+          <Property Name="return_no" Type="nvarchar" MaxLength="20" />
+          <Property Name="adjustment_no" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="stock_status">
+          <Key>
+            <PropertyRef Name="item_id" />
+            <PropertyRef Name="warehouse_id" />
+          </Key>
+          <Property Name="item_id" Type="int" Nullable="false" />
+          <Property Name="warehouse_id" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="stock_transaction">
+          <Key>
+            <PropertyRef Name="transaction_id" />
+          </Key>
+          <Property Name="transaction_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="transaction_type_id" Type="int" />
+          <Property Name="owner_id" Type="int" />
+          <Property Name="item_id" Type="int" />
+          <Property Name="quantity" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="warehouse_id" Type="int" />
+          <Property Name="transaction_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="sub_category">
+          <Key>
+            <PropertyRef Name="sub_category_id" />
+          </Key>
+          <Property Name="sub_category_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="category_id" Type="int" />
+          <Property Name="name" Type="nvarchar" MaxLength="200" />
+          <Property Name="description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="supplier">
+          <Key>
+            <PropertyRef Name="supplier_id" />
+          </Key>
+          <Property Name="supplier_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" MaxLength="200" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="address" Type="nvarchar(max)" />
+          <Property Name="contact_person" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="transaction_status">
+          <Key>
+            <PropertyRef Name="status_id" />
+          </Key>
+          <Property Name="status_id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="transaction_type">
+          <Key>
+            <PropertyRef Name="transaction_type_id" />
+          </Key>
+          <Property Name="transaction_type_id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="transfer">
+          <Key>
+            <PropertyRef Name="transfer_id" />
+          </Key>
+          <Property Name="transfer_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="status_id" Type="int" />
+          <Property Name="transfer_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="transfer_date" Type="datetime" />
+          <Property Name="transfer_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="posted_date" Type="datetime" />
+          <Property Name="posted_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="warehouse_from" Type="int" />
+          <Property Name="warehouse_to" Type="int" />
+          <Property Name="remark" Type="nvarchar(max)" />
+          <Property Name="reason" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="transfer_detail">
+          <Key>
+            <PropertyRef Name="transfer_detail_id" />
+          </Key>
+          <Property Name="transfer_detail_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="transfer_id" Type="int" />
+          <Property Name="item_id" Type="int" />
+          <Property Name="quantity" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="warehouse">
+          <Key>
+            <PropertyRef Name="warehouse_id" />
+          </Key>
+          <Property Name="warehouse_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" MaxLength="200" />
+          <Property Name="address" Type="nvarchar(max)" />
+          <Property Name="contact_person" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.stock.adjustment_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="adjustment_info">
+          <Key>
+            <PropertyRef Name="adjustment_id" />
+          </Key>
+          <Property Name="adjustment_id" Type="int" Nullable="false" />
+          <Property Name="status_id" Type="int" />
+          <Property Name="adjustment_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="reason" Type="nvarchar(max)" />
+          <Property Name="created_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="created_date" Type="datetime" />
+          <Property Name="posted_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="posted_date" Type="datetime" />
+          <Property Name="status" Type="nvarchar" MaxLength="200" />
+          <Property Name="warehouse_text" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.stock.issue_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="issue_info">
+          <Key>
+            <PropertyRef Name="issue_id" />
+          </Key>
+          <Property Name="issue_id" Type="int" Nullable="false" />
+          <Property Name="status_id" Type="int" />
+          <Property Name="warehouse_id" Type="int" />
+          <Property Name="issue_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="issue_date" Type="datetime" />
+          <Property Name="issued_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="posted_date" Type="datetime" />
+          <Property Name="posted_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="remark" Type="nvarchar(max)" />
+          <Property Name="issued_to" Type="nvarchar" MaxLength="200" />
+          <Property Name="status_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="warehouse_text" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.stock.item_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="item_info">
+          <Key>
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Name="item_id" Type="int" Nullable="false" />
+          <Property Name="unit_id" Type="int" />
+          <Property Name="category_id" Type="int" />
+          <Property Name="sub_category_id" Type="int" />
+          <Property Name="item_no" Type="nvarchar" MaxLength="100" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="remark" Type="nvarchar(max)" />
+          <Property Name="image" Type="varbinary(max)" />
+          <Property Name="unit_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="category_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="sub_category_name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.stock.receiving_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="receiving_info">
+          <Key>
+            <PropertyRef Name="receiving_id" />
+            <PropertyRef Name="status_id" />
+          </Key>
+          <Property Name="receiving_id" Type="int" Nullable="false" />
+          <Property Name="grn" Type="nvarchar" MaxLength="50" />
+          <Property Name="airwaybill_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="invoice_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="received_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="received_date" Type="datetime" />
+          <Property Name="status_id" Type="int" Nullable="false" />
+          <Property Name="posted_date" Type="datetime" />
+          <Property Name="posted_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="remark" Type="nvarchar(max)" />
+          <Property Name="status_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="warehouse_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="supplier_name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.stock.return_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="return_info">
+          <Key>
+            <PropertyRef Name="return_id" />
+          </Key>
+          <Property Name="return_id" Type="int" Nullable="false" />
+          <Property Name="status_id" Type="int" />
+          <Property Name="warehouse_id" Type="int" />
+          <Property Name="return_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="reason" Type="nvarchar(max)" />
+          <Property Name="accepted_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="accepted_date" Type="datetime" />
+          <Property Name="posted_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="posted_date" Type="datetime" />
+          <Property Name="remark" Type="nvarchar(max)" />
+          <Property Name="status_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="warehouse_text" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.stock.status_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="status_info">
+          <Key>
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Name="item_id" Type="int" Nullable="false" />
+          <Property Name="item_no" Type="nvarchar" MaxLength="100" />
+          <Property Name="quantity" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="warehouse_text" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.stock.stock_status_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="stock_status_info">
+          <Key>
+            <PropertyRef Name="item_id" />
+            <PropertyRef Name="warehouse_id" />
+          </Key>
+          <Property Name="item_id" Type="int" Nullable="false" />
+          <Property Name="warehouse_id" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="item_no" Type="nvarchar" MaxLength="100" />
+          <Property Name="unit_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="category_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="warehouse_text" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.stock.transfer_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="transfer_info">
+          <Key>
+            <PropertyRef Name="transfer_id" />
+          </Key>
+          <Property Name="transfer_id" Type="int" Nullable="false" />
+          <Property Name="status_id" Type="int" />
+          <Property Name="transfer_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="transfer_date" Type="datetime" />
+          <Property Name="transfer_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="posted_date" Type="datetime" />
+          <Property Name="posted_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="warehouse_from" Type="int" />
+          <Property Name="warehouse_to" Type="int" />
+          <Property Name="remark" Type="nvarchar(max)" />
+          <Property Name="status" Type="nvarchar" MaxLength="200" />
+          <Property Name="source_warehouse" Type="nvarchar" MaxLength="200" />
+          <Property Name="destination_warehouse" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.stock.warehouse_item_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="warehouse_item_info">
+          <Key>
+            <PropertyRef Name="item_id" />
+            <PropertyRef Name="warehouse_id" />
+          </Key>
+          <Property Name="item_id" Type="int" Nullable="false" />
+          <Property Name="item_no" Type="nvarchar" MaxLength="100" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="unit_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="category_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="sub_category_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="warehouse_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_adjustme_reference_adjustme">
+          <End Role="adjustment" Type="ClearOfficeModel.Store.adjustment" Multiplicity="0..1" />
+          <End Role="adjustment_detail" Type="ClearOfficeModel.Store.adjustment_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="adjustment">
+              <PropertyRef Name="adjustment_id" />
+            </Principal>
+            <Dependent Role="adjustment_detail">
+              <PropertyRef Name="adjustment_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_adjustme_reference_item">
+          <End Role="item" Type="ClearOfficeModel.Store.item" Multiplicity="0..1" />
+          <End Role="adjustment_detail" Type="ClearOfficeModel.Store.adjustment_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="item">
+              <PropertyRef Name="item_id" />
+            </Principal>
+            <Dependent Role="adjustment_detail">
+              <PropertyRef Name="item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_adjustme_reference_transact">
+          <End Role="transaction_status" Type="ClearOfficeModel.Store.transaction_status" Multiplicity="0..1" />
+          <End Role="adjustment" Type="ClearOfficeModel.Store.adjustment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transaction_status">
+              <PropertyRef Name="status_id" />
+            </Principal>
+            <Dependent Role="adjustment">
+              <PropertyRef Name="status_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_adjustme_reference_warehous">
+          <End Role="warehouse" Type="ClearOfficeModel.Store.warehouse" Multiplicity="0..1" />
+          <End Role="adjustment" Type="ClearOfficeModel.Store.adjustment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="warehouse_id" />
+            </Principal>
+            <Dependent Role="adjustment">
+              <PropertyRef Name="warehouse_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_issue_de_reference_issue">
+          <End Role="issue" Type="ClearOfficeModel.Store.issue" Multiplicity="0..1" />
+          <End Role="issue_detail" Type="ClearOfficeModel.Store.issue_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="issue">
+              <PropertyRef Name="issue_id" />
+            </Principal>
+            <Dependent Role="issue_detail">
+              <PropertyRef Name="issue_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_issue_de_reference_item">
+          <End Role="item" Type="ClearOfficeModel.Store.item" Multiplicity="0..1" />
+          <End Role="issue_detail" Type="ClearOfficeModel.Store.issue_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="item">
+              <PropertyRef Name="item_id" />
+            </Principal>
+            <Dependent Role="issue_detail">
+              <PropertyRef Name="item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_issue_reference_transact">
+          <End Role="transaction_status" Type="ClearOfficeModel.Store.transaction_status" Multiplicity="0..1" />
+          <End Role="issue" Type="ClearOfficeModel.Store.issue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transaction_status">
+              <PropertyRef Name="status_id" />
+            </Principal>
+            <Dependent Role="issue">
+              <PropertyRef Name="status_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_issue_reference_warehous">
+          <End Role="warehouse" Type="ClearOfficeModel.Store.warehouse" Multiplicity="0..1" />
+          <End Role="issue" Type="ClearOfficeModel.Store.issue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="warehouse_id" />
+            </Principal>
+            <Dependent Role="issue">
+              <PropertyRef Name="warehouse_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_item_reference_category">
+          <End Role="category" Type="ClearOfficeModel.Store.category" Multiplicity="0..1" />
+          <End Role="item" Type="ClearOfficeModel.Store.item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="category_id" />
+            </Principal>
+            <Dependent Role="item">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_item_reference_measurem">
+          <End Role="measurement_unit" Type="ClearOfficeModel.Store.measurement_unit" Multiplicity="0..1" />
+          <End Role="item" Type="ClearOfficeModel.Store.item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="measurement_unit">
+              <PropertyRef Name="unit_id" />
+            </Principal>
+            <Dependent Role="item">
+              <PropertyRef Name="unit_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_item_reference_sub_cate">
+          <End Role="sub_category" Type="ClearOfficeModel.Store.sub_category" Multiplicity="0..1" />
+          <End Role="item" Type="ClearOfficeModel.Store.item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sub_category">
+              <PropertyRef Name="sub_category_id" />
+            </Principal>
+            <Dependent Role="item">
+              <PropertyRef Name="sub_category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lookup_item_lookup">
+          <End Role="lookup" Type="ClearOfficeModel.Store.lookup" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="lookup_item" Type="ClearOfficeModel.Store.lookup_item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lookup">
+              <PropertyRef Name="lookup_id" />
+            </Principal>
+            <Dependent Role="lookup_item">
+              <PropertyRef Name="lookup_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_receivin_reference_item">
+          <End Role="item" Type="ClearOfficeModel.Store.item" Multiplicity="0..1" />
+          <End Role="receiving_detail" Type="ClearOfficeModel.Store.receiving_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="item">
+              <PropertyRef Name="item_id" />
+            </Principal>
+            <Dependent Role="receiving_detail">
+              <PropertyRef Name="item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_receivin_reference_receivin">
+          <End Role="receiving" Type="ClearOfficeModel.Store.receiving" Multiplicity="0..1" />
+          <End Role="receiving_detail" Type="ClearOfficeModel.Store.receiving_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="receiving">
+              <PropertyRef Name="receiving_id" />
+            </Principal>
+            <Dependent Role="receiving_detail">
+              <PropertyRef Name="receiving_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_receivin_reference_supplier">
+          <End Role="supplier" Type="ClearOfficeModel.Store.supplier" Multiplicity="0..1" />
+          <End Role="receiving" Type="ClearOfficeModel.Store.receiving" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="supplier">
+              <PropertyRef Name="supplier_id" />
+            </Principal>
+            <Dependent Role="receiving">
+              <PropertyRef Name="supplier_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_receivin_reference_transact">
+          <End Role="transaction_status" Type="ClearOfficeModel.Store.transaction_status" Multiplicity="1" />
+          <End Role="receiving" Type="ClearOfficeModel.Store.receiving" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transaction_status">
+              <PropertyRef Name="status_id" />
+            </Principal>
+            <Dependent Role="receiving">
+              <PropertyRef Name="status_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_receivin_reference_warehous">
+          <End Role="warehouse" Type="ClearOfficeModel.Store.warehouse" Multiplicity="1" />
+          <End Role="receiving" Type="ClearOfficeModel.Store.receiving" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="warehouse_id" />
+            </Principal>
+            <Dependent Role="receiving">
+              <PropertyRef Name="warehouse_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_return_d_reference_item">
+          <End Role="item" Type="ClearOfficeModel.Store.item" Multiplicity="0..1" />
+          <End Role="return_detail" Type="ClearOfficeModel.Store.return_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="item">
+              <PropertyRef Name="item_id" />
+            </Principal>
+            <Dependent Role="return_detail">
+              <PropertyRef Name="item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_return_d_reference_return">
+          <End Role="return" Type="ClearOfficeModel.Store.return" Multiplicity="0..1" />
+          <End Role="return_detail" Type="ClearOfficeModel.Store.return_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="return">
+              <PropertyRef Name="return_id" />
+            </Principal>
+            <Dependent Role="return_detail">
+              <PropertyRef Name="return_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_return_reference_transact">
+          <End Role="transaction_status" Type="ClearOfficeModel.Store.transaction_status" Multiplicity="0..1" />
+          <End Role="return" Type="ClearOfficeModel.Store.return" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transaction_status">
+              <PropertyRef Name="status_id" />
+            </Principal>
+            <Dependent Role="return">
+              <PropertyRef Name="status_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_return_reference_warehous">
+          <End Role="warehouse" Type="ClearOfficeModel.Store.warehouse" Multiplicity="0..1" />
+          <End Role="return" Type="ClearOfficeModel.Store.return" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="warehouse_id" />
+            </Principal>
+            <Dependent Role="return">
+              <PropertyRef Name="warehouse_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stock_st_reference_item">
+          <End Role="item" Type="ClearOfficeModel.Store.item" Multiplicity="1" />
+          <End Role="stock_status" Type="ClearOfficeModel.Store.stock_status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="item">
+              <PropertyRef Name="item_id" />
+            </Principal>
+            <Dependent Role="stock_status">
+              <PropertyRef Name="item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stock_st_reference_warehous">
+          <End Role="warehouse" Type="ClearOfficeModel.Store.warehouse" Multiplicity="1" />
+          <End Role="stock_status" Type="ClearOfficeModel.Store.stock_status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="warehouse_id" />
+            </Principal>
+            <Dependent Role="stock_status">
+              <PropertyRef Name="warehouse_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stock_tr_reference_item">
+          <End Role="item" Type="ClearOfficeModel.Store.item" Multiplicity="0..1" />
+          <End Role="stock_transaction" Type="ClearOfficeModel.Store.stock_transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="item">
+              <PropertyRef Name="item_id" />
+            </Principal>
+            <Dependent Role="stock_transaction">
+              <PropertyRef Name="item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stock_tr_reference_transact">
+          <End Role="transaction_type" Type="ClearOfficeModel.Store.transaction_type" Multiplicity="0..1" />
+          <End Role="stock_transaction" Type="ClearOfficeModel.Store.stock_transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transaction_type">
+              <PropertyRef Name="transaction_type_id" />
+            </Principal>
+            <Dependent Role="stock_transaction">
+              <PropertyRef Name="transaction_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stock_tr_reference_warehous">
+          <End Role="warehouse" Type="ClearOfficeModel.Store.warehouse" Multiplicity="0..1" />
+          <End Role="stock_transaction" Type="ClearOfficeModel.Store.stock_transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="warehouse_id" />
+            </Principal>
+            <Dependent Role="stock_transaction">
+              <PropertyRef Name="warehouse_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_sub_cate_reference_category">
+          <End Role="category" Type="ClearOfficeModel.Store.category" Multiplicity="0..1" />
+          <End Role="sub_category" Type="ClearOfficeModel.Store.sub_category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="category_id" />
+            </Principal>
+            <Dependent Role="sub_category">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_transfer_ref_sourc_warehous">
+          <End Role="lookup_item" Type="ClearOfficeModel.Store.lookup_item" Multiplicity="0..1" />
+          <End Role="transfer" Type="ClearOfficeModel.Store.transfer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lookup_item">
+              <PropertyRef Name="lookup_item_id" />
+            </Principal>
+            <Dependent Role="transfer">
+              <PropertyRef Name="warehouse_from" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_transfer_reference_item">
+          <End Role="item" Type="ClearOfficeModel.Store.item" Multiplicity="0..1" />
+          <End Role="transfer_detail" Type="ClearOfficeModel.Store.transfer_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="item">
+              <PropertyRef Name="item_id" />
+            </Principal>
+            <Dependent Role="transfer_detail">
+              <PropertyRef Name="item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_transfer_reference_transact">
+          <End Role="transaction_status" Type="ClearOfficeModel.Store.transaction_status" Multiplicity="0..1" />
+          <End Role="transfer" Type="ClearOfficeModel.Store.transfer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transaction_status">
+              <PropertyRef Name="status_id" />
+            </Principal>
+            <Dependent Role="transfer">
+              <PropertyRef Name="status_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_transfer_reference_transfer">
+          <End Role="transfer" Type="ClearOfficeModel.Store.transfer" Multiplicity="0..1" />
+          <End Role="transfer_detail" Type="ClearOfficeModel.Store.transfer_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transfer">
+              <PropertyRef Name="transfer_id" />
+            </Principal>
+            <Dependent Role="transfer_detail">
+              <PropertyRef Name="transfer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_transfer_reference_warehous">
+          <End Role="lookup_item" Type="ClearOfficeModel.Store.lookup_item" Multiplicity="0..1" />
+          <End Role="transfer" Type="ClearOfficeModel.Store.transfer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lookup_item">
+              <PropertyRef Name="lookup_item_id" />
+            </Principal>
+            <Dependent Role="transfer">
+              <PropertyRef Name="warehouse_to" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="delete_issue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="stock">
+          <Parameter Name="issue_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="delete_receiving" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="stock">
+          <Parameter Name="receiving_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="delete_return" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="stock">
+          <Parameter Name="return_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="delete_transfer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="stock">
+          <Parameter Name="transfer_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateAdjustmentNo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="stock">
+          <Parameter Name="newNo" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateGrnNo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="stock">
+          <Parameter Name="newNo" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateIssueNo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="stock">
+          <Parameter Name="newNo" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateReturnNo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="stock">
+          <Parameter Name="newNo" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateTransferNo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="stock">
+          <Parameter Name="newNo" Type="nvarchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="InventoryModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="InventoryEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Adjustments" EntityType="InventoryModel.Adjustment" />
+          <EntitySet Name="Categories" EntityType="InventoryModel.Category" />
+          <EntitySet Name="Issues" EntityType="InventoryModel.Issue" />
+          <EntitySet Name="IssueDetails" EntityType="InventoryModel.IssueDetail" />
+          <EntitySet Name="InventoryItems" EntityType="InventoryModel.InventoryItem" />
+          <EntitySet Name="Receivings" EntityType="InventoryModel.Receiving" />
+          <EntitySet Name="ReceivingDetails" EntityType="InventoryModel.ReceivingDetail" />
+          <EntitySet Name="ItemReturns" EntityType="InventoryModel.ItemReturn" />
+          <EntitySet Name="ReturnDetails" EntityType="InventoryModel.ReturnDetail" />
+          <EntitySet Name="SequenceCounters" EntityType="InventoryModel.SequenceCounter" />
+          <EntitySet Name="StockStatus" EntityType="InventoryModel.StockStatus" />
+          <EntitySet Name="StockTransactions" EntityType="InventoryModel.StockTransaction" />
+          <EntitySet Name="SubCategories" EntityType="InventoryModel.SubCategory" />
+          <EntitySet Name="Suppliers" EntityType="InventoryModel.Supplier" />
+          <EntitySet Name="TransactionStatus" EntityType="InventoryModel.TransactionStatus" />
+          <EntitySet Name="TransactionTypes" EntityType="InventoryModel.TransactionType" />
+          <EntitySet Name="Transfers" EntityType="InventoryModel.Transfer" />
+          <EntitySet Name="TransferDetails" EntityType="InventoryModel.TransferDetail" />
+          <EntitySet Name="Warehouses" EntityType="InventoryModel.Warehouse" />
+          <AssociationSet Name="fk_adjustme_reference_transact" Association="InventoryModel.fk_adjustme_reference_transact">
+            <End Role="transaction_status" EntitySet="TransactionStatus" />
+            <End Role="adjustment" EntitySet="Adjustments" />
+          </AssociationSet>
+          <AssociationSet Name="fk_adjustme_reference_warehous" Association="InventoryModel.fk_adjustme_reference_warehous">
+            <End Role="warehouse" EntitySet="Warehouses" />
+            <End Role="adjustment" EntitySet="Adjustments" />
+          </AssociationSet>
+          <AssociationSet Name="fk_item_reference_category" Association="InventoryModel.fk_item_reference_category">
+            <End Role="category" EntitySet="Categories" />
+            <End Role="item" EntitySet="InventoryItems" />
+          </AssociationSet>
+          <AssociationSet Name="fk_sub_cate_reference_category" Association="InventoryModel.fk_sub_cate_reference_category">
+            <End Role="category" EntitySet="Categories" />
+            <End Role="sub_category" EntitySet="SubCategories" />
+          </AssociationSet>
+          <AssociationSet Name="fk_issue_de_reference_issue" Association="InventoryModel.fk_issue_de_reference_issue">
+            <End Role="issue" EntitySet="Issues" />
+            <End Role="issue_detail" EntitySet="IssueDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_issue_reference_transact" Association="InventoryModel.fk_issue_reference_transact">
+            <End Role="transaction_status" EntitySet="TransactionStatus" />
+            <End Role="issue" EntitySet="Issues" />
+          </AssociationSet>
+          <AssociationSet Name="fk_issue_reference_warehous" Association="InventoryModel.fk_issue_reference_warehous">
+            <End Role="warehouse" EntitySet="Warehouses" />
+            <End Role="issue" EntitySet="Issues" />
+          </AssociationSet>
+          <AssociationSet Name="fk_issue_de_reference_item" Association="InventoryModel.fk_issue_de_reference_item">
+            <End Role="item" EntitySet="InventoryItems" />
+            <End Role="issue_detail" EntitySet="IssueDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_item_reference_sub_cate" Association="InventoryModel.fk_item_reference_sub_cate">
+            <End Role="sub_category" EntitySet="SubCategories" />
+            <End Role="item" EntitySet="InventoryItems" />
+          </AssociationSet>
+          <AssociationSet Name="fk_receivin_reference_item" Association="InventoryModel.fk_receivin_reference_item">
+            <End Role="item" EntitySet="InventoryItems" />
+            <End Role="receiving_detail" EntitySet="ReceivingDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_return_d_reference_item" Association="InventoryModel.fk_return_d_reference_item">
+            <End Role="item" EntitySet="InventoryItems" />
+            <End Role="return_detail" EntitySet="ReturnDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stock_st_reference_item" Association="InventoryModel.fk_stock_st_reference_item">
+            <End Role="item" EntitySet="InventoryItems" />
+            <End Role="stock_status" EntitySet="StockStatus" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stock_tr_reference_item" Association="InventoryModel.fk_stock_tr_reference_item">
+            <End Role="item" EntitySet="InventoryItems" />
+            <End Role="stock_transaction" EntitySet="StockTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="fk_transfer_reference_item" Association="InventoryModel.fk_transfer_reference_item">
+            <End Role="item" EntitySet="InventoryItems" />
+            <End Role="transfer_detail" EntitySet="TransferDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_receivin_reference_receivin" Association="InventoryModel.fk_receivin_reference_receivin">
+            <End Role="receiving" EntitySet="Receivings" />
+            <End Role="receiving_detail" EntitySet="ReceivingDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_receivin_reference_supplier" Association="InventoryModel.fk_receivin_reference_supplier">
+            <End Role="supplier" EntitySet="Suppliers" />
+            <End Role="receiving" EntitySet="Receivings" />
+          </AssociationSet>
+          <AssociationSet Name="fk_receivin_reference_transact" Association="InventoryModel.fk_receivin_reference_transact">
+            <End Role="transaction_status" EntitySet="TransactionStatus" />
+            <End Role="receiving" EntitySet="Receivings" />
+          </AssociationSet>
+          <AssociationSet Name="fk_receivin_reference_warehous" Association="InventoryModel.fk_receivin_reference_warehous">
+            <End Role="warehouse" EntitySet="Warehouses" />
+            <End Role="receiving" EntitySet="Receivings" />
+          </AssociationSet>
+          <AssociationSet Name="fk_return_d_reference_return" Association="InventoryModel.fk_return_d_reference_return">
+            <End Role="return" EntitySet="ItemReturns" />
+            <End Role="return_detail" EntitySet="ReturnDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_return_reference_transact" Association="InventoryModel.fk_return_reference_transact">
+            <End Role="transaction_status" EntitySet="TransactionStatus" />
+            <End Role="return" EntitySet="ItemReturns" />
+          </AssociationSet>
+          <AssociationSet Name="fk_return_reference_warehous" Association="InventoryModel.fk_return_reference_warehous">
+            <End Role="warehouse" EntitySet="Warehouses" />
+            <End Role="return" EntitySet="ItemReturns" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stock_st_reference_warehous" Association="InventoryModel.fk_stock_st_reference_warehous">
+            <End Role="warehouse" EntitySet="Warehouses" />
+            <End Role="stock_status" EntitySet="StockStatus" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stock_tr_reference_transact" Association="InventoryModel.fk_stock_tr_reference_transact">
+            <End Role="transaction_type" EntitySet="TransactionTypes" />
+            <End Role="stock_transaction" EntitySet="StockTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stock_tr_reference_warehous" Association="InventoryModel.fk_stock_tr_reference_warehous">
+            <End Role="warehouse" EntitySet="Warehouses" />
+            <End Role="stock_transaction" EntitySet="StockTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="fk_transfer_reference_transact" Association="InventoryModel.fk_transfer_reference_transact">
+            <End Role="transaction_status" EntitySet="TransactionStatus" />
+            <End Role="transfer" EntitySet="Transfers" />
+          </AssociationSet>
+          <AssociationSet Name="fk_transfer_ref_sourc_warehous" Association="InventoryModel.fk_transfer_ref_sourc_warehous">
+            <End Role="warehouse" EntitySet="Warehouses" />
+            <End Role="transfer" EntitySet="Transfers" />
+          </AssociationSet>
+          <AssociationSet Name="fk_transfer_reference_transfer" Association="InventoryModel.fk_transfer_reference_transfer">
+            <End Role="transfer" EntitySet="Transfers" />
+            <End Role="transfer_detail" EntitySet="TransferDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_transfer_reference_warehous" Association="InventoryModel.fk_transfer_reference_warehous">
+            <End Role="warehouse" EntitySet="Warehouses" />
+            <End Role="transfer" EntitySet="Transfers" />
+          </AssociationSet>
+          <EntitySet Name="MeasurementUnits" EntityType="InventoryModel.MeasurementUnit" />
+          <AssociationSet Name="fk_item_reference_measurem" Association="InventoryModel.fk_item_reference_measurem">
+            <End Role="measurement_unit" EntitySet="MeasurementUnits" />
+            <End Role="Item" EntitySet="InventoryItems" />
+          </AssociationSet>
+          <FunctionImport Name="UpdateGrnNo">
+          <Parameter Name="newNo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateIssueNo">
+          <Parameter Name="newNo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateTransferNo">
+          <Parameter Name="newNo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateReturnNo">
+          <Parameter Name="newNo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateAdjustmentNo">
+          <Parameter Name="newNo" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="ReceivingInfoes" EntityType="InventoryModel.ReceivingInfo" />
+          <FunctionImport Name="DeleteReceiving">
+          <Parameter Name="receiving_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="StockStatusInfoes" EntityType="InventoryModel.StockStatusInfo" />
+          <EntitySet Name="IssueInfoes" EntityType="InventoryModel.IssueInfo" />
+          <FunctionImport Name="DeleteIssue">
+          <Parameter Name="issue_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="WarehouseItemInfoes" EntityType="InventoryModel.WarehouseItemInfo" />
+          <EntitySet Name="ReturnInfoes" EntityType="InventoryModel.ReturnInfo" />
+          <FunctionImport Name="DeleteReturn">
+          <Parameter Name="return_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteTransfer">
+          <Parameter Name="transfer_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="StatusInfoes" EntityType="InventoryModel.StatusInfo" />
+          <EntitySet Name="ItemInfoes" EntityType="InventoryModel.ItemInfo" />
+          <EntitySet Name="AdjustmentDetails" EntityType="InventoryModel.AdjustmentDetail" />
+          <AssociationSet Name="fk_adjustme_reference_adjustme" Association="InventoryModel.fk_adjustme_reference_adjustme">
+            <End Role="Adjustment" EntitySet="Adjustments" />
+            <End Role="adjustment_detail" EntitySet="AdjustmentDetails" />
+          </AssociationSet>
+          <AssociationSet Name="fk_adjustme_reference_item" Association="InventoryModel.fk_adjustme_reference_item">
+            <End Role="InventoryItem" EntitySet="InventoryItems" />
+            <End Role="adjustment_detail" EntitySet="AdjustmentDetails" />
+          </AssociationSet>
+          <EntitySet Name="Lookups" EntityType="InventoryModel.Lookup" />
+          <EntitySet Name="LookupItems" EntityType="InventoryModel.LookupItem" />
+          <AssociationSet Name="FK_lookup_item_lookup" Association="InventoryModel.FK_lookup_item_lookup">
+            <End Role="lookup" EntitySet="Lookups" />
+            <End Role="lookup_item" EntitySet="LookupItems" />
+          </AssociationSet>
+          <EntitySet Name="AdjustmentInfoes" EntityType="InventoryModel.AdjustmentInfo" />
+          <EntitySet Name="TransferInfoes" EntityType="InventoryModel.TransferInfo" />
+          <AssociationSet Name="fk_receivin_reference_supplier1" Association="InventoryModel.fk_receivin_reference_supplier1">
+            <End Role="LookupItem" EntitySet="LookupItems" />
+            <End Role="Receiving" EntitySet="Receivings" />
+          </AssociationSet>
+          <AssociationSet Name="fk_transfer_ref_sourc_warehous1" Association="InventoryModel.fk_transfer_ref_sourc_warehous1">
+            <End Role="LookupItem" EntitySet="LookupItems" />
+            <End Role="Transfer" EntitySet="Transfers" />
+          </AssociationSet>
+          <AssociationSet Name="fk_transfer_reference_warehous1" Association="InventoryModel.fk_transfer_reference_warehous1">
+            <End Role="LookupItem" EntitySet="LookupItems" />
+            <End Role="Transfer" EntitySet="Transfers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Adjustment">
+          <Key>
+            <PropertyRef Name="AdjustmentId" />
+          </Key>
+          <Property Name="AdjustmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusId" Type="Int32" />
+          <Property Name="WarehouseId" Type="Int32" />
+          <Property Name="AdjustmentNo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Reason" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" />
+          <Property Name="PostedBy" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="PostedDate" Type="DateTime" />
+          <NavigationProperty Name="transaction_status" Relationship="InventoryModel.fk_adjustme_reference_transact" FromRole="adjustment" ToRole="transaction_status" />
+          <NavigationProperty Name="warehouse" Relationship="InventoryModel.fk_adjustme_reference_warehous" FromRole="adjustment" ToRole="warehouse" />
+          <NavigationProperty Name="adjustment_detail" Relationship="InventoryModel.fk_adjustme_reference_adjustme" FromRole="Adjustment" ToRole="adjustment_detail" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="SubCategories" Relationship="InventoryModel.fk_sub_cate_reference_category" FromRole="category" ToRole="sub_category" />
+        </EntityType>
+        <EntityType Name="Issue">
+          <Key>
+            <PropertyRef Name="IssueId" />
+          </Key>
+          <Property Name="IssueId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusId" Type="Int32" />
+          <Property Name="WarehouseId" Type="Int32" />
+          <Property Name="IssueNo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="IssueDate" Type="DateTime" />
+          <Property Name="IssuedBy" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="PostedDate" Type="DateTime" />
+          <Property Name="PostedBy" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="IssueItems" Relationship="InventoryModel.fk_issue_de_reference_issue" FromRole="issue" ToRole="issue_detail" />
+          <Property Type="String" Name="IssuedTo" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IssueReason" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="IssueDetail">
+          <Key>
+            <PropertyRef Name="IssueDetailId" />
+          </Key>
+          <Property Name="IssueDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IssueId" Type="Int32" />
+          <Property Name="ItemId" Type="Int32" />
+          <Property Name="Quantity" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ItemDetail" Relationship="InventoryModel.fk_issue_de_reference_item" FromRole="issue_detail" ToRole="item" />
+        </EntityType>
+        <EntityType Name="InventoryItem">
+          <Key>
+            <PropertyRef Name="ItemId" />
+          </Key>
+          <Property Name="ItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UnitId" Type="Int32" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="SubCategoryId" Type="Int32" />
+          <Property Name="ItemNo" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Category" Relationship="InventoryModel.fk_item_reference_category" FromRole="item" ToRole="category" />
+          <NavigationProperty Name="SubCategory" Relationship="InventoryModel.fk_item_reference_sub_cate" FromRole="item" ToRole="sub_category" />
+          <NavigationProperty Name="measurement_unit" Relationship="InventoryModel.fk_item_reference_measurem" FromRole="Item" ToRole="measurement_unit" />
+          <NavigationProperty Name="adjustment_detail" Relationship="InventoryModel.fk_adjustme_reference_item" FromRole="InventoryItem" ToRole="adjustment_detail" />
+        </EntityType>
+        <EntityType Name="Receiving">
+          <Key>
+            <PropertyRef Name="ReceivingId" />
+          </Key>
+          <Property Name="ReceivingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WarehouseId" Type="Int32" Nullable="false" />
+          <Property Name="SupplierId" Type="Int32" />
+          <Property Name="GRN" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AirwaybillNo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="InvoiceNo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="ReceivedBy" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="ReceivedDate" Type="DateTime" />
+          <Property Name="StatusId" Type="Int32" Nullable="false" />
+          <Property Name="PostedDate" Type="DateTime" />
+          <Property Name="PostedBy" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ReceivingItems" Relationship="InventoryModel.fk_receivin_reference_receivin" FromRole="receiving" ToRole="receiving_detail" />
+          <NavigationProperty Name="lookup_item" Relationship="InventoryModel.fk_receivin_reference_supplier1" FromRole="Receiving" ToRole="LookupItem" />
+        </EntityType>
+        <EntityType Name="ReceivingDetail">
+          <Key>
+            <PropertyRef Name="ReceivingDetailId" />
+          </Key>
+          <Property Name="ReceivingDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemId" Type="Int32" />
+          <Property Name="ReceivingId" Type="Int32" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Quantity" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ItemDetail" Relationship="InventoryModel.fk_receivin_reference_item" FromRole="receiving_detail" ToRole="item" />
+        </EntityType>
+        <EntityType Name="ItemReturn">
+          <Key>
+            <PropertyRef Name="ReturnId" />
+          </Key>
+          <Property Name="ReturnId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusId" Type="Int32" />
+          <Property Name="WarehouseId" Type="Int32" />
+          <Property Name="ReturnNo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="AcceptedBy" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="AcceptedDate" Type="DateTime" />
+          <Property Name="PostedBy" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="PostedDate" Type="DateTime" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ReturnedItems" Relationship="InventoryModel.fk_return_d_reference_return" FromRole="return" ToRole="return_detail" />
+          <Property Type="String" Name="Reason" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ReturnDetail">
+          <Key>
+            <PropertyRef Name="ReturnDetailId" />
+          </Key>
+          <Property Name="ReturnDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReturnId" Type="Int32" />
+          <Property Name="ItemId" Type="Int32" />
+          <Property Name="Quantity" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ItemDetail" Relationship="InventoryModel.fk_return_d_reference_item" FromRole="return_detail" ToRole="item" />
+        </EntityType>
+        <EntityType Name="SequenceCounter">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="Int32" Nullable="false" />
+          <Property Name="GRN" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="IssueNo" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="TransferNo" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="ReturnNo" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="AdjustmentNo" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="StockStatus">
+          <Key>
+            <PropertyRef Name="ItemId" />
+            <PropertyRef Name="WarehouseId" />
+          </Key>
+          <Property Name="ItemId" Type="Int32" Nullable="false" />
+          <Property Name="WarehouseId" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="StockTransaction">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Name="TransactionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionTypeId" Type="Int32" />
+          <Property Name="OwnerId" Type="Int32" />
+          <Property Name="ItemId" Type="Int32" />
+          <Property Name="Quantity" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="WarehouseId" Type="Int32" />
+          <Property Name="TransactionDate" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="SubCategory">
+          <Key>
+            <PropertyRef Name="SubCategoryId" />
+          </Key>
+          <Property Name="SubCategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Category" Relationship="InventoryModel.fk_sub_cate_reference_category" FromRole="sub_category" ToRole="category" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="SupplierId" />
+          </Key>
+          <Property Name="SupplierId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ContactPerson" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TransactionStatus">
+          <Key>
+            <PropertyRef Name="StatusId" />
+          </Key>
+          <Property Name="StatusId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TransactionType">
+          <Key>
+            <PropertyRef Name="TransactionTypeId" />
+          </Key>
+          <Property Name="TransactionTypeId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Transfer">
+          <Key>
+            <PropertyRef Name="TransferId" />
+          </Key>
+          <Property Name="TransferId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusId" Type="Int32" />
+          <Property Name="TransferNo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="TransferDate" Type="DateTime" />
+          <Property Name="TransferBy" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="PostedDate" Type="DateTime" />
+          <Property Name="PostedBy" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="WarehouseFrom" Type="Int32" />
+          <Property Name="WarehouseTo" Type="Int32" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="TransferItems" Relationship="InventoryModel.fk_transfer_reference_transfer" FromRole="transfer" ToRole="transfer_detail" />
+          <Property Type="String" Name="Reason" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="lookup_item" Relationship="InventoryModel.fk_transfer_ref_sourc_warehous1" FromRole="Transfer" ToRole="LookupItem" />
+          <NavigationProperty Name="lookup_item1" Relationship="InventoryModel.fk_transfer_reference_warehous1" FromRole="Transfer" ToRole="LookupItem" />
+        </EntityType>
+        <EntityType Name="TransferDetail">
+          <Key>
+            <PropertyRef Name="TransferDetailId" />
+          </Key>
+          <Property Name="TransferDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransferId" Type="Int32" />
+          <Property Name="ItemId" Type="Int32" />
+          <Property Name="Quantity" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="ItemDetail" Relationship="InventoryModel.fk_transfer_reference_item" FromRole="transfer_detail" ToRole="item" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Warehouse">
+          <Key>
+            <PropertyRef Name="WarehouseId" />
+          </Key>
+          <Property Name="WarehouseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ContactPerson" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <Association Name="fk_adjustme_reference_transact">
+          <End Role="transaction_status" Type="InventoryModel.TransactionStatus" Multiplicity="0..1" />
+          <End Role="adjustment" Type="InventoryModel.Adjustment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transaction_status">
+              <PropertyRef Name="StatusId" />
+            </Principal>
+            <Dependent Role="adjustment">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_adjustme_reference_warehous">
+          <End Role="warehouse" Type="InventoryModel.Warehouse" Multiplicity="0..1" />
+          <End Role="adjustment" Type="InventoryModel.Adjustment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="WarehouseId" />
+            </Principal>
+            <Dependent Role="adjustment">
+              <PropertyRef Name="WarehouseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_item_reference_category">
+          <End Role="category" Type="InventoryModel.Category" Multiplicity="0..1" />
+          <End Role="item" Type="InventoryModel.InventoryItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="item">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_sub_cate_reference_category">
+          <End Role="category" Type="InventoryModel.Category" Multiplicity="0..1" />
+          <End Role="sub_category" Type="InventoryModel.SubCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="sub_category">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_issue_de_reference_issue">
+          <End Role="issue" Type="InventoryModel.Issue" Multiplicity="0..1" />
+          <End Role="issue_detail" Type="InventoryModel.IssueDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="issue">
+              <PropertyRef Name="IssueId" />
+            </Principal>
+            <Dependent Role="issue_detail">
+              <PropertyRef Name="IssueId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_issue_reference_transact">
+          <End Role="transaction_status" Type="InventoryModel.TransactionStatus" Multiplicity="0..1" />
+          <End Role="issue" Type="InventoryModel.Issue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transaction_status">
+              <PropertyRef Name="StatusId" />
+            </Principal>
+            <Dependent Role="issue">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_issue_reference_warehous">
+          <End Role="warehouse" Type="InventoryModel.Warehouse" Multiplicity="0..1" />
+          <End Role="issue" Type="InventoryModel.Issue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="WarehouseId" />
+            </Principal>
+            <Dependent Role="issue">
+              <PropertyRef Name="WarehouseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_issue_de_reference_item">
+          <End Role="item" Type="InventoryModel.InventoryItem" Multiplicity="0..1" />
+          <End Role="issue_detail" Type="InventoryModel.IssueDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="item">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="issue_detail">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_item_reference_sub_cate">
+          <End Role="sub_category" Type="InventoryModel.SubCategory" Multiplicity="0..1" />
+          <End Role="item" Type="InventoryModel.InventoryItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sub_category">
+              <PropertyRef Name="SubCategoryId" />
+            </Principal>
+            <Dependent Role="item">
+              <PropertyRef Name="SubCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_receivin_reference_item">
+          <End Role="item" Type="InventoryModel.InventoryItem" Multiplicity="0..1" />
+          <End Role="receiving_detail" Type="InventoryModel.ReceivingDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="item">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="receiving_detail">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_return_d_reference_item">
+          <End Role="item" Type="InventoryModel.InventoryItem" Multiplicity="0..1" />
+          <End Role="return_detail" Type="InventoryModel.ReturnDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="item">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="return_detail">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stock_st_reference_item">
+          <End Role="item" Type="InventoryModel.InventoryItem" Multiplicity="1" />
+          <End Role="stock_status" Type="InventoryModel.StockStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="item">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="stock_status">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stock_tr_reference_item">
+          <End Role="item" Type="InventoryModel.InventoryItem" Multiplicity="0..1" />
+          <End Role="stock_transaction" Type="InventoryModel.StockTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="item">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="stock_transaction">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_transfer_reference_item">
+          <End Role="item" Type="InventoryModel.InventoryItem" Multiplicity="0..1" />
+          <End Role="transfer_detail" Type="InventoryModel.TransferDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="item">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="transfer_detail">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_receivin_reference_receivin">
+          <End Role="receiving" Type="InventoryModel.Receiving" Multiplicity="0..1" />
+          <End Role="receiving_detail" Type="InventoryModel.ReceivingDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="receiving">
+              <PropertyRef Name="ReceivingId" />
+            </Principal>
+            <Dependent Role="receiving_detail">
+              <PropertyRef Name="ReceivingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_receivin_reference_supplier">
+          <End Role="supplier" Type="InventoryModel.Supplier" Multiplicity="0..1" />
+          <End Role="receiving" Type="InventoryModel.Receiving" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="supplier">
+              <PropertyRef Name="SupplierId" />
+            </Principal>
+            <Dependent Role="receiving">
+              <PropertyRef Name="SupplierId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_receivin_reference_transact">
+          <End Role="transaction_status" Type="InventoryModel.TransactionStatus" Multiplicity="1" />
+          <End Role="receiving" Type="InventoryModel.Receiving" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transaction_status">
+              <PropertyRef Name="StatusId" />
+            </Principal>
+            <Dependent Role="receiving">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_receivin_reference_warehous">
+          <End Role="warehouse" Type="InventoryModel.Warehouse" Multiplicity="1" />
+          <End Role="receiving" Type="InventoryModel.Receiving" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="WarehouseId" />
+            </Principal>
+            <Dependent Role="receiving">
+              <PropertyRef Name="WarehouseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_return_d_reference_return">
+          <End Role="return" Type="InventoryModel.ItemReturn" Multiplicity="0..1" />
+          <End Role="return_detail" Type="InventoryModel.ReturnDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="return">
+              <PropertyRef Name="ReturnId" />
+            </Principal>
+            <Dependent Role="return_detail">
+              <PropertyRef Name="ReturnId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_return_reference_transact">
+          <End Role="transaction_status" Type="InventoryModel.TransactionStatus" Multiplicity="0..1" />
+          <End Role="return" Type="InventoryModel.ItemReturn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transaction_status">
+              <PropertyRef Name="StatusId" />
+            </Principal>
+            <Dependent Role="return">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_return_reference_warehous">
+          <End Role="warehouse" Type="InventoryModel.Warehouse" Multiplicity="0..1" />
+          <End Role="return" Type="InventoryModel.ItemReturn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="WarehouseId" />
+            </Principal>
+            <Dependent Role="return">
+              <PropertyRef Name="WarehouseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stock_st_reference_warehous">
+          <End Role="warehouse" Type="InventoryModel.Warehouse" Multiplicity="1" />
+          <End Role="stock_status" Type="InventoryModel.StockStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="WarehouseId" />
+            </Principal>
+            <Dependent Role="stock_status">
+              <PropertyRef Name="WarehouseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stock_tr_reference_transact">
+          <End Role="transaction_type" Type="InventoryModel.TransactionType" Multiplicity="0..1" />
+          <End Role="stock_transaction" Type="InventoryModel.StockTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transaction_type">
+              <PropertyRef Name="TransactionTypeId" />
+            </Principal>
+            <Dependent Role="stock_transaction">
+              <PropertyRef Name="TransactionTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stock_tr_reference_warehous">
+          <End Role="warehouse" Type="InventoryModel.Warehouse" Multiplicity="0..1" />
+          <End Role="stock_transaction" Type="InventoryModel.StockTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="WarehouseId" />
+            </Principal>
+            <Dependent Role="stock_transaction">
+              <PropertyRef Name="WarehouseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_transfer_reference_transact">
+          <End Role="transaction_status" Type="InventoryModel.TransactionStatus" Multiplicity="0..1" />
+          <End Role="transfer" Type="InventoryModel.Transfer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transaction_status">
+              <PropertyRef Name="StatusId" />
+            </Principal>
+            <Dependent Role="transfer">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_transfer_ref_sourc_warehous">
+          <End Role="warehouse" Type="InventoryModel.Warehouse" Multiplicity="0..1" />
+          <End Role="transfer" Type="InventoryModel.Transfer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="WarehouseId" />
+            </Principal>
+            <Dependent Role="transfer">
+              <PropertyRef Name="WarehouseFrom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_transfer_reference_transfer">
+          <End Role="transfer" Type="InventoryModel.Transfer" Multiplicity="0..1" />
+          <End Role="transfer_detail" Type="InventoryModel.TransferDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transfer">
+              <PropertyRef Name="TransferId" />
+            </Principal>
+            <Dependent Role="transfer_detail">
+              <PropertyRef Name="TransferId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_transfer_reference_warehous">
+          <End Role="warehouse" Type="InventoryModel.Warehouse" Multiplicity="0..1" />
+          <End Role="transfer" Type="InventoryModel.Transfer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouse">
+              <PropertyRef Name="WarehouseId" />
+            </Principal>
+            <Dependent Role="transfer">
+              <PropertyRef Name="WarehouseTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MeasurementUnit">
+          <Key>
+            <PropertyRef Name="UnitId" />
+          </Key>
+          <Property Type="Int32" Name="UnitId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="fk_item_reference_measurem">
+          <End Type="InventoryModel.MeasurementUnit" Role="measurement_unit" Multiplicity="0..1" />
+          <End Type="InventoryModel.InventoryItem" Role="Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="measurement_unit">
+              <PropertyRef Name="UnitId" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="UnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ReceivingInfo">
+          <Key>
+            <PropertyRef Name="ReceivingId" />
+            <PropertyRef Name="StatusId" />
+          </Key>
+          <Property Type="Int32" Name="ReceivingId" Nullable="false" />
+          <Property Type="String" Name="GRN" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AirwaybillNo" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InvoiceNo" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReceivedBy" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ReceivedDate" />
+          <Property Type="Int32" Name="StatusId" Nullable="false" />
+          <Property Type="DateTime" Name="PostedDate" />
+          <Property Type="String" Name="PostedBy" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SupplierName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StatusName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WarehouseName" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="StockStatusInfo">
+          <Key>
+            <PropertyRef Name="ItemId" />
+            <PropertyRef Name="WarehouseId" />
+          </Key>
+          <Property Type="Int32" Name="ItemId" Nullable="false" />
+          <Property Type="Int32" Name="WarehouseId" Nullable="false" />
+          <Property Type="Decimal" Name="Quantity" Precision="10" Scale="2" />
+          <Property Type="String" Name="ItemNo" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UnitName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CategoryName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WarehouseText" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="IssueInfo">
+          <Key>
+            <PropertyRef Name="IssueId" />
+          </Key>
+          <Property Type="Int32" Name="IssueId" Nullable="false" />
+          <Property Type="Int32" Name="StatusId" />
+          <Property Type="Int32" Name="WarehouseId" />
+          <Property Type="String" Name="IssueNo" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="IssueDate" />
+          <Property Type="String" Name="IssuedBy" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="PostedDate" />
+          <Property Type="String" Name="PostedBy" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IssuedTo" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WarehouseText" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WarehouseItemInfo">
+          <Key>
+            <PropertyRef Name="ItemId" />
+            <PropertyRef Name="WarehouseId" />
+          </Key>
+          <Property Type="Int32" Name="ItemId" Nullable="false" />
+          <Property Type="String" Name="ItemNo" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UnitName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CategoryName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SubCategoryName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="WarehouseId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReturnInfo">
+          <Key>
+            <PropertyRef Name="ReturnId" />
+          </Key>
+          <Property Type="Int32" Name="ReturnId" Nullable="false" />
+          <Property Type="Int32" Name="StatusId" />
+          <Property Type="Int32" Name="WarehouseId" />
+          <Property Type="String" Name="ReturnNo" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Reason" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AcceptedBy" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="AcceptedDate" />
+          <Property Type="String" Name="PostedBy" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="PostedDate" />
+          <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StatusName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WarehouseText" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="StatusInfo">
+          <Key>
+            <PropertyRef Name="ItemId" />
+          </Key>
+          <Property Type="Int32" Name="ItemId" Nullable="false" />
+          <Property Type="String" Name="ItemNo" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Quantity" Precision="10" Scale="2" />
+          <Property Type="String" Name="WarehouseText" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ItemInfo">
+          <Key>
+            <PropertyRef Name="ItemId" />
+          </Key>
+          <Property Type="Int32" Name="ItemId" Nullable="false" />
+          <Property Type="Int32" Name="UnitId" />
+          <Property Type="Int32" Name="CategoryId" />
+          <Property Type="Int32" Name="SubCategoryId" />
+          <Property Type="String" Name="ItemNo" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="Image" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="UnitName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CategoryName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SubCategoryName" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AdjustmentDetail">
+          <Key>
+            <PropertyRef Name="AdjustmentDetailId" />
+          </Key>
+          <Property Type="Int32" Name="AdjustmentDetailId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AdjustmentId" />
+          <Property Type="Int32" Name="ItemId" />
+          <Property Type="Decimal" Name="CurrentQuantity" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="AdjustedQuantity" Precision="10" Scale="2" />
+          <NavigationProperty Name="adjustment" Relationship="InventoryModel.fk_adjustme_reference_adjustme" FromRole="adjustment_detail" ToRole="Adjustment" />
+          <NavigationProperty Name="item" Relationship="InventoryModel.fk_adjustme_reference_item" FromRole="adjustment_detail" ToRole="InventoryItem" />
+        </EntityType>
+        <Association Name="fk_adjustme_reference_adjustme">
+          <End Type="InventoryModel.Adjustment" Role="Adjustment" Multiplicity="0..1" />
+          <End Type="InventoryModel.AdjustmentDetail" Role="adjustment_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adjustment">
+              <PropertyRef Name="AdjustmentId" />
+            </Principal>
+            <Dependent Role="adjustment_detail">
+              <PropertyRef Name="AdjustmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_adjustme_reference_item">
+          <End Type="InventoryModel.InventoryItem" Role="InventoryItem" Multiplicity="0..1" />
+          <End Type="InventoryModel.AdjustmentDetail" Role="adjustment_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InventoryItem">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="adjustment_detail">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Lookup">
+          <Key>
+            <PropertyRef Name="LookupId" />
+          </Key>
+          <Property Type="Int32" Name="LookupId" Nullable="false" />
+          <Property Type="String" Name="LookupName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="lookup_item" Relationship="InventoryModel.FK_lookup_item_lookup" FromRole="lookup" ToRole="lookup_item" />
+        </EntityType>
+        <EntityType Name="LookupItem">
+          <Key>
+            <PropertyRef Name="LookupItemId" />
+          </Key>
+          <Property Type="Int32" Name="LookupItemId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="LookupId" />
+          <Property Type="String" Name="ItemName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="lookup" Relationship="InventoryModel.FK_lookup_item_lookup" FromRole="lookup_item" ToRole="lookup" />
+          <NavigationProperty Name="receivings" Relationship="InventoryModel.fk_receivin_reference_supplier1" FromRole="LookupItem" ToRole="Receiving" />
+          <NavigationProperty Name="transfers" Relationship="InventoryModel.fk_transfer_ref_sourc_warehous1" FromRole="LookupItem" ToRole="Transfer" />
+          <NavigationProperty Name="transfers1" Relationship="InventoryModel.fk_transfer_reference_warehous1" FromRole="LookupItem" ToRole="Transfer" />
+        </EntityType>
+        <Association Name="FK_lookup_item_lookup">
+          <End Type="InventoryModel.Lookup" Role="lookup" Multiplicity="0..1" />
+          <End Type="InventoryModel.LookupItem" Role="lookup_item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lookup">
+              <PropertyRef Name="LookupId" />
+            </Principal>
+            <Dependent Role="lookup_item">
+              <PropertyRef Name="LookupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AdjustmentInfo">
+          <Key>
+            <PropertyRef Name="AdjustmentId" />
+          </Key>
+          <Property Type="Int32" Name="AdjustmentId" Nullable="false" />
+          <Property Type="Int32" Name="StatusId" />
+          <Property Type="String" Name="AdjustmentNo" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Reason" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CreatedBy" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" />
+          <Property Type="String" Name="PostedBy" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="PostedDate" />
+          <Property Type="String" Name="Status" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WarehouseText" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TransferInfo">
+          <Key>
+            <PropertyRef Name="TransferId" />
+          </Key>
+          <Property Type="Int32" Name="TransferId" Nullable="false" />
+          <Property Type="Int32" Name="StatusId" />
+          <Property Type="String" Name="TransferNo" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="TransferDate" />
+          <Property Type="String" Name="TransferBy" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="PostedDate" />
+          <Property Type="String" Name="PostedBy" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="WarehouseFrom" />
+          <Property Type="Int32" Name="WarehouseTo" />
+          <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Status" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SourceWarehouse" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DestinationWarehouse" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="fk_receivin_reference_supplier1">
+          <End Type="InventoryModel.LookupItem" Role="LookupItem" Multiplicity="0..1" />
+          <End Type="InventoryModel.Receiving" Role="Receiving" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LookupItem">
+              <PropertyRef Name="LookupItemId" />
+            </Principal>
+            <Dependent Role="Receiving">
+              <PropertyRef Name="SupplierId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_transfer_ref_sourc_warehous1">
+          <End Type="InventoryModel.LookupItem" Role="LookupItem" Multiplicity="0..1" />
+          <End Type="InventoryModel.Transfer" Role="Transfer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LookupItem">
+              <PropertyRef Name="LookupItemId" />
+            </Principal>
+            <Dependent Role="Transfer">
+              <PropertyRef Name="WarehouseFrom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_transfer_reference_warehous1">
+          <End Type="InventoryModel.LookupItem" Role="LookupItem" Multiplicity="0..1" />
+          <End Type="InventoryModel.Transfer" Role="Transfer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LookupItem">
+              <PropertyRef Name="LookupItemId" />
+            </Principal>
+            <Dependent Role="Transfer">
+              <PropertyRef Name="WarehouseTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ClearOfficeModelStoreContainer" CdmEntityContainer="InventoryEntities">
+          <EntitySetMapping Name="Adjustments">
+            <EntityTypeMapping TypeName="InventoryModel.Adjustment">
+              <MappingFragment StoreEntitySet="adjustment">
+                <ScalarProperty Name="AdjustmentId" ColumnName="adjustment_id" />
+                <ScalarProperty Name="StatusId" ColumnName="status_id" />
+                <ScalarProperty Name="WarehouseId" ColumnName="warehouse_id" />
+                <ScalarProperty Name="AdjustmentNo" ColumnName="adjustment_no" />
+                <ScalarProperty Name="Reason" ColumnName="reason" />
+                <ScalarProperty Name="CreatedBy" ColumnName="created_by" />
+                <ScalarProperty Name="CreatedDate" ColumnName="created_date" />
+                <ScalarProperty Name="PostedBy" ColumnName="posted_by" />
+                <ScalarProperty Name="PostedDate" ColumnName="posted_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="InventoryModel.Category">
+              <MappingFragment StoreEntitySet="category">
+                <ScalarProperty Name="CategoryId" ColumnName="category_id" />
+                <ScalarProperty Name="Name" ColumnName="name" />
+                <ScalarProperty Name="Description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Issues">
+            <EntityTypeMapping TypeName="InventoryModel.Issue">
+              <MappingFragment StoreEntitySet="issue">
+                <ScalarProperty Name="IssueReason" ColumnName="issue_reason" />
+                <ScalarProperty Name="IssuedTo" ColumnName="issued_to" />
+                <ScalarProperty Name="IssueId" ColumnName="issue_id" />
+                <ScalarProperty Name="StatusId" ColumnName="status_id" />
+                <ScalarProperty Name="WarehouseId" ColumnName="warehouse_id" />
+                <ScalarProperty Name="IssueNo" ColumnName="issue_no" />
+                <ScalarProperty Name="IssueDate" ColumnName="issue_date" />
+                <ScalarProperty Name="IssuedBy" ColumnName="issued_by" />
+                <ScalarProperty Name="PostedDate" ColumnName="posted_date" />
+                <ScalarProperty Name="PostedBy" ColumnName="posted_by" />
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IssueDetails">
+            <EntityTypeMapping TypeName="InventoryModel.IssueDetail">
+              <MappingFragment StoreEntitySet="issue_detail">
+                <ScalarProperty Name="IssueDetailId" ColumnName="issue_detail_id" />
+                <ScalarProperty Name="IssueId" ColumnName="issue_id" />
+                <ScalarProperty Name="ItemId" ColumnName="item_id" />
+                <ScalarProperty Name="Quantity" ColumnName="quantity" />
+                <ScalarProperty Name="UnitPrice" ColumnName="unit_price" />
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InventoryItems">
+            <EntityTypeMapping TypeName="InventoryModel.InventoryItem">
+              <MappingFragment StoreEntitySet="item">
+                <ScalarProperty Name="ItemId" ColumnName="item_id" />
+                <ScalarProperty Name="UnitId" ColumnName="unit_id" />
+                <ScalarProperty Name="CategoryId" ColumnName="category_id" />
+                <ScalarProperty Name="SubCategoryId" ColumnName="sub_category_id" />
+                <ScalarProperty Name="ItemNo" ColumnName="item_no" />
+                <ScalarProperty Name="Description" ColumnName="description" />
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+                <ScalarProperty Name="Image" ColumnName="image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Receivings">
+            <EntityTypeMapping TypeName="InventoryModel.Receiving">
+              <MappingFragment StoreEntitySet="receiving">
+                <ScalarProperty Name="ReceivingId" ColumnName="receiving_id" />
+                <ScalarProperty Name="WarehouseId" ColumnName="warehouse_id" />
+                <ScalarProperty Name="SupplierId" ColumnName="supplier_id" />
+                <ScalarProperty Name="GRN" ColumnName="grn" />
+                <ScalarProperty Name="AirwaybillNo" ColumnName="airwaybill_no" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="invoice_no" />
+                <ScalarProperty Name="ReceivedBy" ColumnName="received_by" />
+                <ScalarProperty Name="ReceivedDate" ColumnName="received_date" />
+                <ScalarProperty Name="StatusId" ColumnName="status_id" />
+                <ScalarProperty Name="PostedDate" ColumnName="posted_date" />
+                <ScalarProperty Name="PostedBy" ColumnName="posted_by" />
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReceivingDetails">
+            <EntityTypeMapping TypeName="InventoryModel.ReceivingDetail">
+              <MappingFragment StoreEntitySet="receiving_detail">
+                <ScalarProperty Name="ReceivingDetailId" ColumnName="receiving_detail_id" />
+                <ScalarProperty Name="ItemId" ColumnName="item_id" />
+                <ScalarProperty Name="ReceivingId" ColumnName="receiving_id" />
+                <ScalarProperty Name="UnitPrice" ColumnName="unit_price" />
+                <ScalarProperty Name="Quantity" ColumnName="quantity" />
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemReturns">
+            <EntityTypeMapping TypeName="InventoryModel.ItemReturn">
+              <MappingFragment StoreEntitySet="return">
+                <ScalarProperty Name="Reason" ColumnName="reason" />
+                <ScalarProperty Name="ReturnId" ColumnName="return_id" />
+                <ScalarProperty Name="StatusId" ColumnName="status_id" />
+                <ScalarProperty Name="WarehouseId" ColumnName="warehouse_id" />
+                <ScalarProperty Name="ReturnNo" ColumnName="return_no" />
+                <ScalarProperty Name="AcceptedBy" ColumnName="accepted_by" />
+                <ScalarProperty Name="AcceptedDate" ColumnName="accepted_date" />
+                <ScalarProperty Name="PostedBy" ColumnName="posted_by" />
+                <ScalarProperty Name="PostedDate" ColumnName="posted_date" />
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReturnDetails">
+            <EntityTypeMapping TypeName="InventoryModel.ReturnDetail">
+              <MappingFragment StoreEntitySet="return_detail">
+                <ScalarProperty Name="ReturnDetailId" ColumnName="return_detail_id" />
+                <ScalarProperty Name="ReturnId" ColumnName="return_id" />
+                <ScalarProperty Name="ItemId" ColumnName="item_id" />
+                <ScalarProperty Name="Quantity" ColumnName="quantity" />
+                <ScalarProperty Name="UnitPrice" ColumnName="unit_price" />
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SequenceCounters">
+            <EntityTypeMapping TypeName="InventoryModel.SequenceCounter">
+              <MappingFragment StoreEntitySet="sequence_counter">
+                <ScalarProperty Name="RecordId" ColumnName="record_id" />
+                <ScalarProperty Name="GRN" ColumnName="grn" />
+                <ScalarProperty Name="IssueNo" ColumnName="issue_no" />
+                <ScalarProperty Name="TransferNo" ColumnName="transfer_no" />
+                <ScalarProperty Name="ReturnNo" ColumnName="return_no" />
+                <ScalarProperty Name="AdjustmentNo" ColumnName="adjustment_no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StockStatus">
+            <EntityTypeMapping TypeName="InventoryModel.StockStatus">
+              <MappingFragment StoreEntitySet="stock_status">
+                <ScalarProperty Name="ItemId" ColumnName="item_id" />
+                <ScalarProperty Name="WarehouseId" ColumnName="warehouse_id" />
+                <ScalarProperty Name="Quantity" ColumnName="quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StockTransactions">
+            <EntityTypeMapping TypeName="InventoryModel.StockTransaction">
+              <MappingFragment StoreEntitySet="stock_transaction">
+                <ScalarProperty Name="TransactionId" ColumnName="transaction_id" />
+                <ScalarProperty Name="TransactionTypeId" ColumnName="transaction_type_id" />
+                <ScalarProperty Name="OwnerId" ColumnName="owner_id" />
+                <ScalarProperty Name="ItemId" ColumnName="item_id" />
+                <ScalarProperty Name="Quantity" ColumnName="quantity" />
+                <ScalarProperty Name="WarehouseId" ColumnName="warehouse_id" />
+                <ScalarProperty Name="TransactionDate" ColumnName="transaction_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubCategories">
+            <EntityTypeMapping TypeName="InventoryModel.SubCategory">
+              <MappingFragment StoreEntitySet="sub_category">
+                <ScalarProperty Name="SubCategoryId" ColumnName="sub_category_id" />
+                <ScalarProperty Name="CategoryId" ColumnName="category_id" />
+                <ScalarProperty Name="Name" ColumnName="name" />
+                <ScalarProperty Name="Description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="InventoryModel.Supplier">
+              <MappingFragment StoreEntitySet="supplier">
+                <ScalarProperty Name="SupplierId" ColumnName="supplier_id" />
+                <ScalarProperty Name="Name" ColumnName="name" />
+                <ScalarProperty Name="Description" ColumnName="description" />
+                <ScalarProperty Name="Address" ColumnName="address" />
+                <ScalarProperty Name="ContactPerson" ColumnName="contact_person" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransactionStatus">
+            <EntityTypeMapping TypeName="InventoryModel.TransactionStatus">
+              <MappingFragment StoreEntitySet="transaction_status">
+                <ScalarProperty Name="StatusId" ColumnName="status_id" />
+                <ScalarProperty Name="Name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransactionTypes">
+            <EntityTypeMapping TypeName="InventoryModel.TransactionType">
+              <MappingFragment StoreEntitySet="transaction_type">
+                <ScalarProperty Name="TransactionTypeId" ColumnName="transaction_type_id" />
+                <ScalarProperty Name="Name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transfers">
+            <EntityTypeMapping TypeName="InventoryModel.Transfer">
+              <MappingFragment StoreEntitySet="transfer">
+                <ScalarProperty Name="Reason" ColumnName="reason" />
+                <ScalarProperty Name="TransferId" ColumnName="transfer_id" />
+                <ScalarProperty Name="StatusId" ColumnName="status_id" />
+                <ScalarProperty Name="TransferNo" ColumnName="transfer_no" />
+                <ScalarProperty Name="TransferDate" ColumnName="transfer_date" />
+                <ScalarProperty Name="TransferBy" ColumnName="transfer_by" />
+                <ScalarProperty Name="PostedDate" ColumnName="posted_date" />
+                <ScalarProperty Name="PostedBy" ColumnName="posted_by" />
+                <ScalarProperty Name="WarehouseFrom" ColumnName="warehouse_from" />
+                <ScalarProperty Name="WarehouseTo" ColumnName="warehouse_to" />
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransferDetails">
+            <EntityTypeMapping TypeName="InventoryModel.TransferDetail">
+              <MappingFragment StoreEntitySet="transfer_detail">
+                <ScalarProperty Name="Description" ColumnName="description" />
+                <ScalarProperty Name="TransferDetailId" ColumnName="transfer_detail_id" />
+                <ScalarProperty Name="TransferId" ColumnName="transfer_id" />
+                <ScalarProperty Name="ItemId" ColumnName="item_id" />
+                <ScalarProperty Name="Quantity" ColumnName="quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Warehouses">
+            <EntityTypeMapping TypeName="InventoryModel.Warehouse">
+              <MappingFragment StoreEntitySet="warehouse">
+                <ScalarProperty Name="WarehouseId" ColumnName="warehouse_id" />
+                <ScalarProperty Name="Name" ColumnName="name" />
+                <ScalarProperty Name="Address" ColumnName="address" />
+                <ScalarProperty Name="ContactPerson" ColumnName="contact_person" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MeasurementUnits">
+            <EntityTypeMapping TypeName="InventoryModel.MeasurementUnit">
+              <MappingFragment StoreEntitySet="measurement_unit">
+                <ScalarProperty Name="Name" ColumnName="name" />
+                <ScalarProperty Name="UnitId" ColumnName="unit_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="UpdateGrnNo" FunctionName="ClearOfficeModel.Store.UpdateGrnNo" />
+          <FunctionImportMapping FunctionImportName="UpdateIssueNo" FunctionName="ClearOfficeModel.Store.UpdateIssueNo" />
+          <FunctionImportMapping FunctionImportName="UpdateTransferNo" FunctionName="ClearOfficeModel.Store.UpdateTransferNo" />
+          <FunctionImportMapping FunctionImportName="UpdateReturnNo" FunctionName="ClearOfficeModel.Store.UpdateReturnNo" />
+          <FunctionImportMapping FunctionImportName="UpdateAdjustmentNo" FunctionName="ClearOfficeModel.Store.UpdateAdjustmentNo" />
+          <EntitySetMapping Name="ReceivingInfoes">
+            <EntityTypeMapping TypeName="InventoryModel.ReceivingInfo">
+              <MappingFragment StoreEntitySet="receiving_info">
+                <ScalarProperty Name="WarehouseName" ColumnName="warehouse_name" />
+                <ScalarProperty Name="StatusName" ColumnName="status_name" />
+                <ScalarProperty Name="SupplierName" ColumnName="supplier_name" />
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+                <ScalarProperty Name="PostedBy" ColumnName="posted_by" />
+                <ScalarProperty Name="PostedDate" ColumnName="posted_date" />
+                <ScalarProperty Name="StatusId" ColumnName="status_id" />
+                <ScalarProperty Name="ReceivedDate" ColumnName="received_date" />
+                <ScalarProperty Name="ReceivedBy" ColumnName="received_by" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="invoice_no" />
+                <ScalarProperty Name="AirwaybillNo" ColumnName="airwaybill_no" />
+                <ScalarProperty Name="GRN" ColumnName="grn" />
+                <ScalarProperty Name="ReceivingId" ColumnName="receiving_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="DeleteReceiving" FunctionName="ClearOfficeModel.Store.delete_receiving" />
+          <EntitySetMapping Name="StockStatusInfoes">
+            <EntityTypeMapping TypeName="InventoryModel.StockStatusInfo">
+              <MappingFragment StoreEntitySet="stock_status_info">
+                <ScalarProperty Name="WarehouseText" ColumnName="warehouse_text" />
+                <ScalarProperty Name="CategoryName" ColumnName="category_name" />
+                <ScalarProperty Name="UnitName" ColumnName="unit_name" />
+                <ScalarProperty Name="ItemNo" ColumnName="item_no" />
+                <ScalarProperty Name="Quantity" ColumnName="quantity" />
+                <ScalarProperty Name="WarehouseId" ColumnName="warehouse_id" />
+                <ScalarProperty Name="ItemId" ColumnName="item_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IssueInfoes">
+            <EntityTypeMapping TypeName="InventoryModel.IssueInfo">
+              <MappingFragment StoreEntitySet="issue_info">
+                <ScalarProperty Name="WarehouseText" ColumnName="warehouse_text" />
+                <ScalarProperty Name="IssuedTo" ColumnName="issued_to" />
+                <ScalarProperty Name="Status" ColumnName="status_name" />
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+                <ScalarProperty Name="PostedBy" ColumnName="posted_by" />
+                <ScalarProperty Name="PostedDate" ColumnName="posted_date" />
+                <ScalarProperty Name="IssuedBy" ColumnName="issued_by" />
+                <ScalarProperty Name="IssueDate" ColumnName="issue_date" />
+                <ScalarProperty Name="IssueNo" ColumnName="issue_no" />
+                <ScalarProperty Name="WarehouseId" ColumnName="warehouse_id" />
+                <ScalarProperty Name="StatusId" ColumnName="status_id" />
+                <ScalarProperty Name="IssueId" ColumnName="issue_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="DeleteIssue" FunctionName="ClearOfficeModel.Store.delete_issue" />
+          <EntitySetMapping Name="WarehouseItemInfoes">
+            <EntityTypeMapping TypeName="InventoryModel.WarehouseItemInfo">
+              <MappingFragment StoreEntitySet="warehouse_item_info">
+                <ScalarProperty Name="WarehouseId" ColumnName="warehouse_id" />
+                <ScalarProperty Name="SubCategoryName" ColumnName="sub_category_name" />
+                <ScalarProperty Name="CategoryName" ColumnName="category_name" />
+                <ScalarProperty Name="UnitName" ColumnName="unit_name" />
+                <ScalarProperty Name="Description" ColumnName="description" />
+                <ScalarProperty Name="ItemNo" ColumnName="item_no" />
+                <ScalarProperty Name="ItemId" ColumnName="item_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReturnInfoes">
+            <EntityTypeMapping TypeName="InventoryModel.ReturnInfo">
+              <MappingFragment StoreEntitySet="return_info">
+                <ScalarProperty Name="WarehouseText" ColumnName="warehouse_text" />
+                <ScalarProperty Name="StatusName" ColumnName="status_name" />
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+                <ScalarProperty Name="PostedDate" ColumnName="posted_date" />
+                <ScalarProperty Name="PostedBy" ColumnName="posted_by" />
+                <ScalarProperty Name="AcceptedDate" ColumnName="accepted_date" />
+                <ScalarProperty Name="AcceptedBy" ColumnName="accepted_by" />
+                <ScalarProperty Name="Reason" ColumnName="reason" />
+                <ScalarProperty Name="ReturnNo" ColumnName="return_no" />
+                <ScalarProperty Name="WarehouseId" ColumnName="warehouse_id" />
+                <ScalarProperty Name="StatusId" ColumnName="status_id" />
+                <ScalarProperty Name="ReturnId" ColumnName="return_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="DeleteReturn" FunctionName="ClearOfficeModel.Store.delete_return" />
+          <FunctionImportMapping FunctionImportName="DeleteTransfer" FunctionName="ClearOfficeModel.Store.delete_transfer" />
+          <EntitySetMapping Name="StatusInfoes">
+            <EntityTypeMapping TypeName="InventoryModel.StatusInfo">
+              <MappingFragment StoreEntitySet="status_info">
+                <ScalarProperty Name="WarehouseText" ColumnName="warehouse_text" />
+                <ScalarProperty Name="Quantity" ColumnName="quantity" />
+                <ScalarProperty Name="ItemNo" ColumnName="item_no" />
+                <ScalarProperty Name="ItemId" ColumnName="item_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemInfoes">
+            <EntityTypeMapping TypeName="InventoryModel.ItemInfo">
+              <MappingFragment StoreEntitySet="item_info">
+                <ScalarProperty Name="SubCategoryName" ColumnName="sub_category_name" />
+                <ScalarProperty Name="CategoryName" ColumnName="category_name" />
+                <ScalarProperty Name="UnitName" ColumnName="unit_name" />
+                <ScalarProperty Name="Image" ColumnName="image" />
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+                <ScalarProperty Name="Description" ColumnName="description" />
+                <ScalarProperty Name="ItemNo" ColumnName="item_no" />
+                <ScalarProperty Name="SubCategoryId" ColumnName="sub_category_id" />
+                <ScalarProperty Name="CategoryId" ColumnName="category_id" />
+                <ScalarProperty Name="UnitId" ColumnName="unit_id" />
+                <ScalarProperty Name="ItemId" ColumnName="item_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdjustmentDetails">
+            <EntityTypeMapping TypeName="InventoryModel.AdjustmentDetail">
+              <MappingFragment StoreEntitySet="adjustment_detail">
+                <ScalarProperty Name="AdjustedQuantity" ColumnName="adjusted_quantity" />
+                <ScalarProperty Name="CurrentQuantity" ColumnName="current_quantity" />
+                <ScalarProperty Name="ItemId" ColumnName="item_id" />
+                <ScalarProperty Name="AdjustmentId" ColumnName="adjustment_id" />
+                <ScalarProperty Name="AdjustmentDetailId" ColumnName="adjustment_detail_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lookups">
+            <EntityTypeMapping TypeName="InventoryModel.Lookup">
+              <MappingFragment StoreEntitySet="lookup">
+                <ScalarProperty Name="LookupName" ColumnName="lookup_name" />
+                <ScalarProperty Name="LookupId" ColumnName="lookup_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LookupItems">
+            <EntityTypeMapping TypeName="InventoryModel.LookupItem">
+              <MappingFragment StoreEntitySet="lookup_item">
+                <ScalarProperty Name="ItemName" ColumnName="item_name" />
+                <ScalarProperty Name="LookupId" ColumnName="lookup_id" />
+                <ScalarProperty Name="LookupItemId" ColumnName="lookup_item_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdjustmentInfoes">
+            <EntityTypeMapping TypeName="InventoryModel.AdjustmentInfo">
+              <MappingFragment StoreEntitySet="adjustment_info">
+                <ScalarProperty Name="WarehouseText" ColumnName="warehouse_text" />
+                <ScalarProperty Name="Status" ColumnName="status" />
+                <ScalarProperty Name="PostedDate" ColumnName="posted_date" />
+                <ScalarProperty Name="PostedBy" ColumnName="posted_by" />
+                <ScalarProperty Name="CreatedDate" ColumnName="created_date" />
+                <ScalarProperty Name="CreatedBy" ColumnName="created_by" />
+                <ScalarProperty Name="Reason" ColumnName="reason" />
+                <ScalarProperty Name="AdjustmentNo" ColumnName="adjustment_no" />
+                <ScalarProperty Name="StatusId" ColumnName="status_id" />
+                <ScalarProperty Name="AdjustmentId" ColumnName="adjustment_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransferInfoes">
+            <EntityTypeMapping TypeName="InventoryModel.TransferInfo">
+              <MappingFragment StoreEntitySet="transfer_info">
+                <ScalarProperty Name="DestinationWarehouse" ColumnName="destination_warehouse" />
+                <ScalarProperty Name="SourceWarehouse" ColumnName="source_warehouse" />
+                <ScalarProperty Name="Status" ColumnName="status" />
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+                <ScalarProperty Name="WarehouseTo" ColumnName="warehouse_to" />
+                <ScalarProperty Name="WarehouseFrom" ColumnName="warehouse_from" />
+                <ScalarProperty Name="PostedBy" ColumnName="posted_by" />
+                <ScalarProperty Name="PostedDate" ColumnName="posted_date" />
+                <ScalarProperty Name="TransferBy" ColumnName="transfer_by" />
+                <ScalarProperty Name="TransferDate" ColumnName="transfer_date" />
+                <ScalarProperty Name="TransferNo" ColumnName="transfer_no" />
+                <ScalarProperty Name="StatusId" ColumnName="status_id" />
+                <ScalarProperty Name="TransferId" ColumnName="transfer_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="InventoryModel" ZoomLevel="88">
+        <EntityTypeShape EntityType="InventoryModel.Adjustment" Width="1.875" PointX="5.25" PointY="20.25" Height="3.326396484374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.Category" Width="1.5" PointX="0.75" PointY="13.375" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.Issue" Width="1.5" PointX="8.25" PointY="7.25" Height="2.9417936197916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.IssueDetail" Width="1.5" PointX="10.5" PointY="15.625" Height="2.364889322916671" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.InventoryItem" Width="1.5" PointX="5.25" PointY="14.75" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.Receiving" Width="1.5" PointX="5.875" PointY="6.125" Height="3.5186979166666656" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.ReceivingDetail" Width="1.5" PointX="7.5" PointY="11.625" Height="2.3648893229166656" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.ItemReturn" Width="1.5" PointX="5.25" PointY="25.375" Height="3.1340950520833353" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.ReturnDetail" Width="1.5" PointX="7.5" PointY="19.625" Height="2.364889322916671" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.SequenceCounter" Width="1.875" PointX="0.75" PointY="0.75" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.StockStatus" Width="1.5" PointX="10.5" PointY="12.875" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.StockTransaction" Width="1.5" PointX="10.5" PointY="19.375" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.SubCategory" Width="1.5" PointX="3" PointY="18.25" Height="1.9802864583333353" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.Supplier" Width="1.5" PointX="3" PointY="4.25" Height="1.9802864583333326" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.TransactionStatus" Width="1.5" PointX="3" PointY="7.125" Height="1.4033821614583335" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.TransactionType" Width="1.5" PointX="8.25" PointY="23.125" Height="1.4033821614583353" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.Transfer" Width="1.5" PointX="11.25" PointY="8.125" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.TransferDetail" Width="1.5" PointX="13.5" PointY="15.75" Height="1.9802864583333353" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.Warehouse" Width="1.5" PointX="3" PointY="10.25" Height="1.7879850260416657" IsExpanded="true" />
+        <AssociationConnector Association="InventoryModel.fk_adjustme_reference_transact" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="8.527301636718752" />
+          <ConnectorPoint PointX="4.96875" PointY="8.996051636718752" />
+          <ConnectorPoint PointX="4.96875" PointY="21.913198242187498" />
+          <ConnectorPoint PointX="5.25" PointY="21.913198242187498" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_adjustme_reference_warehous" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="10.697923613281251" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="10.697923613281249" />
+          <ConnectorPoint PointX="5.052083333333333" PointY="10.697923613281251" />
+          <ConnectorPoint PointX="5.291666666666667" PointY="10.697923613281251" />
+          <ConnectorPoint PointX="5.458333333333333" PointY="10.697923613281251" />
+          <ConnectorPoint PointX="6.147132604166667" PointY="10.697923613281251" />
+          <ConnectorPoint PointX="6.313799270833333" PointY="10.697923613281251" />
+          <ConnectorPoint PointX="6.5651035416666668" PointY="10.697923613281251" />
+          <ConnectorPoint PointX="6.7317702083333328" PointY="10.697923613281251" />
+          <ConnectorPoint PointX="6.976563125" PointY="10.697923613281251" />
+          <ConnectorPoint PointX="6.976563125" PointY="20.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_item_reference_category" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="14.956492513020834" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="14.956492513020832" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="14.956492513020834" />
+          <ConnectorPoint PointX="5.25" PointY="14.956492513020834" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_sub_cate_reference_category" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="15.162985026041666" />
+          <ConnectorPoint PointX="1.5" PointY="19.240143229166669" />
+          <ConnectorPoint PointX="3" PointY="19.240143229166669" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_issue_de_reference_issue" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.59375" PointY="10.576396484375" />
+          <ConnectorPoint PointX="9.59375" PointY="15.78125" />
+          <ConnectorPoint PointX="10.5" PointY="15.78125" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_issue_reference_transact" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="8.4927568450520852" />
+          <ConnectorPoint PointX="5.375" PointY="9.3677568450520852" />
+          <ConnectorPoint PointX="5.375" PointY="10.951396484375" />
+          <ConnectorPoint PointX="6.147132604166667" PointY="10.951396484375" />
+          <ConnectorPoint PointX="6.313799270833333" PointY="10.951396484375" />
+          <ConnectorPoint PointX="6.5651035416666668" PointY="10.951396484375" />
+          <ConnectorPoint PointX="6.7317702083333328" PointY="10.951396484375" />
+          <ConnectorPoint PointX="6.8932297916666672" PointY="10.951396484375" />
+          <ConnectorPoint PointX="7.0598964583333332" PointY="10.951396484375" />
+          <ConnectorPoint PointX="7.875" PointY="10.951396484375" />
+          <ConnectorPoint PointX="8.25" PointY="10.576396484375" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_issue_reference_warehous" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="10.381945742187499" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="10.381945742187497" />
+          <ConnectorPoint PointX="5.052083333333333" PointY="10.381945742187499" />
+          <ConnectorPoint PointX="5.291666666666667" PointY="10.381945742187499" />
+          <ConnectorPoint PointX="5.458333333333333" PointY="10.381945742187499" />
+          <ConnectorPoint PointX="6.147132604166667" PointY="10.381945742187499" />
+          <ConnectorPoint PointX="6.313799270833333" PointY="10.381945742187499" />
+          <ConnectorPoint PointX="6.5651035416666668" PointY="10.381945742187499" />
+          <ConnectorPoint PointX="6.7317702083333328" PointY="10.381945742187499" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="10.381945742187499" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="10.381945742187499" />
+          <ConnectorPoint PointX="8.25" PointY="10.381945742187499" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_issue_de_reference_item" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="15.26388374419235" />
+          <ConnectorPoint PointX="6.8932297916666672" PointY="15.26388374419235" />
+          <ConnectorPoint PointX="7.0598964583333332" PointY="15.26388374419235" />
+          <ConnectorPoint PointX="9.5104166666666661" PointY="15.26388374419235" />
+          <ConnectorPoint PointX="9.6770833333333339" PointY="15.26388374419235" />
+          <ConnectorPoint PointX="9.7604166666666661" PointY="15.26388374419235" />
+          <ConnectorPoint PointX="9.9270833333333339" PointY="15.26388374419235" />
+          <ConnectorPoint PointX="11.25" PointY="15.26388374419235" />
+          <ConnectorPoint PointX="11.25" PointY="15.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_item_reference_sub_cate" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="19.240143229166669" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="19.240143229166669" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="19.240143229166669" />
+          <ConnectorPoint PointX="6" PointY="19.240143229166669" />
+          <ConnectorPoint PointX="6" PointY="18.076396484375003" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_receivin_reference_item" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.7291700866699218" PointY="14.75" />
+          <ConnectorPoint PointX="5.7291700866699218" PointY="13.270069717746893" />
+          <ConnectorPoint PointX="6.8932297916666672" PointY="13.270069717746893" />
+          <ConnectorPoint PointX="7.0598964583333332" PointY="13.270069717746893" />
+          <ConnectorPoint PointX="7.5" PointY="13.270069717746893" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_return_d_reference_item" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="15.234049176203005" />
+          <ConnectorPoint PointX="6.8932297916666672" PointY="15.234049176203005" />
+          <ConnectorPoint PointX="7.0598964583333332" PointY="15.234049176203005" />
+          <ConnectorPoint PointX="7.65625" PointY="15.234049176203005" />
+          <ConnectorPoint PointX="7.65625" PointY="19.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_stock_st_reference_item" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.2708351589584348" PointY="14.75" />
+          <ConnectorPoint PointX="6.2708351589584348" PointY="14.261536458333334" />
+          <ConnectorPoint PointX="6.8932297916666672" PointY="14.261536458333334" />
+          <ConnectorPoint PointX="7.0598964583333332" PointY="14.261536458333334" />
+          <ConnectorPoint PointX="9.5104166666666661" PointY="14.261536458333334" />
+          <ConnectorPoint PointX="9.6770833333333339" PointY="14.261536458333334" />
+          <ConnectorPoint PointX="9.7604166666666661" PointY="14.261536458333334" />
+          <ConnectorPoint PointX="9.9270833333333339" PointY="14.261536458333334" />
+          <ConnectorPoint PointX="10.5" PointY="14.261536458333334" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_stock_tr_reference_item" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="18.076396484375003" />
+          <ConnectorPoint PointX="6.9176375599011219" PointY="18.244034044276123" />
+          <ConnectorPoint PointX="7.0354886900988793" PointY="18.36188517447388" />
+          <ConnectorPoint PointX="7.375" PointY="18.701396484375003" />
+          <ConnectorPoint PointX="7.375" PointY="19" />
+          <ConnectorPoint PointX="7.572916666666667" PointY="19" />
+          <ConnectorPoint PointX="7.739583333333333" PointY="19" />
+          <ConnectorPoint PointX="10.100769230769231" PointY="19" />
+          <ConnectorPoint PointX="10.5" PointY="19.399230769230769" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_transfer_reference_item" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="14.93074921579025" />
+          <ConnectorPoint PointX="6.8932297916666672" PointY="14.93074921579025" />
+          <ConnectorPoint PointX="7.0598964583333332" PointY="14.93074921579025" />
+          <ConnectorPoint PointX="9.5104166666666661" PointY="14.93074921579025" />
+          <ConnectorPoint PointX="9.6770833333333339" PointY="14.93074921579025" />
+          <ConnectorPoint PointX="9.7604166666666661" PointY="14.93074921579025" />
+          <ConnectorPoint PointX="9.9270833333333339" PointY="14.93074921579025" />
+          <ConnectorPoint PointX="12.166666666666666" PointY="14.93074921579025" />
+          <ConnectorPoint PointX="12.333333333333334" PointY="14.93074921579025" />
+          <ConnectorPoint PointX="14.25" PointY="14.93074921579025" />
+          <ConnectorPoint PointX="14.25" PointY="15.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_receivin_reference_receivin" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.648436875" PointY="9.8359993489583335" />
+          <ConnectorPoint PointX="6.648436875" PointY="12.454427667716267" />
+          <ConnectorPoint PointX="6.8932297916666672" PointY="12.454427667716267" />
+          <ConnectorPoint PointX="7.0598964583333332" PointY="12.454427667716267" />
+          <ConnectorPoint PointX="7.5" PointY="12.454427667716267" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_receivin_reference_supplier" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="5.1874994999999995" />
+          <ConnectorPoint PointX="6.625" PointY="5.1874994999999995" />
+          <ConnectorPoint PointX="6.625" PointY="6.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_receivin_reference_transact" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="7.7776259225260418" />
+          <ConnectorPoint PointX="5.875" PointY="7.7776259225260418" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_receivin_reference_warehous" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="11.675478134962736" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="11.675478134962734" />
+          <ConnectorPoint PointX="5.052083333333333" PointY="11.675478134962736" />
+          <ConnectorPoint PointX="6.2304659375" PointY="11.675478134962736" />
+          <ConnectorPoint PointX="6.2304659375" PointY="9.8359993489583335" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_return_d_reference_return" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="26.942047526041669" />
+          <ConnectorPoint PointX="7.84375" PointY="26.942047526041669" />
+          <ConnectorPoint PointX="7.84375" PointY="21.989889322916671" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_return_reference_transact" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.4654552083333314" PointY="8.5283821614583335" />
+          <ConnectorPoint PointX="4.875" PointY="8.9379269531250021" />
+          <ConnectorPoint PointX="4.875" PointY="26.942047526041669" />
+          <ConnectorPoint PointX="5.25" PointY="26.942047526041669" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_return_reference_warehous" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.4757692307692283" PointY="12.037985026041666" />
+          <ConnectorPoint PointX="4.8160744349011217" PointY="12.378290230173557" />
+          <ConnectorPoint PointX="4.9964255650988791" PointY="12.558641360371315" />
+          <ConnectorPoint PointX="5" PointY="12.562215795272437" />
+          <ConnectorPoint PointX="5" PointY="26.127271763020836" />
+          <ConnectorPoint PointX="5.25" PointY="26.127271763020836" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_stock_st_reference_warehous" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.75" PointY="12.037985026041666" />
+          <ConnectorPoint PointX="3.75" PointY="14.125710390624999" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="14.125710390624997" />
+          <ConnectorPoint PointX="5.052083333333333" PointY="14.125710390624999" />
+          <ConnectorPoint PointX="5.6458319845835367" PointY="14.125710390624999" />
+          <ConnectorPoint PointX="5.8124986512502028" PointY="14.125710390624999" />
+          <ConnectorPoint PointX="6.8932297916666672" PointY="14.125710390624999" />
+          <ConnectorPoint PointX="7.0598964583333332" PointY="14.125710390624999" />
+          <ConnectorPoint PointX="9.5104166666666661" PointY="14.125710390624999" />
+          <ConnectorPoint PointX="9.6770833333333339" PointY="14.125710390624999" />
+          <ConnectorPoint PointX="9.7604166666666661" PointY="14.125710390624999" />
+          <ConnectorPoint PointX="9.9270833333333339" PointY="14.125710390624999" />
+          <ConnectorPoint PointX="10.5" PointY="14.125710390624999" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_stock_tr_reference_transact" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.40625" PointY="23.125" />
+          <ConnectorPoint PointX="9.40625" PointY="19.512117884615385" />
+          <ConnectorPoint PointX="10.5" PointY="19.512117884615385" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_stock_tr_reference_warehous" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="11.964137872195515" />
+          <ConnectorPoint PointX="4.8160744349011217" PointY="12.280212307096635" />
+          <ConnectorPoint PointX="4.9339255650988791" PointY="12.398063437294393" />
+          <ConnectorPoint PointX="4.9375" PointY="12.401637872195515" />
+          <ConnectorPoint PointX="4.9375" PointY="18.75" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="18.75" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="18.75" />
+          <ConnectorPoint PointX="6.7799457291666672" PointY="18.75" />
+          <ConnectorPoint PointX="7.0598964583333332" PointY="18.75" />
+          <ConnectorPoint PointX="7.572916666666667" PointY="18.75" />
+          <ConnectorPoint PointX="7.739583333333333" PointY="18.75" />
+          <ConnectorPoint PointX="9.9003836153846159" PointY="18.75" />
+          <ConnectorPoint PointX="10.525383615384616" PointY="19.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_transfer_reference_transact" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.7014756041666659" PointY="8.5283821614583335" />
+          <ConnectorPoint PointX="3.7014756041666659" PointY="10.085999348958334" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="10.085999348958332" />
+          <ConnectorPoint PointX="5.052083333333333" PointY="10.085999348958334" />
+          <ConnectorPoint PointX="5.291666666666667" PointY="10.085999348958334" />
+          <ConnectorPoint PointX="5.458333333333333" PointY="10.085999348958334" />
+          <ConnectorPoint PointX="6.147132604166667" PointY="10.085999348958334" />
+          <ConnectorPoint PointX="6.313799270833333" PointY="10.085999348958334" />
+          <ConnectorPoint PointX="6.5651035416666668" PointY="10.085999348958334" />
+          <ConnectorPoint PointX="6.7317702083333328" PointY="10.085999348958334" />
+          <ConnectorPoint PointX="8" PointY="10.085999348958334" />
+          <ConnectorPoint PointX="8" PointY="10.826396484375" />
+          <ConnectorPoint PointX="9.5104166666666661" PointY="10.826396484375" />
+          <ConnectorPoint PointX="9.6770833333333339" PointY="10.826396484375" />
+          <ConnectorPoint PointX="9.7604166666666661" PointY="10.826396484375" />
+          <ConnectorPoint PointX="9.9270833333333339" PointY="10.826396484375" />
+          <ConnectorPoint PointX="10.875" PointY="10.826396484375" />
+          <ConnectorPoint PointX="10.875" PointY="9.647054220526238" />
+          <ConnectorPoint PointX="11.25" PointY="9.647054220526238" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_transfer_ref_sourc_warehous" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="11.470876666513995" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="11.470876666513993" />
+          <ConnectorPoint PointX="5.052083333333333" PointY="11.470876666513995" />
+          <ConnectorPoint PointX="6.147132604166667" PointY="11.470876666513995" />
+          <ConnectorPoint PointX="6.313799270833333" PointY="11.470876666513995" />
+          <ConnectorPoint PointX="6.5651035416666668" PointY="11.470876666513995" />
+          <ConnectorPoint PointX="6.7317702083333328" PointY="11.470876666513995" />
+          <ConnectorPoint PointX="6.8932297916666672" PointY="11.470876666513995" />
+          <ConnectorPoint PointX="7.0598964583333332" PointY="11.470876666513995" />
+          <ConnectorPoint PointX="9.5104166666666661" PointY="11.470876666513995" />
+          <ConnectorPoint PointX="9.6770833333333339" PointY="11.470876666513995" />
+          <ConnectorPoint PointX="9.7604166666666661" PointY="11.470876666513995" />
+          <ConnectorPoint PointX="9.9270833333333339" PointY="11.470876666513995" />
+          <ConnectorPoint PointX="11.25" PointY="11.470876666513995" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_transfer_reference_transfer" ManuallyRouted="false">
+          <ConnectorPoint PointX="12" PointY="11.835999348958334" />
+          <ConnectorPoint PointX="12" PointY="12.625" />
+          <ConnectorPoint PointX="12.25" PointY="12.625" />
+          <ConnectorPoint PointX="12.25" PointY="16.8362939453125" />
+          <ConnectorPoint PointX="13.5" PointY="16.8362939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_transfer_reference_warehous" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="11.211136575444497" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="11.211136575444495" />
+          <ConnectorPoint PointX="5.052083333333333" PointY="11.211136575444497" />
+          <ConnectorPoint PointX="6.147132604166667" PointY="11.211136575444497" />
+          <ConnectorPoint PointX="6.313799270833333" PointY="11.211136575444497" />
+          <ConnectorPoint PointX="6.5651035416666668" PointY="11.211136575444497" />
+          <ConnectorPoint PointX="6.7317702083333328" PointY="11.211136575444497" />
+          <ConnectorPoint PointX="6.8932297916666672" PointY="11.211136575444497" />
+          <ConnectorPoint PointX="7.0598964583333332" PointY="11.211136575444497" />
+          <ConnectorPoint PointX="9.5104166666666661" PointY="11.211136575444497" />
+          <ConnectorPoint PointX="9.6770833333333339" PointY="11.211136575444497" />
+          <ConnectorPoint PointX="9.7604166666666661" PointY="11.211136575444497" />
+          <ConnectorPoint PointX="9.9270833333333339" PointY="11.211136575444497" />
+          <ConnectorPoint PointX="11.25" PointY="11.211136575444497" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="InventoryModel.MeasurementUnit" Width="1.5" PointX="8.375" PointY="0.875" Height="1.4033821614583331" />
+        <AssociationConnector Association="InventoryModel.fk_item_reference_measurem">
+          <ConnectorPoint PointX="9.84375" PointY="2.2783821614583331" />
+          <ConnectorPoint PointX="9.84375" PointY="15.508879215790252" />
+          <ConnectorPoint PointX="9.6770833333333339" PointY="15.508879215790252" />
+          <ConnectorPoint PointX="9.5104166666666661" PointY="15.508879215790252" />
+          <ConnectorPoint PointX="7.739583333333333" PointY="15.508879215790252" />
+          <ConnectorPoint PointX="7.572916666666667" PointY="15.508879215790252" />
+          <ConnectorPoint PointX="7.0598964583333332" PointY="15.508879215790252" />
+          <ConnectorPoint PointX="6.8932297916666672" PointY="15.508879215790252" />
+          <ConnectorPoint PointX="6.75" PointY="15.508879215790252" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="InventoryModel.ReceivingInfo" Width="1.5" PointX="10.375" PointY="0.75" Height="3.5186979166666656" />
+        <EntityTypeShape EntityType="InventoryModel.StockStatusInfo" Width="1.5" PointX="12.375" PointY="0.75" Height="2.3648893229166665" />
+        <EntityTypeShape EntityType="InventoryModel.IssueInfo" Width="1.5" PointX="13.375" PointY="4.75" Height="3.3263964843749996" />
+        <EntityTypeShape EntityType="InventoryModel.WarehouseItemInfo" Width="2.125" PointX="13.375" PointY="9.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="InventoryModel.ReturnInfo" Width="1.5" PointX="15.375" PointY="0.75" Height="3.3263964843749996" />
+        <EntityTypeShape EntityType="InventoryModel.StatusInfo" Width="1.5" PointX="16.375" PointY="14.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="InventoryModel.ItemInfo" Width="1.5" PointX="5.375" PointY="0.75" Height="3.1340950520833246" />
+        <EntityTypeShape EntityType="InventoryModel.AdjustmentDetail" Width="1.5" PointX="7.875" PointY="16" Height="2.3648893229166674" />
+        <AssociationConnector Association="InventoryModel.fk_adjustme_reference_adjustme">
+          <ConnectorPoint PointX="6.8632790625" PointY="20.25" />
+          <ConnectorPoint PointX="6.8632790625" PointY="18.251892903645835" />
+          <ConnectorPoint PointX="6.8932297916666672" PointY="18.251892903645835" />
+          <ConnectorPoint PointX="7.0598964583333332" PointY="18.251892903645835" />
+          <ConnectorPoint PointX="7.572916666666667" PointY="18.251892903645835" />
+          <ConnectorPoint PointX="7.739583333333333" PointY="18.251892903645835" />
+          <ConnectorPoint PointX="7.875" PointY="18.251892903645835" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_adjustme_reference_item">
+          <ConnectorPoint PointX="6.75" PointY="17.0069457421875" />
+          <ConnectorPoint PointX="6.8932297916666672" PointY="17.0069457421875" />
+          <ConnectorPoint PointX="7.0598964583333332" PointY="17.0069457421875" />
+          <ConnectorPoint PointX="7.572916666666667" PointY="17.0069457421875" />
+          <ConnectorPoint PointX="7.739583333333333" PointY="17.0069457421875" />
+          <ConnectorPoint PointX="7.875" PointY="17.0069457421875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="InventoryModel.Lookup" Width="1.5" PointX="17.375" PointY="1" Height="1.595683593749996" />
+        <EntityTypeShape EntityType="InventoryModel.LookupItem" Width="1.5" PointX="19.625" PointY="0.875" Height="1.7879850260416674" />
+        <AssociationConnector Association="InventoryModel.FK_lookup_item_lookup">
+          <ConnectorPoint PointX="18.875" PointY="1.797841796874998" />
+          <ConnectorPoint PointX="19.625" PointY="1.797841796874998" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="InventoryModel.AdjustmentInfo" Width="1.5" PointX="16.375" PointY="10.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="InventoryModel.TransferInfo" Width="1.5" PointX="16.375" PointY="5.75" Height="3.5186979166666674" />
+        <AssociationConnector Association="InventoryModel.fk_receivin_reference_supplier1">
+          <ConnectorPoint PointX="19.625" PointY="2.5501175598958263" />
+          <ConnectorPoint PointX="19.125" PointY="2.5501175598958263" />
+          <ConnectorPoint PointX="19.125" PointY="4.5186979166666665" />
+          <ConnectorPoint PointX="9.9270833333333339" PointY="4.5186979166666656" />
+          <ConnectorPoint PointX="9.7604166666666661" PointY="4.5186979166666665" />
+          <ConnectorPoint PointX="7.031252" PointY="4.5186979166666665" />
+          <ConnectorPoint PointX="7.031252" PointY="6.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_transfer_ref_sourc_warehous1">
+          <ConnectorPoint PointX="20.375" PointY="3.239889322916667" />
+          <ConnectorPoint PointX="20.375" PointY="9.5093489583333337" />
+          <ConnectorPoint PointX="12.75" PointY="9.5093489583333337" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventoryModel.fk_transfer_reference_warehous1">
+          <ConnectorPoint PointX="19.9687475" PointY="3.239889322916667" />
+          <ConnectorPoint PointX="19.9687475" PointY="9.3890209375" />
+          <ConnectorPoint PointX="12.75" PointY="9.3890209375" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

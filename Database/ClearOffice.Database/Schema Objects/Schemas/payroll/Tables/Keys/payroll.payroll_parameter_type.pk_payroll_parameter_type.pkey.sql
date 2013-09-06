@@ -1,0 +1,3 @@
+﻿ALTER TABLE [payroll].[payroll_parameter_type]
+    ADD CONSTRAINT [pk_payroll_parameter_type] PRIMARY KEY CLUSTERED ([type_id] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF);
+

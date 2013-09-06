@@ -1,0 +1,3 @@
+﻿ALTER TABLE [payroll].[payroll_tax_table]
+    ADD CONSTRAINT [pk_payroll_tax_table] PRIMARY KEY CLUSTERED ([tax_table_id] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF);
+

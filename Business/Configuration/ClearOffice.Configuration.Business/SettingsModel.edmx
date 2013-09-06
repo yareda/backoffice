@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SettingsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="SettingsModelStoreContainer">
+          <EntitySet Name="application_option" EntityType="SettingsModel.Store.application_option" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="user" EntityType="SettingsModel.Store.user" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="user_option_value" EntityType="SettingsModel.Store.user_option_value" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="fk_user_opt_reference_applicat" Association="SettingsModel.Store.fk_user_opt_reference_applicat">
+            <End Role="application_option" EntitySet="application_option" />
+            <End Role="user_option_value" EntitySet="user_option_value" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_opt_reference_user" Association="SettingsModel.Store.fk_user_opt_reference_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="user_option_value" EntitySet="user_option_value" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="application_option">
+          <Key>
+            <PropertyRef Name="option_id" />
+          </Key>
+          <Property Name="option_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="module_id" Type="int" />
+          <Property Name="option_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="option_value" Type="nvarchar" MaxLength="200" />
+          <Property Name="option_help_text" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="user_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="full_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="password" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="user_option_value">
+          <Key>
+            <PropertyRef Name="value_id" />
+          </Key>
+          <Property Name="value_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="option_id" Type="int" />
+        </EntityType>
+        <Association Name="fk_user_opt_reference_applicat">
+          <End Role="application_option" Type="SettingsModel.Store.application_option" Multiplicity="0..1" />
+          <End Role="user_option_value" Type="SettingsModel.Store.user_option_value" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="application_option">
+              <PropertyRef Name="option_id" />
+            </Principal>
+            <Dependent Role="user_option_value">
+              <PropertyRef Name="option_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_opt_reference_user">
+          <End Role="user" Type="SettingsModel.Store.user" Multiplicity="0..1" />
+          <End Role="user_option_value" Type="SettingsModel.Store.user_option_value" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="user_option_value">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SettingsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ClearOfficeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ApplicationOptions" EntityType="SettingsModel.ApplicationOption" />
+          <EntitySet Name="Users1" EntityType="SettingsModel.User" />
+          <EntitySet Name="UserOptionValues" EntityType="SettingsModel.UserOptionValue" />
+          <AssociationSet Name="fk_user_opt_reference_applicat" Association="SettingsModel.fk_user_opt_reference_applicat">
+            <End Role="application_option" EntitySet="ApplicationOptions" />
+            <End Role="user_option_value" EntitySet="UserOptionValues" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_opt_reference_user" Association="SettingsModel.fk_user_opt_reference_user">
+            <End Role="user" EntitySet="Users1" />
+            <End Role="user_option_value" EntitySet="UserOptionValues" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ApplicationOption">
+          <Key>
+            <PropertyRef Name="OptionId" />
+          </Key>
+          <Property Name="OptionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModuleId" Type="Int32" />
+          <Property Name="OptionName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="OptionValue" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="OptionHelpText" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="UserOptionValues" Relationship="SettingsModel.fk_user_opt_reference_applicat" FromRole="application_option" ToRole="user_option_value" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="FullName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="UserOptions" Relationship="SettingsModel.fk_user_opt_reference_user" FromRole="user" ToRole="user_option_value" />
+        </EntityType>
+        <EntityType Name="UserOptionValue">
+          <Key>
+            <PropertyRef Name="ValueId" />
+          </Key>
+          <Property Name="ValueId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="OptionId" Type="Int32" />
+          <NavigationProperty Name="application_option" Relationship="SettingsModel.fk_user_opt_reference_applicat" FromRole="user_option_value" ToRole="application_option" />
+          <NavigationProperty Name="user" Relationship="SettingsModel.fk_user_opt_reference_user" FromRole="user_option_value" ToRole="user" />
+        </EntityType>
+        <Association Name="fk_user_opt_reference_applicat">
+          <End Role="application_option" Type="SettingsModel.ApplicationOption" Multiplicity="0..1" />
+          <End Role="user_option_value" Type="SettingsModel.UserOptionValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="application_option">
+              <PropertyRef Name="OptionId" />
+            </Principal>
+            <Dependent Role="user_option_value">
+              <PropertyRef Name="OptionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_opt_reference_user">
+          <End Role="user" Type="SettingsModel.User" Multiplicity="0..1" />
+          <End Role="user_option_value" Type="SettingsModel.UserOptionValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="user_option_value">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SettingsModelStoreContainer" CdmEntityContainer="ClearOfficeEntities">
+          <EntitySetMapping Name="ApplicationOptions"><EntityTypeMapping TypeName="SettingsModel.ApplicationOption"><MappingFragment StoreEntitySet="application_option">
+            <ScalarProperty Name="OptionId" ColumnName="option_id" />
+            <ScalarProperty Name="ModuleId" ColumnName="module_id" />
+            <ScalarProperty Name="OptionName" ColumnName="option_name" />
+            <ScalarProperty Name="OptionValue" ColumnName="option_value" />
+            <ScalarProperty Name="OptionHelpText" ColumnName="option_help_text" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Users1"><EntityTypeMapping TypeName="SettingsModel.User"><MappingFragment StoreEntitySet="user">
+            <ScalarProperty Name="UserId" ColumnName="user_id" />
+            <ScalarProperty Name="UserName" ColumnName="user_name" />
+            <ScalarProperty Name="FullName" ColumnName="full_name" />
+            <ScalarProperty Name="Password" ColumnName="password" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="UserOptionValues"><EntityTypeMapping TypeName="SettingsModel.UserOptionValue"><MappingFragment StoreEntitySet="user_option_value">
+            <ScalarProperty Name="ValueId" ColumnName="value_id" />
+            <ScalarProperty Name="UserId" ColumnName="user_id" />
+            <ScalarProperty Name="OptionId" ColumnName="option_id" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="SettingsModel">
+        <EntityTypeShape EntityType="SettingsModel.ApplicationOption" Width="1.875" PointX="0.875" PointY="0.75" Height="2.1725878906250005" IsExpanded="true" />
+        <EntityTypeShape EntityType="SettingsModel.User" Width="1.5" PointX="1.125" PointY="4.25" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="SettingsModel.UserOptionValue" Width="1.875" PointX="3.875" PointY="1.375" Height="1.9802864583333326" IsExpanded="true" />
+        <AssociationConnector Association="SettingsModel.fk_user_opt_reference_applicat" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.75" PointY="2.1487939453125002" />
+          <ConnectorPoint PointX="3.875" PointY="2.1487939453125002" />
+        </AssociationConnector>
+        <AssociationConnector Association="SettingsModel.fk_user_opt_reference_user" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.625" PointY="5.2401432291666667" />
+          <ConnectorPoint PointX="4.8125" PointY="5.2401432291666667" />
+          <ConnectorPoint PointX="4.8125" PointY="3.3552864583333326" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

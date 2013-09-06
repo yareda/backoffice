@@ -1,0 +1,3 @@
+﻿/*ALTER TABLE [hrm].[employee_allowance]
+    ADD CONSTRAINT [pk_employee_allowance] PRIMARY KEY CLUSTERED ([allowance_id] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF);*/
+

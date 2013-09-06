@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{91B5ABDD-9C23-4AE9-9CF7-95214D8D9E9C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClearOffice.Fleet</RootNamespace>
+    <AssemblyName>ClearOffice.Fleet</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v10.2.Core, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v10.2.UI, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FleetHelper.cs" />
+    <Compile Include="FleetModuleManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CouponDetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CouponDetailView.Designer.cs">
+      <DependentUpon>CouponDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CouponList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CouponList.Designer.cs">
+      <DependentUpon>CouponList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExpenseEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ExpenseEdit.Designer.cs">
+      <DependentUpon>ExpenseEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FleetLookUpListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FleetLookUpListView.Designer.cs">
+      <DependentUpon>FleetLookUpListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FuelLogEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FuelLogEdit.Designer.cs">
+      <DependentUpon>FuelLogEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InsuranceEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\InsuranceEdit.Designer.cs">
+      <DependentUpon>InsuranceEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LookUpItemView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LookUpItemView.Designer.cs">
+      <DependentUpon>LookUpItemView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MaintenanceActivityEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MaintenanceActivityEdit.Designer.cs">
+      <DependentUpon>MaintenanceActivityEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MaintenanceEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MaintenanceEdit.Designer.cs">
+      <DependentUpon>MaintenanceEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MaintenanceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MaintenanceList.Designer.cs">
+      <DependentUpon>MaintenanceList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MaintenancePartEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MaintenancePartEdit.Designer.cs">
+      <DependentUpon>MaintenancePartEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewCouponView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewCouponView.Designer.cs">
+      <DependentUpon>NewCouponView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewMaintenance.Designer.cs">
+      <DependentUpon>NewMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewTire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewTire.Designer.cs">
+      <DependentUpon>NewTire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewVehicle.Designer.cs">
+      <DependentUpon>NewVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TireEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TireEdit.Designer.cs">
+      <DependentUpon>TireEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TireListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TireListView.Designer.cs">
+      <DependentUpon>TireListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UnMountTireView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UnMountTireView.Designer.cs">
+      <DependentUpon>UnMountTireView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VehicleDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VehicleDetail.Designer.cs">
+      <DependentUpon>VehicleDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VehicleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VehicleList.Designer.cs">
+      <DependentUpon>VehicleList.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Source\ClearOffice.Infrastructure\ClearOffice.Infrastructure.csproj">
+      <Project>{64079208-38D3-4985-829E-9FA95D54D4B4}</Project>
+      <Name>ClearOffice.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Source\ClearOffice.Security\ClearOffice.Security.csproj">
+      <Project>{19F6B825-2B82-43A0-9267-67BADEDFC6A6}</Project>
+      <Name>ClearOffice.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClearOffice.Fleet.DataAccess\ClearOffice.Fleet.Business.csproj">
+      <Project>{6DD4CC02-89B0-4C10-9ED4-8731FE86CE3D}</Project>
+      <Name>ClearOffice.Fleet.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CouponDetailView.resx">
+      <DependentUpon>CouponDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CouponList.resx">
+      <DependentUpon>CouponList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ExpenseEdit.resx">
+      <DependentUpon>ExpenseEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FleetLookUpListView.resx">
+      <DependentUpon>FleetLookUpListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FuelLogEdit.resx">
+      <DependentUpon>FuelLogEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InsuranceEdit.resx">
+      <DependentUpon>InsuranceEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LookUpItemView.resx">
+      <DependentUpon>LookUpItemView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MaintenanceActivityEdit.resx">
+      <DependentUpon>MaintenanceActivityEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MaintenanceEdit.resx">
+      <DependentUpon>MaintenanceEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MaintenanceList.resx">
+      <DependentUpon>MaintenanceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MaintenancePartEdit.resx">
+      <DependentUpon>MaintenancePartEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewCouponView.resx">
+      <DependentUpon>NewCouponView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewMaintenance.resx">
+      <DependentUpon>NewMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewTire.resx">
+      <DependentUpon>NewTire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewVehicle.resx">
+      <DependentUpon>NewVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TireEdit.resx">
+      <DependentUpon>TireEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TireListView.resx">
+      <DependentUpon>TireListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UnMountTireView.resx">
+      <DependentUpon>UnMountTireView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VehicleDetail.resx">
+      <DependentUpon>VehicleDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VehicleList.resx">
+      <DependentUpon>VehicleList.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Workflows\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.Coupon.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.CouponInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.CouponTransaction.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.Expense.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.FuelLog.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.InsurancePolicy.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.LookupItem.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.Maintanance.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.MaintenanceActivity.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.MaintenanceInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.MaintenancePart.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.Tire.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.TireBrandInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.TireInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.TireSizeInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.TireStatusInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.TireTypeInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.Vehicle.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.VehicleInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.VehicleTire.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Business.Vendor.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Views.CouponDetailView.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Views.CouponList.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Views.ExpenseEdit.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Views.FleetLookUpListView.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Views.FuelLogEdit.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Views.InsuranceEdit.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Views.LookUpItemView.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Views.MaintenanceActivityEdit.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Views.MaintenanceEdit.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Views.MaintenanceList.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Views.MaintenancePartEdit.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Views.NewCouponView.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Views.NewMaintenance.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Views.NewTire.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Views.NewVehicle.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Views.TireEdit.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Views.TireListView.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Views.VehicleDetail.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Fleet.Views.VehicleList.datasource" />
+    <None Include="Properties\DataSources\FleetHelper.datasource" />
+    <None Include="Properties\DataSources\FleetModuleManager.datasource" />
+    <None Include="Resources\arrow_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuBar_Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-as-16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table_gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_curve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exclamation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Revenue_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Period_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cog_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shield_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coins_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ActiveRents_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_form_delete.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

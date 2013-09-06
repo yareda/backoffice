@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1E23D732-E155-4FE7-8AE2-17006DB57ACA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClearOffice.Hrm</RootNamespace>
+    <AssemblyName>ClearOffice.Hrm</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v10.2.Core, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.OfficeSkins.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v10.2.Core, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v10.2.Core, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.SpellChecker.v10.2.Core, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Win.Projects.v10.2.Design, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v10.2.UI, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpellChecker.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TemplateWizardInterface, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VSLangProj, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HrmModuleManager.cs" />
+    <Compile Include="LeaveCalculationHelper.cs" />
+    <Compile Include="Lookup\BankBranchView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\BankBranchView.Designer.cs">
+      <DependentUpon>BankBranchView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\BenefitTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\BenefitTypeView.Designer.cs">
+      <DependentUpon>BenefitTypeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\CompetencyTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\CompetencyTypeView.Designer.cs">
+      <DependentUpon>CompetencyTypeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\EmployeeSkillTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\NationalityView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\NationalityView.Designer.cs">
+      <DependentUpon>NationalityView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\TrainingCategoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\TrainingCategoryView.Designer.cs">
+      <DependentUpon>TrainingCategoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\EmployeeSkillTypeView.Designer.cs">
+      <DependentUpon>EmployeeSkillTypeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\EmployeeStatusView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\EmployeeStatusView.Designer.cs">
+      <DependentUpon>EmployeeStatusView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\EmployeeTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\EmployeeTypeView.Designer.cs">
+      <DependentUpon>EmployeeTypeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\CountryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\CountryView.Designer.cs">
+      <DependentUpon>CountryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\DeductionConditionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\DeductionConditionView.Designer.cs">
+      <DependentUpon>DeductionConditionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\DependantTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\DependantTypeView.Designer.cs">
+      <DependentUpon>DependantTypeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\EducationLevelView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\EducationLevelView.Designer.cs">
+      <DependentUpon>EducationLevelView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\EducationTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\EducationTypeView.Designer.cs">
+      <DependentUpon>EducationTypeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\EthinicityTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\EthinicityTypeView.Designer.cs">
+      <DependentUpon>EthinicityTypeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\InsurancePolicyTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\InsurancePolicyTypeView.Designer.cs">
+      <DependentUpon>InsurancePolicyTypeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\JobSkillTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\JobSkillTypeView.Designer.cs">
+      <DependentUpon>JobSkillTypeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\LanguageView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\LanguageView.Designer.cs">
+      <DependentUpon>LanguageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\MartialStatusView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\MartialStatusView.Designer.cs">
+      <DependentUpon>MartialStatusView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\MeasureTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\MeasureTypeView.Designer.cs">
+      <DependentUpon>MeasureTypeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\OrganizationNodeTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\OrganizationNodeTypeView.Designer.cs">
+      <DependentUpon>OrganizationNodeTypeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lookup\ReligionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lookup\ReligionView.Designer.cs">
+      <DependentUpon>ReligionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\EmployeeDetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeDetailView.Designer.cs">
+      <DependentUpon>EmployeeDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeInitialLeaveConfigurationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeInitialLeaveConfigurationView.Designer.cs">
+      <DependentUpon>EmployeeInitialLeaveConfigurationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeListView.Designer.cs">
+      <DependentUpon>EmployeeListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeWarningView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeWarningView.Designer.cs">
+      <DependentUpon>EmployeeWarningView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JobListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\JobListView.Designer.cs">
+      <DependentUpon>JobListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LeaveRequestListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LeaveRequestListView.Designer.cs">
+      <DependentUpon>LeaveRequestListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LeaveRequestView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LeaveRequestView.Designer.cs">
+      <DependentUpon>LeaveRequestView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LeaveStatusView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LeaveStatusView.Designer.cs">
+      <DependentUpon>LeaveStatusView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewPersonView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewPersonView.Designer.cs">
+      <DependentUpon>NewPersonView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\JobView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\JobView.Designer.cs">
+      <DependentUpon>JobView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewTrainingRequestView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewTrainingRequestView.Designer.cs">
+      <DependentUpon>NewTrainingRequestView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewTransferView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewTransferView.Designer.cs">
+      <DependentUpon>NewTransferView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NodeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NodeEdit.Designer.cs">
+      <DependentUpon>NodeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TerminationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TerminationView.Designer.cs">
+      <DependentUpon>TerminationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PromotionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PromotionView.Designer.cs">
+      <DependentUpon>PromotionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrainingAttendanceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TrainingAttendanceView.Designer.cs">
+      <DependentUpon>TrainingAttendanceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrainingDetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TrainingDetailView.Designer.cs">
+      <DependentUpon>TrainingDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrainingFeedbackView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TrainingFeedbackView.Designer.cs">
+      <DependentUpon>TrainingFeedbackView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrainingListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TrainingListView.Designer.cs">
+      <DependentUpon>TrainingListView.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Workflows\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Source\ClearOffice.Infrastructure\ClearOffice.Infrastructure.csproj">
+      <Project>{64079208-38D3-4985-829E-9FA95D54D4B4}</Project>
+      <Name>ClearOffice.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Source\ClearOffice.Security\ClearOffice.Security.csproj">
+      <Project>{19F6B825-2B82-43A0-9267-67BADEDFC6A6}</Project>
+      <Name>ClearOffice.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClearOffice.Hrm.Business\ClearOffice.Hrm.Business.csproj">
+      <Project>{323D4981-DF3F-42B3-98B9-AE37F93D70EA}</Project>
+      <Name>ClearOffice.Hrm.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Lookup\BankBranchView.resx">
+      <DependentUpon>BankBranchView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\BenefitTypeView.resx">
+      <DependentUpon>BenefitTypeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\CompetencyTypeView.resx">
+      <DependentUpon>CompetencyTypeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\EmployeeSkillTypeView.resx">
+      <DependentUpon>EmployeeSkillTypeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\NationalityView.resx">
+      <DependentUpon>NationalityView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\TrainingCategoryView.resx">
+      <DependentUpon>TrainingCategoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\EmployeeStatusView.resx">
+      <DependentUpon>EmployeeStatusView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\EmployeeTypeView.resx">
+      <DependentUpon>EmployeeTypeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\CountryView.resx">
+      <DependentUpon>CountryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\DeductionConditionView.resx">
+      <DependentUpon>DeductionConditionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\DependantTypeView.resx">
+      <DependentUpon>DependantTypeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\EducationLevelView.resx">
+      <DependentUpon>EducationLevelView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\EducationTypeView.resx">
+      <DependentUpon>EducationTypeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\EthinicityTypeView.resx">
+      <DependentUpon>EthinicityTypeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\InsurancePolicyTypeView.resx">
+      <DependentUpon>InsurancePolicyTypeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\JobSkillTypeView.resx">
+      <DependentUpon>JobSkillTypeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\LanguageView.resx">
+      <DependentUpon>LanguageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\MartialStatusView.resx">
+      <DependentUpon>MartialStatusView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\MeasureTypeView.resx">
+      <DependentUpon>MeasureTypeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\OrganizationNodeTypeView.resx">
+      <DependentUpon>OrganizationNodeTypeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lookup\ReligionView.resx">
+      <DependentUpon>ReligionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeDetailView.resx">
+      <DependentUpon>EmployeeDetailView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeInitialLeaveConfigurationView.resx">
+      <DependentUpon>EmployeeInitialLeaveConfigurationView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeListView.resx">
+      <DependentUpon>EmployeeListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeWarningView.resx">
+      <DependentUpon>EmployeeWarningView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\JobListView.resx">
+      <DependentUpon>JobListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LeaveRequestListView.resx">
+      <DependentUpon>LeaveRequestListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LeaveRequestView.resx">
+      <DependentUpon>LeaveRequestView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LeaveStatusView.resx">
+      <DependentUpon>LeaveStatusView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewPersonView.resx">
+      <DependentUpon>NewPersonView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\JobView.resx">
+      <DependentUpon>JobView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewTrainingRequestView.resx">
+      <DependentUpon>NewTrainingRequestView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewTransferView.resx">
+      <DependentUpon>NewTransferView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NodeEdit.resx">
+      <DependentUpon>NodeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TerminationView.resx">
+      <DependentUpon>TerminationView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PromotionView.resx">
+      <DependentUpon>PromotionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TrainingAttendanceView.resx">
+      <DependentUpon>TrainingAttendanceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TrainingDetailView.resx">
+      <DependentUpon>TrainingDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TrainingFeedbackView.resx">
+      <DependentUpon>TrainingFeedbackView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TrainingListView.resx">
+      <DependentUpon>TrainingListView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.CompetencyType.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.BankBranch.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.BenefitType.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.CompetencyType.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.ContactAddress.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.country.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.DeductionCondition.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.Department.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.DependantType.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EducationLevel.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EducationType.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.Employee.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeeAccident.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeeBenefit.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeeDependant.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeeEducationalHistory.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeeInfo1.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeeInfoTraining.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeeLeave.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeeMedicalRecord.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeePromotion.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeePto.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeePtoInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeePtoStatusInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeePtoTransactionInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeeSkill.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeeSkillType.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeeStatus.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeeTermination.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeeTransfer.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeeType.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeeWarning.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.EmployeeWorkExperiance.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.Ethnicity2.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.Gender.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.Job.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.JobCompetency.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.JobFunction.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.JobInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.JobSkill.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.LeaveType.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.MaritalStatus.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.MeasureType.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.Nationality.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.Organization.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.OrganizationNodeType.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.Person.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.PromotionType.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.Religion.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.Sex.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.Training.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.TrainingAttendanceInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.TrainingFeedback.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.TrainingInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.TrainingRequest.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.TrainingStatus.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.WarningType.datasource" />
+    <None Include="Resources\Delete_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_form_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

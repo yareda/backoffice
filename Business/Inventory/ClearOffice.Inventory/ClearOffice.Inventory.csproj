@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B580D725-65EB-4989-8DEE-58129E2822E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClearOffice.Inventory</RootNamespace>
+    <AssemblyName>ClearOffice.Inventory</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InventoryModuleManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Views\AdjustmentEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AdjustmentEdit.Designer.cs">
+      <DependentUpon>AdjustmentEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdjustmentListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AdjustmentListView.Designer.cs">
+      <DependentUpon>AdjustmentListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CategoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CategoryView.Designer.cs">
+      <DependentUpon>CategoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventoryLookupListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\InventoryLookupListView.Designer.cs">
+      <DependentUpon>InventoryLookupListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IssueEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\IssueEdit.Designer.cs">
+      <DependentUpon>IssueEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IssueListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\IssueListView.Designer.cs">
+      <DependentUpon>IssueListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ItemDetail.Designer.cs">
+      <DependentUpon>ItemDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemsListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ItemsListView.Designer.cs">
+      <DependentUpon>ItemsListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LookupItemView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LookupItemView.Designer.cs">
+      <DependentUpon>LookupItemView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MeasurmentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MeasurmentView.Designer.cs">
+      <DependentUpon>MeasurmentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewAdjustment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewAdjustment.Designer.cs">
+      <DependentUpon>NewAdjustment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewIsssue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewIsssue.Designer.cs">
+      <DependentUpon>NewIsssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewReceiving.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewReceiving.Designer.cs">
+      <DependentUpon>NewReceiving.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewReturn.Designer.cs">
+      <DependentUpon>NewReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewTransfer.Designer.cs">
+      <DependentUpon>NewTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReceivingEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ReceivingEdit.Designer.cs">
+      <DependentUpon>ReceivingEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReceivingList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ReceivingList.Designer.cs">
+      <DependentUpon>ReceivingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReturnEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ReturnEdit.Designer.cs">
+      <DependentUpon>ReturnEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReturnListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ReturnListView.Designer.cs">
+      <DependentUpon>ReturnListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StockStatusView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\StockStatusView.Designer.cs">
+      <DependentUpon>StockStatusView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubCategoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SubCategoryView.Designer.cs">
+      <DependentUpon>SubCategoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SupplierView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SupplierView.Designer.cs">
+      <DependentUpon>SupplierView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransferEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TransferEdit.Designer.cs">
+      <DependentUpon>TransferEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransferListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TransferListView.Designer.cs">
+      <DependentUpon>TransferListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WarehouseView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\WarehouseView.Designer.cs">
+      <DependentUpon>WarehouseView.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Source\ClearOffice.Infrastructure\ClearOffice.Infrastructure.csproj">
+      <Project>{64079208-38D3-4985-829E-9FA95D54D4B4}</Project>
+      <Name>ClearOffice.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Source\ClearOffice.Security\ClearOffice.Security.csproj">
+      <Project>{19F6B825-2B82-43A0-9267-67BADEDFC6A6}</Project>
+      <Name>ClearOffice.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClearOffice.Inventory.DataAccess\ClearOffice.Inventory.DataAccess.csproj">
+      <Project>{D0D454D0-DBAF-4F90-BD1F-6A9E7826AE35}</Project>
+      <Name>ClearOffice.Inventory.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Workflows\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AdjustmentEdit.resx">
+      <DependentUpon>AdjustmentEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AdjustmentListView.resx">
+      <DependentUpon>AdjustmentListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CategoryView.resx">
+      <DependentUpon>CategoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InventoryLookupListView.resx">
+      <DependentUpon>InventoryLookupListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\IssueEdit.resx">
+      <DependentUpon>IssueEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\IssueListView.resx">
+      <DependentUpon>IssueListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ItemDetail.resx">
+      <DependentUpon>ItemDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ItemsListView.resx">
+      <DependentUpon>ItemsListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LookupItemView.resx">
+      <DependentUpon>LookupItemView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MeasurmentView.resx">
+      <DependentUpon>MeasurmentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewAdjustment.resx">
+      <DependentUpon>NewAdjustment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewIsssue.resx">
+      <DependentUpon>NewIsssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewReceiving.resx">
+      <DependentUpon>NewReceiving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewReturn.resx">
+      <DependentUpon>NewReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewTransfer.resx">
+      <DependentUpon>NewTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ReceivingEdit.resx">
+      <DependentUpon>ReceivingEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ReceivingList.resx">
+      <DependentUpon>ReceivingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ReturnEdit.resx">
+      <DependentUpon>ReturnEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ReturnListView.resx">
+      <DependentUpon>ReturnListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StockStatusView.resx">
+      <DependentUpon>StockStatusView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SubCategoryView.resx">
+      <DependentUpon>SubCategoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SupplierView.resx">
+      <DependentUpon>SupplierView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TransferEdit.resx">
+      <DependentUpon>TransferEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TransferListView.resx">
+      <DependentUpon>TransferListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WarehouseView.resx">
+      <DependentUpon>WarehouseView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

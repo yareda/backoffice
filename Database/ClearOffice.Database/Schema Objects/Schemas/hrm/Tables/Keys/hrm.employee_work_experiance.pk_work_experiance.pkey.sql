@@ -1,0 +1,3 @@
+﻿ALTER TABLE [hrm].[employee_work_experiance]
+    ADD CONSTRAINT [pk_work_experiance] PRIMARY KEY CLUSTERED ([work_experiance_id] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF);
+

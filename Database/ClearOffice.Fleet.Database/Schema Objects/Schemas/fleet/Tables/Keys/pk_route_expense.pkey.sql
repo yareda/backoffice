@@ -1,0 +1,3 @@
+﻿ALTER TABLE [fleet].[route_expense]
+    ADD CONSTRAINT [pk_route_expense] PRIMARY KEY CLUSTERED ([expense_id] ASC, [route_id] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF);
+

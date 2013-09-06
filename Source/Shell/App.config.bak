@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <connectionStrings>
+    <add name="WmsEntities" connectionString="metadata=res://*/WmsModel.csdl|res://*/WmsModel.ssdl|res://*/WmsModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.;initial catalog=ClearOffice;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="FleetEntities" connectionString="metadata=res://*/FleetModel.csdl|res://*/FleetModel.ssdl|res://*/FleetModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.;initial catalog=ClearOffice;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+    <add name="FixedAssetEntities" connectionString="metadata=res://*/FixedAssetModel.csdl|res://*/FixedAssetModel.ssdl|res://*/FixedAssetModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=.;Initial Catalog=ClearOffice;Integrated Security=True;Pooling=False;MultipleActiveResultSets=True;Application Name=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+  </connectionStrings>
+</configuration>

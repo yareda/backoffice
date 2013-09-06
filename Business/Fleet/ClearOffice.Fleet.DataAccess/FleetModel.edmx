@@ -1,0 +1,2060 @@
+﻿
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FleetModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="FleetModelStoreContainer">
+          <EntitySet Name="coupon" EntityType="FleetModel.Store.coupon" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="coupon_transaction" EntityType="FleetModel.Store.coupon_transaction" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="driver" EntityType="FleetModel.Store.driver" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="expense" EntityType="FleetModel.Store.expense" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="form_no" EntityType="FleetModel.Store.form_no" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="fuel_log" EntityType="FleetModel.Store.fuel_log" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="fuel_lubricant_purchase" EntityType="FleetModel.Store.fuel_lubricant_purchase" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="fuel_station" EntityType="FleetModel.Store.fuel_station" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="insurance_history" EntityType="FleetModel.Store.insurance_history" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="lookup" EntityType="FleetModel.Store.lookup" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="lookup_item" EntityType="FleetModel.Store.lookup_item" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="maintanance" EntityType="FleetModel.Store.maintanance" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="maintenance_activity" EntityType="FleetModel.Store.maintenance_activity" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="maintenance_expense" EntityType="FleetModel.Store.maintenance_expense" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="maintenance_part" EntityType="FleetModel.Store.maintenance_part" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="order_type" EntityType="FleetModel.Store.order_type" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="tire" EntityType="FleetModel.Store.tire" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="vehicle" EntityType="FleetModel.Store.vehicle" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="vehicle_tire" EntityType="FleetModel.Store.vehicle_tire" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="vendor" EntityType="FleetModel.Store.vendor" store:Type="Tables" Schema="fleet" />
+          <EntitySet Name="coupon_info" EntityType="FleetModel.Store.coupon_info" store:Type="Views" store:Schema="fleet" store:Name="coupon_info">
+            <DefiningQuery>SELECT 
+      [coupon_info].[coupon_id] AS [coupon_id], 
+      [coupon_info].[coupon_label] AS [coupon_label], 
+      [coupon_info].[purchased_from] AS [purchased_from], 
+      [coupon_info].[date_purchased] AS [date_purchased], 
+      [coupon_info].[cash_value] AS [cash_value], 
+      [coupon_info].[consumed_cash_amount] AS [consumed_cash_amount], 
+      [coupon_info].[consumed_value_amount] AS [consumed_value_amount], 
+      [coupon_info].[remaining_amount] AS [remaining_amount]
+      FROM [fleet].[coupon_info] AS [coupon_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="maintenance_info" EntityType="FleetModel.Store.maintenance_info" store:Type="Views" store:Schema="fleet" store:Name="maintenance_info">
+            <DefiningQuery>SELECT 
+      [maintenance_info].[maintenance_id] AS [maintenance_id], 
+      [maintenance_info].[vehicle_id] AS [vehicle_id], 
+      [maintenance_info].[plate_number] AS [plate_number], 
+      [maintenance_info].[service_request_no] AS [service_request_no], 
+      [maintenance_info].[creation_date] AS [creation_date], 
+      [maintenance_info].[completion_date] AS [completion_date], 
+      [maintenance_info].[total_part_price] AS [total_part_price], 
+      [maintenance_info].[total_activity_price] AS [total_activity_price], 
+      [maintenance_info].[total_expense_amount] AS [total_expense_amount]
+      FROM [fleet].[maintenance_info] AS [maintenance_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tire_brand_info" EntityType="FleetModel.Store.tire_brand_info" store:Type="Views" store:Schema="fleet" store:Name="tire_brand_info">
+            <DefiningQuery>SELECT 
+      [tire_brand_info].[lookup_item_id] AS [lookup_item_id], 
+      [tire_brand_info].[lookup_id] AS [lookup_id], 
+      [tire_brand_info].[item_name] AS [item_name]
+      FROM [fleet].[tire_brand_info] AS [tire_brand_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tire_info" EntityType="FleetModel.Store.tire_info" store:Type="Views" store:Schema="fleet" store:Name="tire_info">
+            <DefiningQuery>SELECT 
+      [tire_info].[tire_id] AS [tire_id], 
+      [tire_info].[brand] AS [brand], 
+      [tire_info].[size] AS [size], 
+      [tire_info].[tire_type] AS [tire_type], 
+      [tire_info].[serial_no] AS [serial_no], 
+      [tire_info].[purchased_date] AS [purchased_date], 
+      [tire_info].[status] AS [status], 
+      [tire_info].[vendor] AS [vendor], 
+      [tire_info].[comment] AS [comment], 
+      [tire_info].[tire_size_name] AS [tire_size_name], 
+      [tire_info].[tire_brand_name] AS [tire_brand_name], 
+      [tire_info].[tire_type_name] AS [tire_type_name], 
+      [tire_info].[tire_status_name] AS [tire_status_name], 
+      [tire_info].[vendor_name] AS [vendor_name]
+      FROM [fleet].[tire_info] AS [tire_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tire_size_info" EntityType="FleetModel.Store.tire_size_info" store:Type="Views" store:Schema="fleet" store:Name="tire_size_info">
+            <DefiningQuery>SELECT 
+      [tire_size_info].[lookup_item_id] AS [lookup_item_id], 
+      [tire_size_info].[lookup_id] AS [lookup_id], 
+      [tire_size_info].[item_name] AS [item_name]
+      FROM [fleet].[tire_size_info] AS [tire_size_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tire_status_info" EntityType="FleetModel.Store.tire_status_info" store:Type="Views" store:Schema="fleet" store:Name="tire_status_info">
+            <DefiningQuery>SELECT 
+      [tire_status_info].[lookup_item_id] AS [lookup_item_id], 
+      [tire_status_info].[lookup_id] AS [lookup_id], 
+      [tire_status_info].[item_name] AS [item_name]
+      FROM [fleet].[tire_status_info] AS [tire_status_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tire_type_info" EntityType="FleetModel.Store.tire_type_info" store:Type="Views" store:Schema="fleet" store:Name="tire_type_info">
+            <DefiningQuery>SELECT 
+      [tire_type_info].[lookup_item_id] AS [lookup_item_id], 
+      [tire_type_info].[lookup_id] AS [lookup_id], 
+      [tire_type_info].[item_name] AS [item_name]
+      FROM [fleet].[tire_type_info] AS [tire_type_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vehicle_info" EntityType="FleetModel.Store.vehicle_info" store:Type="Views" store:Schema="fleet" store:Name="vehicle_info">
+            <DefiningQuery>SELECT 
+      [vehicle_info].[vehicle_id] AS [vehicle_id], 
+      [vehicle_info].[plate_number] AS [plate_number], 
+      [vehicle_info].[make_id] AS [make_id], 
+      [vehicle_info].[vehicle_type] AS [vehicle_type], 
+      [vehicle_info].[ownership] AS [ownership], 
+      [vehicle_info].[production_year] AS [production_year], 
+      [vehicle_info].[chasis_no] AS [chasis_no], 
+      [vehicle_info].[engine_serial] AS [engine_serial], 
+      [vehicle_info].[libre_no] AS [libre_no], 
+      [vehicle_info].[vehicle_make_name] AS [vehicle_make_name], 
+      [vehicle_info].[vehicle_ownership_name] AS [vehicle_ownership_name], 
+      [vehicle_info].[vehicle_type_name] AS [vehicle_type_name]
+      FROM [fleet].[vehicle_info] AS [vehicle_info]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_coupon_transaction_coupon" Association="FleetModel.Store.FK_coupon_transaction_coupon">
+            <End Role="coupon" EntitySet="coupon" />
+            <End Role="coupon_transaction" EntitySet="coupon_transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_coupon_transaction_vehicle" Association="FleetModel.Store.FK_coupon_transaction_vehicle">
+            <End Role="vehicle" EntitySet="vehicle" />
+            <End Role="coupon_transaction" EntitySet="coupon_transaction" />
+          </AssociationSet>
+          <AssociationSet Name="fk_expense_reference_vehicle" Association="FleetModel.Store.fk_expense_reference_vehicle">
+            <End Role="vehicle" EntitySet="vehicle" />
+            <End Role="expense" EntitySet="expense" />
+          </AssociationSet>
+          <AssociationSet Name="fk_fuel_log_reference_vehicle" Association="FleetModel.Store.fk_fuel_log_reference_vehicle">
+            <End Role="vehicle" EntitySet="vehicle" />
+            <End Role="fuel_log" EntitySet="fuel_log" />
+          </AssociationSet>
+          <AssociationSet Name="fk_fuel_lubricant_purchase_ref_driver" Association="FleetModel.Store.fk_fuel_lubricant_purchase_ref_driver">
+            <End Role="driver" EntitySet="driver" />
+            <End Role="fuel_lubricant_purchase" EntitySet="fuel_lubricant_purchase" />
+          </AssociationSet>
+          <AssociationSet Name="fk_fuel_lubricant_purchase_ref_order" Association="FleetModel.Store.fk_fuel_lubricant_purchase_ref_order">
+            <End Role="order_type" EntitySet="order_type" />
+            <End Role="fuel_lubricant_purchase" EntitySet="fuel_lubricant_purchase" />
+          </AssociationSet>
+          <AssociationSet Name="fk_fuel_lubricant_purchase_ref_station" Association="FleetModel.Store.fk_fuel_lubricant_purchase_ref_station">
+            <End Role="fuel_station" EntitySet="fuel_station" />
+            <End Role="fuel_lubricant_purchase" EntitySet="fuel_lubricant_purchase" />
+          </AssociationSet>
+          <AssociationSet Name="fk_fuel_lubricant_purchase_ref_vehicle" Association="FleetModel.Store.fk_fuel_lubricant_purchase_ref_vehicle">
+            <End Role="vehicle" EntitySet="vehicle" />
+            <End Role="fuel_lubricant_purchase" EntitySet="fuel_lubricant_purchase" />
+          </AssociationSet>
+          <AssociationSet Name="FK_fuel_lubricant_purchase_vehicle" Association="FleetModel.Store.FK_fuel_lubricant_purchase_vehicle">
+            <End Role="vehicle" EntitySet="vehicle" />
+            <End Role="fuel_lubricant_purchase" EntitySet="fuel_lubricant_purchase" />
+          </AssociationSet>
+          <AssociationSet Name="fk_insuranc_reference_vehicle" Association="FleetModel.Store.fk_insuranc_reference_vehicle">
+            <End Role="vehicle" EntitySet="vehicle" />
+            <End Role="insurance_history" EntitySet="insurance_history" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lookup_item_lookup" Association="FleetModel.Store.FK_lookup_item_lookup">
+            <End Role="lookup" EntitySet="lookup" />
+            <End Role="lookup_item" EntitySet="lookup_item" />
+          </AssociationSet>
+          <AssociationSet Name="fk_maintana_reference_vendor" Association="FleetModel.Store.fk_maintana_reference_vendor">
+            <End Role="vendor" EntitySet="vendor" />
+            <End Role="maintanance" EntitySet="maintanance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_maintanance_vehicle" Association="FleetModel.Store.FK_maintanance_vehicle">
+            <End Role="vehicle" EntitySet="vehicle" />
+            <End Role="maintanance" EntitySet="maintanance" />
+          </AssociationSet>
+          <AssociationSet Name="fk_maintena_maint_act_maintana" Association="FleetModel.Store.fk_maintena_maint_act_maintana">
+            <End Role="maintanance" EntitySet="maintanance" />
+            <End Role="maintenance_expense" EntitySet="maintenance_expense" />
+          </AssociationSet>
+          <AssociationSet Name="fk_maintena_ref_28_maintana" Association="FleetModel.Store.fk_maintena_ref_28_maintana">
+            <End Role="maintanance" EntitySet="maintanance" />
+            <End Role="maintenance_part" EntitySet="maintenance_part" />
+          </AssociationSet>
+          <AssociationSet Name="fk_maintena_reference_expense" Association="FleetModel.Store.fk_maintena_reference_expense">
+            <End Role="expense" EntitySet="expense" />
+            <End Role="maintenance_expense" EntitySet="maintenance_expense" />
+          </AssociationSet>
+          <AssociationSet Name="fk_maintena_reference_maintana" Association="FleetModel.Store.fk_maintena_reference_maintana">
+            <End Role="maintanance" EntitySet="maintanance" />
+            <End Role="maintenance_activity" EntitySet="maintenance_activity" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tire_reference_vehicle" Association="FleetModel.Store.fk_tire_reference_vehicle">
+            <End Role="vehicle" EntitySet="vehicle" />
+            <End Role="vehicle_tire" EntitySet="vehicle_tire" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tire_vendor" Association="FleetModel.Store.FK_tire_vendor">
+            <End Role="vendor" EntitySet="vendor" />
+            <End Role="tire" EntitySet="tire" />
+          </AssociationSet>
+          <AssociationSet Name="fk_vehicle_tire_tire" Association="FleetModel.Store.fk_vehicle_tire_tire">
+            <End Role="tire" EntitySet="tire" />
+            <End Role="vehicle_tire" EntitySet="vehicle_tire" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="coupon">
+          <Key>
+            <PropertyRef Name="coupon_id" />
+          </Key>
+          <Property Name="coupon_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="coupon_label" Type="nvarchar(max)" />
+          <Property Name="purchased_from" Type="nvarchar" MaxLength="500" />
+          <Property Name="date_purchased" Type="datetime" />
+          <Property Name="cash_value" Type="float" />
+          <Property Name="remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="coupon_transaction">
+          <Key>
+            <PropertyRef Name="coupon_transaction_id" />
+          </Key>
+          <Property Name="coupon_transaction_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="coupon_id" Type="int" />
+          <Property Name="vehicle_id" Type="int" />
+          <Property Name="fuel_type_id" Type="int" />
+          <Property Name="leaf_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="cash_amount" Type="float" />
+          <Property Name="value_amount" Type="float" />
+          <Property Name="transaction_date" Type="datetime" />
+          <Property Name="remark" Type="ntext" />
+          <Property Name="driver_name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="driver">
+          <Key>
+            <PropertyRef Name="driver_id" />
+          </Key>
+          <Property Name="driver_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="driver_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="data_version" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="expense">
+          <Key>
+            <PropertyRef Name="expense_id" />
+          </Key>
+          <Property Name="expense_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="vehicle_id" Type="int" />
+          <Property Name="payment_type_id" Type="int" />
+          <Property Name="amount" Type="money" />
+          <Property Name="payment_date" Type="datetime" />
+          <Property Name="invoice" Type="nvarchar" MaxLength="200" />
+          <Property Name="description" Type="ntext" />
+          <Property Name="remark" Type="ntext" />
+        </EntityType>
+        <EntityType Name="form_no">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="starting_no" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="data_version" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="fuel_log">
+          <Key>
+            <PropertyRef Name="fuel_log_id" />
+          </Key>
+          <Property Name="fuel_log_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="vehicle_id" Type="int" />
+          <Property Name="filled_date" Type="datetime" />
+          <Property Name="last_odometer" Type="float" />
+          <Property Name="current_odometer" Type="float" />
+          <Property Name="distance_covered" Type="int" />
+          <Property Name="fuel_amount" Type="float" />
+          <Property Name="driver_id" Type="int" />
+          <Property Name="account_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="remark" Type="ntext" />
+          <Property Name="total_cost" Type="decimal" />
+        </EntityType>
+        <EntityType Name="fuel_lubricant_purchase">
+          <Key>
+            <PropertyRef Name="fuel_order_id" />
+          </Key>
+          <Property Name="fuel_order_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="vehicle_id" Type="int" />
+          <Property Name="fuel_guage_indicator" Type="int" />
+          <Property Name="prev_km_reading" Type="decimal" Scale="2" />
+          <Property Name="prev_fuel_purchase" Type="decimal" Scale="2" />
+          <Property Name="current_km_reading" Type="decimal" Scale="2" />
+          <Property Name="order_id" Type="int" />
+          <Property Name="fuel_station_id" Type="int" />
+          <Property Name="quantity" Type="decimal" Scale="2" />
+          <Property Name="amount" Type="decimal" Scale="2" />
+          <Property Name="purchase_date" Type="datetime" />
+          <Property Name="form_no" Type="nvarchar(max)" />
+          <Property Name="difference_km" Type="decimal" Scale="2" />
+          <Property Name="consumption" Type="decimal" Scale="2" />
+          <Property Name="isPrevious" Type="bit" />
+          <Property Name="driver_id" Type="int" />
+          <Property Name="data_version" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="reqular_quantity" Type="decimal" Scale="2" />
+          <Property Name="regular_amount" Type="decimal" Scale="2" />
+          <Property Name="gas_oil_quantity" Type="decimal" Scale="2" />
+          <Property Name="gas_oil_amount" Type="decimal" Scale="2" />
+          <Property Name="engine_oil_quantity" Type="decimal" Scale="2" />
+          <Property Name="engine_oil_amount" Type="decimal" Scale="2" />
+          <Property Name="grease_quantity" Type="decimal" Scale="2" />
+          <Property Name="grease_amount" Type="decimal" Scale="2" />
+          <Property Name="washing_quantity" Type="decimal" Scale="2" />
+          <Property Name="washing_amount" Type="decimal" Scale="2" />
+          <Property Name="order_status" Type="int" />
+        </EntityType>
+        <EntityType Name="fuel_station">
+          <Key>
+            <PropertyRef Name="fuel_station_id" />
+          </Key>
+          <Property Name="fuel_station_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="station_name" Type="nvarchar(max)" />
+          <Property Name="data_version" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="insurance_history">
+          <Key>
+            <PropertyRef Name="history_id" />
+          </Key>
+          <Property Name="history_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="vehicle_id" Type="int" />
+          <Property Name="company_id" Type="int" />
+          <Property Name="policy_type" Type="int" />
+          <Property Name="policy_no" Type="nvarchar" MaxLength="500" />
+          <Property Name="coverage_limit" Type="decimal" />
+          <Property Name="premium" Type="decimal" />
+          <Property Name="date_insured" Type="datetime" />
+          <Property Name="agent_name" Type="nvarchar" MaxLength="500" />
+          <Property Name="agent_telephone" Type="nvarchar" MaxLength="100" />
+          <Property Name="agent_email" Type="nvarchar" MaxLength="100" />
+          <Property Name="remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="lookup">
+          <Key>
+            <PropertyRef Name="lookup_id" />
+          </Key>
+          <Property Name="lookup_id" Type="int" Nullable="false" />
+          <Property Name="lookup_name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="lookup_item">
+          <Key>
+            <PropertyRef Name="lookup_item_id" />
+          </Key>
+          <Property Name="lookup_item_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="lookup_id" Type="int" />
+          <Property Name="item_name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="maintanance">
+          <Key>
+            <PropertyRef Name="maintenance_id" />
+          </Key>
+          <Property Name="maintenance_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="vehicle_id" Type="int" Nullable="false" />
+          <Property Name="creation_date" Type="datetime" />
+          <Property Name="completion_date" Type="datetime" />
+          <Property Name="service_request_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="serviced_by_type_id" Type="bit" />
+          <Property Name="serviced_by" Type="int" />
+          <Property Name="account_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="service_type_id" Type="int" />
+          <Property Name="description" Type="ntext" />
+          <Property Name="status" Type="int" />
+          <Property Name="closed_date" Type="date" />
+          <Property Name="closed_by" Type="nvarchar" MaxLength="200" />
+          <Property Name="closing_remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="maintenance_activity">
+          <Key>
+            <PropertyRef Name="activity_id" />
+          </Key>
+          <Property Name="activity_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="maintenance_id" Type="int" />
+          <Property Name="performed_by" Type="bit" />
+          <Property Name="performer" Type="nvarchar" MaxLength="200" />
+          <Property Name="labor_units" Type="int" />
+          <Property Name="unit_cost" Type="money" />
+          <Property Name="activity_type_id" Type="int" />
+          <Property Name="description" Type="ntext" />
+          <Property Name="notes" Type="ntext" />
+        </EntityType>
+        <EntityType Name="maintenance_expense">
+          <Key>
+            <PropertyRef Name="maintenance_id" />
+            <PropertyRef Name="expense_id" />
+          </Key>
+          <Property Name="maintenance_id" Type="int" Nullable="false" />
+          <Property Name="expense_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="maintenance_part">
+          <Key>
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Name="item_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="maintenance_id" Type="int" />
+          <Property Name="part_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="unit_price" Type="money" />
+          <Property Name="replaced_date" Type="datetime" />
+          <Property Name="description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="order_type">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="order_name" Type="nvarchar(max)" />
+          <Property Name="data_version" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tire">
+          <Key>
+            <PropertyRef Name="tire_id" />
+          </Key>
+          <Property Name="tire_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="brand" Type="int" />
+          <Property Name="size" Type="int" />
+          <Property Name="tire_type" Type="int" />
+          <Property Name="serial_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="purchased_date" Type="datetime" />
+          <Property Name="status" Type="int" />
+          <Property Name="vendor" Type="int" />
+          <Property Name="comment" Type="ntext" />
+        </EntityType>
+        <EntityType Name="vehicle">
+          <Key>
+            <PropertyRef Name="vehicle_id" />
+          </Key>
+          <Property Name="vehicle_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="plate_number" Type="nvarchar" MaxLength="200" />
+          <Property Name="make_id" Type="int" />
+          <Property Name="vehicle_type" Type="int" />
+          <Property Name="model_id" Type="nvarchar" MaxLength="200" />
+          <Property Name="vendor_id" Type="int" />
+          <Property Name="status_id" Type="nvarchar(max)" />
+          <Property Name="ownership" Type="int" />
+          <Property Name="production_year" Type="int" />
+          <Property Name="purchased_from" Type="nvarchar" MaxLength="200" />
+          <Property Name="purchase_date" Type="datetime" />
+          <Property Name="purchase_price" Type="money" />
+          <Property Name="purchase_odometer" Type="float" />
+          <Property Name="engine_serial" Type="nvarchar" MaxLength="200" />
+          <Property Name="chasis_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="cylinders" Type="int" />
+          <Property Name="power" Type="int" />
+          <Property Name="fuel_type_id" Type="int" />
+          <Property Name="color_id" Type="int" />
+          <Property Name="no_of_tires" Type="int" />
+          <Property Name="tyre_config" Type="int" />
+          <Property Name="libre_no" Type="nvarchar" MaxLength="100" />
+          <Property Name="fueltank_capacity" Type="int" />
+          <Property Name="picture" Type="image" />
+          <Property Name="remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="vehicle_tire">
+          <Key>
+            <PropertyRef Name="transaction_id" />
+          </Key>
+          <Property Name="transaction_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tire_id" Type="int" Nullable="false" />
+          <Property Name="vehicle_id" Type="int" Nullable="false" />
+          <Property Name="position" Type="nvarchar" MaxLength="200" />
+          <Property Name="status" Type="int" />
+          <Property Name="mounted_date" Type="datetime" />
+          <Property Name="mounted_milage" Type="float" />
+          <Property Name="unmounted_date" Type="datetime" />
+          <Property Name="unmount_milage" Type="float" />
+          <Property Name="remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="vendor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="service" Type="bit" />
+          <Property Name="dealer" Type="bit" />
+          <Property Name="parts" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.fleet.coupon_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="coupon_info">
+          <Key>
+            <PropertyRef Name="coupon_id" />
+          </Key>
+          <Property Name="coupon_id" Type="int" Nullable="false" />
+          <Property Name="coupon_label" Type="nvarchar(max)" />
+          <Property Name="purchased_from" Type="nvarchar" MaxLength="500" />
+          <Property Name="date_purchased" Type="datetime" />
+          <Property Name="cash_value" Type="float" />
+          <Property Name="consumed_cash_amount" Type="float" />
+          <Property Name="consumed_value_amount" Type="float" />
+          <Property Name="remaining_amount" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.fleet.maintenance_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="maintenance_info">
+          <Key>
+            <PropertyRef Name="maintenance_id" />
+            <PropertyRef Name="vehicle_id" />
+          </Key>
+          <Property Name="maintenance_id" Type="int" Nullable="false" />
+          <Property Name="vehicle_id" Type="int" Nullable="false" />
+          <Property Name="plate_number" Type="nvarchar" MaxLength="200" />
+          <Property Name="service_request_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="creation_date" Type="datetime" />
+          <Property Name="completion_date" Type="datetime" />
+          <Property Name="total_part_price" Type="money" />
+          <Property Name="total_activity_price" Type="money" />
+          <Property Name="total_expense_amount" Type="money" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.fleet.tire_brand_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="tire_brand_info">
+          <Key>
+            <PropertyRef Name="lookup_item_id" />
+          </Key>
+          <Property Name="lookup_item_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="lookup_id" Type="int" />
+          <Property Name="item_name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.fleet.tire_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="tire_info">
+          <Key>
+            <PropertyRef Name="tire_id" />
+          </Key>
+          <Property Name="tire_id" Type="int" Nullable="false" />
+          <Property Name="brand" Type="int" />
+          <Property Name="size" Type="int" />
+          <Property Name="tire_type" Type="int" />
+          <Property Name="serial_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="purchased_date" Type="datetime" />
+          <Property Name="status" Type="int" />
+          <Property Name="vendor" Type="int" />
+          <Property Name="comment" Type="ntext" />
+          <Property Name="tire_size_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="tire_brand_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="tire_type_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="tire_status_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="vendor_name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.fleet.tire_size_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="tire_size_info">
+          <Key>
+            <PropertyRef Name="lookup_item_id" />
+          </Key>
+          <Property Name="lookup_item_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="lookup_id" Type="int" />
+          <Property Name="item_name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.fleet.tire_status_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="tire_status_info">
+          <Key>
+            <PropertyRef Name="lookup_item_id" />
+          </Key>
+          <Property Name="lookup_item_id" Type="int" Nullable="false" />
+          <Property Name="lookup_id" Type="int" />
+          <Property Name="item_name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.fleet.tire_type_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="tire_type_info">
+          <Key>
+            <PropertyRef Name="lookup_item_id" />
+          </Key>
+          <Property Name="lookup_item_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="lookup_id" Type="int" />
+          <Property Name="item_name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.fleet.vehicle_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vehicle_info">
+          <Key>
+            <PropertyRef Name="vehicle_id" />
+          </Key>
+          <Property Name="vehicle_id" Type="int" Nullable="false" />
+          <Property Name="plate_number" Type="nvarchar" MaxLength="200" />
+          <Property Name="make_id" Type="int" />
+          <Property Name="vehicle_type" Type="int" />
+          <Property Name="ownership" Type="int" />
+          <Property Name="production_year" Type="int" />
+          <Property Name="chasis_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="engine_serial" Type="nvarchar" MaxLength="200" />
+          <Property Name="libre_no" Type="nvarchar" MaxLength="100" />
+          <Property Name="vehicle_make_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="vehicle_ownership_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="vehicle_type_name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <Association Name="FK_coupon_transaction_coupon">
+          <End Role="coupon" Type="FleetModel.Store.coupon" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="coupon_transaction" Type="FleetModel.Store.coupon_transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="coupon">
+              <PropertyRef Name="coupon_id" />
+            </Principal>
+            <Dependent Role="coupon_transaction">
+              <PropertyRef Name="coupon_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_coupon_transaction_vehicle">
+          <End Role="vehicle" Type="FleetModel.Store.vehicle" Multiplicity="0..1" />
+          <End Role="coupon_transaction" Type="FleetModel.Store.coupon_transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle">
+              <PropertyRef Name="vehicle_id" />
+            </Principal>
+            <Dependent Role="coupon_transaction">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_expense_reference_vehicle">
+          <End Role="vehicle" Type="FleetModel.Store.vehicle" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="expense" Type="FleetModel.Store.expense" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle">
+              <PropertyRef Name="vehicle_id" />
+            </Principal>
+            <Dependent Role="expense">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_fuel_log_reference_vehicle">
+          <End Role="vehicle" Type="FleetModel.Store.vehicle" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="fuel_log" Type="FleetModel.Store.fuel_log" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle">
+              <PropertyRef Name="vehicle_id" />
+            </Principal>
+            <Dependent Role="fuel_log">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_fuel_lubricant_purchase_ref_driver">
+          <End Role="driver" Type="FleetModel.Store.driver" Multiplicity="0..1" />
+          <End Role="fuel_lubricant_purchase" Type="FleetModel.Store.fuel_lubricant_purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="driver">
+              <PropertyRef Name="driver_id" />
+            </Principal>
+            <Dependent Role="fuel_lubricant_purchase">
+              <PropertyRef Name="driver_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_fuel_lubricant_purchase_ref_order">
+          <End Role="order_type" Type="FleetModel.Store.order_type" Multiplicity="0..1" />
+          <End Role="fuel_lubricant_purchase" Type="FleetModel.Store.fuel_lubricant_purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order_type">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="fuel_lubricant_purchase">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_fuel_lubricant_purchase_ref_station">
+          <End Role="fuel_station" Type="FleetModel.Store.fuel_station" Multiplicity="0..1" />
+          <End Role="fuel_lubricant_purchase" Type="FleetModel.Store.fuel_lubricant_purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fuel_station">
+              <PropertyRef Name="fuel_station_id" />
+            </Principal>
+            <Dependent Role="fuel_lubricant_purchase">
+              <PropertyRef Name="fuel_station_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_fuel_lubricant_purchase_ref_vehicle">
+          <End Role="vehicle" Type="FleetModel.Store.vehicle" Multiplicity="0..1" />
+          <End Role="fuel_lubricant_purchase" Type="FleetModel.Store.fuel_lubricant_purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle">
+              <PropertyRef Name="vehicle_id" />
+            </Principal>
+            <Dependent Role="fuel_lubricant_purchase">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_fuel_lubricant_purchase_vehicle">
+          <End Role="vehicle" Type="FleetModel.Store.vehicle" Multiplicity="0..1" />
+          <End Role="fuel_lubricant_purchase" Type="FleetModel.Store.fuel_lubricant_purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle">
+              <PropertyRef Name="vehicle_id" />
+            </Principal>
+            <Dependent Role="fuel_lubricant_purchase">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_insuranc_reference_vehicle">
+          <End Role="vehicle" Type="FleetModel.Store.vehicle" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="insurance_history" Type="FleetModel.Store.insurance_history" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle">
+              <PropertyRef Name="vehicle_id" />
+            </Principal>
+            <Dependent Role="insurance_history">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lookup_item_lookup">
+          <End Role="lookup" Type="FleetModel.Store.lookup" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="lookup_item" Type="FleetModel.Store.lookup_item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lookup">
+              <PropertyRef Name="lookup_id" />
+            </Principal>
+            <Dependent Role="lookup_item">
+              <PropertyRef Name="lookup_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_maintana_reference_vendor">
+          <End Role="vendor" Type="FleetModel.Store.vendor" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="maintanance" Type="FleetModel.Store.maintanance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vendor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="maintanance">
+              <PropertyRef Name="serviced_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_maintanance_vehicle">
+          <End Role="vehicle" Type="FleetModel.Store.vehicle" Multiplicity="1" />
+          <End Role="maintanance" Type="FleetModel.Store.maintanance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle">
+              <PropertyRef Name="vehicle_id" />
+            </Principal>
+            <Dependent Role="maintanance">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_maintena_maint_act_maintana">
+          <End Role="maintanance" Type="FleetModel.Store.maintanance" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="maintenance_expense" Type="FleetModel.Store.maintenance_expense" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maintanance">
+              <PropertyRef Name="maintenance_id" />
+            </Principal>
+            <Dependent Role="maintenance_expense">
+              <PropertyRef Name="maintenance_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_maintena_ref_28_maintana">
+          <End Role="maintanance" Type="FleetModel.Store.maintanance" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="maintenance_part" Type="FleetModel.Store.maintenance_part" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maintanance">
+              <PropertyRef Name="maintenance_id" />
+            </Principal>
+            <Dependent Role="maintenance_part">
+              <PropertyRef Name="maintenance_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_maintena_reference_expense">
+          <End Role="expense" Type="FleetModel.Store.expense" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="maintenance_expense" Type="FleetModel.Store.maintenance_expense" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="expense">
+              <PropertyRef Name="expense_id" />
+            </Principal>
+            <Dependent Role="maintenance_expense">
+              <PropertyRef Name="expense_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_maintena_reference_maintana">
+          <End Role="maintanance" Type="FleetModel.Store.maintanance" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="maintenance_activity" Type="FleetModel.Store.maintenance_activity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maintanance">
+              <PropertyRef Name="maintenance_id" />
+            </Principal>
+            <Dependent Role="maintenance_activity">
+              <PropertyRef Name="maintenance_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tire_reference_vehicle">
+          <End Role="vehicle" Type="FleetModel.Store.vehicle" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="vehicle_tire" Type="FleetModel.Store.vehicle_tire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle">
+              <PropertyRef Name="vehicle_id" />
+            </Principal>
+            <Dependent Role="vehicle_tire">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tire_vendor">
+          <End Role="vendor" Type="FleetModel.Store.vendor" Multiplicity="0..1" />
+          <End Role="tire" Type="FleetModel.Store.tire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vendor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tire">
+              <PropertyRef Name="vendor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_vehicle_tire_tire">
+          <End Role="tire" Type="FleetModel.Store.tire" Multiplicity="1" />
+          <End Role="vehicle_tire" Type="FleetModel.Store.vehicle_tire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tire">
+              <PropertyRef Name="tire_id" />
+            </Principal>
+            <Dependent Role="vehicle_tire">
+              <PropertyRef Name="tire_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ClearOffice.Fleet.Business" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="FleetEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="drivers" EntityType="ClearOffice.Fleet.Business.driver" />
+          <EntitySet Name="Expenses1" EntityType="ClearOffice.Fleet.Business.Expense" />
+          <EntitySet Name="form_no" EntityType="ClearOffice.Fleet.Business.form_no" />
+          <EntitySet Name="FuelLogs" EntityType="ClearOffice.Fleet.Business.FuelLog" />
+          <EntitySet Name="fuel_lubricant_purchase" EntityType="ClearOffice.Fleet.Business.fuel_lubricant_purchase" />
+          <EntitySet Name="fuel_station" EntityType="ClearOffice.Fleet.Business.fuel_station" />
+          <EntitySet Name="InsurancePolicies" EntityType="ClearOffice.Fleet.Business.InsurancePolicy" />
+          <EntitySet Name="Lookups" EntityType="ClearOffice.Fleet.Business.Lookup" />
+          <EntitySet Name="LookupItems" EntityType="ClearOffice.Fleet.Business.LookupItem" />
+          <EntitySet Name="Maintanances" EntityType="ClearOffice.Fleet.Business.Maintanance" />
+          <EntitySet Name="MaintenanceActivities" EntityType="ClearOffice.Fleet.Business.MaintenanceActivity" />
+          <EntitySet Name="MaintenanceParts" EntityType="ClearOffice.Fleet.Business.MaintenancePart" />
+          <EntitySet Name="order_type" EntityType="ClearOffice.Fleet.Business.order_type" />
+          <EntitySet Name="Tires" EntityType="ClearOffice.Fleet.Business.Tire" />
+          <EntitySet Name="Vehicles" EntityType="ClearOffice.Fleet.Business.Vehicle" />
+          <EntitySet Name="Vendors" EntityType="ClearOffice.Fleet.Business.Vendor" />
+          <AssociationSet Name="fk_fuel_lubricant_purchase_ref_driver" Association="ClearOffice.Fleet.Business.fk_fuel_lubricant_purchase_ref_driver">
+            <End Role="driver" EntitySet="drivers" />
+            <End Role="fuel_lubricant_purchase" EntitySet="fuel_lubricant_purchase" />
+          </AssociationSet>
+          <AssociationSet Name="fk_expense_reference_vehicle" Association="ClearOffice.Fleet.Business.fk_expense_reference_vehicle">
+            <End Role="vehicle" EntitySet="Vehicles" />
+            <End Role="expense" EntitySet="Expenses1" />
+          </AssociationSet>
+          <AssociationSet Name="fk_fuel_log_reference_vehicle" Association="ClearOffice.Fleet.Business.fk_fuel_log_reference_vehicle">
+            <End Role="vehicle" EntitySet="Vehicles" />
+            <End Role="fuel_log" EntitySet="FuelLogs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_fuel_lubricant_purchase_ref_order" Association="ClearOffice.Fleet.Business.fk_fuel_lubricant_purchase_ref_order">
+            <End Role="order_type" EntitySet="order_type" />
+            <End Role="fuel_lubricant_purchase" EntitySet="fuel_lubricant_purchase" />
+          </AssociationSet>
+          <AssociationSet Name="fk_fuel_lubricant_purchase_ref_station" Association="ClearOffice.Fleet.Business.fk_fuel_lubricant_purchase_ref_station">
+            <End Role="fuel_station" EntitySet="fuel_station" />
+            <End Role="fuel_lubricant_purchase" EntitySet="fuel_lubricant_purchase" />
+          </AssociationSet>
+          <AssociationSet Name="fk_fuel_lubricant_purchase_ref_vehicle" Association="ClearOffice.Fleet.Business.fk_fuel_lubricant_purchase_ref_vehicle">
+            <End Role="vehicle" EntitySet="Vehicles" />
+            <End Role="fuel_lubricant_purchase" EntitySet="fuel_lubricant_purchase" />
+          </AssociationSet>
+          <AssociationSet Name="fk_insuranc_reference_vehicle" Association="ClearOffice.Fleet.Business.fk_insuranc_reference_vehicle">
+            <End Role="vehicle" EntitySet="Vehicles" />
+            <End Role="insurance_history" EntitySet="InsurancePolicies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lookup_item_lookup" Association="ClearOffice.Fleet.Business.FK_lookup_item_lookup">
+            <End Role="lookup" EntitySet="Lookups" />
+            <End Role="lookup_item" EntitySet="LookupItems" />
+          </AssociationSet>
+          <AssociationSet Name="fk_maintana_reference_vendor" Association="ClearOffice.Fleet.Business.fk_maintana_reference_vendor">
+            <End Role="vendor" EntitySet="Vendors" />
+            <End Role="maintanance" EntitySet="Maintanances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_maintanance_vehicle" Association="ClearOffice.Fleet.Business.FK_maintanance_vehicle">
+            <End Role="vehicle" EntitySet="Vehicles" />
+            <End Role="maintanance" EntitySet="Maintanances" />
+          </AssociationSet>
+          <AssociationSet Name="fk_maintena_ref_28_maintana" Association="ClearOffice.Fleet.Business.fk_maintena_ref_28_maintana">
+            <End Role="maintanance" EntitySet="Maintanances" />
+            <End Role="maintenance_part" EntitySet="MaintenanceParts" />
+          </AssociationSet>
+          <AssociationSet Name="fk_maintena_reference_maintana" Association="ClearOffice.Fleet.Business.fk_maintena_reference_maintana">
+            <End Role="maintanance" EntitySet="Maintanances" />
+            <End Role="maintenance_activity" EntitySet="MaintenanceActivities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tire_vendor" Association="ClearOffice.Fleet.Business.FK_tire_vendor">
+            <End Role="vendor" EntitySet="Vendors" />
+            <End Role="tire" EntitySet="Tires" />
+          </AssociationSet>
+          <AssociationSet Name="maintenance_expense" Association="ClearOffice.Fleet.Business.maintenance_expense">
+            <End Role="maintanance" EntitySet="Maintanances" />
+            <End Role="expense" EntitySet="Expenses1" />
+          </AssociationSet>
+          <EntitySet Name="MaintenanceInfoes" EntityType="ClearOffice.Fleet.Business.MaintenanceInfo" />
+          <EntitySet Name="Coupons" EntityType="ClearOffice.Fleet.Business.Coupon" />
+          <EntitySet Name="CouponTransactions" EntityType="ClearOffice.Fleet.Business.CouponTransaction" />
+          <AssociationSet Name="FK_coupon_transaction_coupon" Association="ClearOffice.Fleet.Business.FK_coupon_transaction_coupon">
+            <End Role="coupon" EntitySet="Coupons" />
+            <End Role="coupon_transaction" EntitySet="CouponTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_coupon_transaction_vehicle" Association="ClearOffice.Fleet.Business.FK_coupon_transaction_vehicle">
+            <End Role="Vehicle" EntitySet="Vehicles" />
+            <End Role="coupon_transaction" EntitySet="CouponTransactions" />
+          </AssociationSet>
+          <EntitySet Name="CouponInfoes" EntityType="ClearOffice.Fleet.Business.CouponInfo" />
+          <EntitySet Name="TireInfoes" EntityType="ClearOffice.Fleet.Business.TireInfo" />
+          <EntitySet Name="TireBrandInfoes" EntityType="ClearOffice.Fleet.Business.TireBrandInfo" />
+          <EntitySet Name="TireSizeInfoes" EntityType="ClearOffice.Fleet.Business.TireSizeInfo" />
+          <EntitySet Name="TireStatusInfoes" EntityType="ClearOffice.Fleet.Business.TireStatusInfo" />
+          <EntitySet Name="TireTypeInfoes" EntityType="ClearOffice.Fleet.Business.TireTypeInfo" />
+          <EntitySet Name="VehicleTires" EntityType="ClearOffice.Fleet.Business.VehicleTire" />
+          <AssociationSet Name="fk_vehicle_tire_tire" Association="ClearOffice.Fleet.Business.fk_vehicle_tire_tire">
+            <End Role="Tire" EntitySet="Tires" />
+            <End Role="vehicle_tire" EntitySet="VehicleTires" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tire_reference_vehicle" Association="ClearOffice.Fleet.Business.fk_tire_reference_vehicle">
+            <End Role="Vehicle" EntitySet="Vehicles" />
+            <End Role="vehicle_tire" EntitySet="VehicleTires" />
+          </AssociationSet>
+          <EntitySet Name="VehicleInfoes" EntityType="ClearOffice.Fleet.Business.VehicleInfo" />
+        </EntityContainer>
+        <EntityType Name="driver">
+          <Key>
+            <PropertyRef Name="driver_id" />
+          </Key>
+          <Property Name="driver_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="driver_name" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="data_version" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="fuel_lubricant_purchase" Relationship="ClearOffice.Fleet.Business.fk_fuel_lubricant_purchase_ref_driver" FromRole="driver" ToRole="fuel_lubricant_purchase" />
+        </EntityType>
+        <EntityType Name="Expense">
+          <Key>
+            <PropertyRef Name="ExpenseId" />
+          </Key>
+          <Property Name="ExpenseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VehicleId" Type="Int32" />
+          <Property Name="PaymentTypeId" Type="Int32" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PaymentDate" Type="DateTime" />
+          <Property Name="Invoice" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="form_no">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="starting_no" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="data_version" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="FuelLog">
+          <Key>
+            <PropertyRef Name="FuelLogId" />
+          </Key>
+          <Property Name="FuelLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VehicleId" Type="Int32" Nullable="false" />
+          <Property Name="FilledDate" Type="DateTime" />
+          <Property Name="LastOdometer" Type="Double" />
+          <Property Name="CurrentOdometer" Type="Double" />
+          <Property Name="DistanceCovered" Type="Int32" />
+          <Property Name="FuelAmount" Type="Int32" />
+          <Property Name="DriverId" Type="Int32" />
+          <Property Name="AccountNo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Decimal" Name="TotalCost" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="fuel_lubricant_purchase">
+          <Key>
+            <PropertyRef Name="fuel_order_id" />
+          </Key>
+          <Property Name="fuel_order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vehicle_id" Type="Int32" />
+          <Property Name="fuel_guage_indicator" Type="Int32" />
+          <Property Name="prev_km_reading" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="prev_fuel_purchase" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="current_km_reading" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="order_id" Type="Int32" />
+          <Property Name="fuel_station_id" Type="Int32" />
+          <Property Name="quantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="purchase_date" Type="DateTime" />
+          <Property Name="form_no" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="difference_km" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="consumption" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="isPrevious" Type="Boolean" />
+          <Property Name="driver_id" Type="Int32" />
+          <Property Name="data_version" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="reqular_quantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="regular_amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="gas_oil_quantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="gas_oil_amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="engine_oil_quantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="engine_oil_amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="grease_quantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="grease_amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="washing_quantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="washing_amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="order_status" Type="Int32" />
+          <NavigationProperty Name="driver" Relationship="ClearOffice.Fleet.Business.fk_fuel_lubricant_purchase_ref_driver" FromRole="fuel_lubricant_purchase" ToRole="driver" />
+          <NavigationProperty Name="order_type" Relationship="ClearOffice.Fleet.Business.fk_fuel_lubricant_purchase_ref_order" FromRole="fuel_lubricant_purchase" ToRole="order_type" />
+          <NavigationProperty Name="fuel_station" Relationship="ClearOffice.Fleet.Business.fk_fuel_lubricant_purchase_ref_station" FromRole="fuel_lubricant_purchase" ToRole="fuel_station" />
+          <NavigationProperty Name="vehicle" Relationship="ClearOffice.Fleet.Business.fk_fuel_lubricant_purchase_ref_vehicle" FromRole="fuel_lubricant_purchase" ToRole="vehicle" />
+        </EntityType>
+        <EntityType Name="fuel_station">
+          <Key>
+            <PropertyRef Name="fuel_station_id" />
+          </Key>
+          <Property Name="fuel_station_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="station_name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="data_version" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="fuel_lubricant_purchase" Relationship="ClearOffice.Fleet.Business.fk_fuel_lubricant_purchase_ref_station" FromRole="fuel_station" ToRole="fuel_lubricant_purchase" />
+        </EntityType>
+        <EntityType Name="InsurancePolicy">
+          <Key>
+            <PropertyRef Name="HistoryId" />
+          </Key>
+          <Property Name="HistoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VehicleId" Type="Int32" />
+          <Property Name="CompanyId" Type="Int32" />
+          <Property Name="PolicyNo" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="CoverageLimit" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Premium" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="DateInsured" Type="DateTime" />
+          <Property Name="AgentName" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="AgentTelephone" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="AgentEmail" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="PolicyType" />
+        </EntityType>
+        <EntityType Name="Lookup">
+          <Key>
+            <PropertyRef Name="LookupId" />
+          </Key>
+          <Property Name="LookupId" Type="Int32" Nullable="false" />
+          <Property Name="LookupName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Items" Relationship="ClearOffice.Fleet.Business.FK_lookup_item_lookup" FromRole="lookup" ToRole="lookup_item" />
+        </EntityType>
+        <EntityType Name="LookupItem">
+          <Key>
+            <PropertyRef Name="LookupItemId" />
+          </Key>
+          <Property Name="LookupItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LookupId" Type="Int32" />
+          <Property Name="ItemName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Maintanance">
+          <Key>
+            <PropertyRef Name="MaintenanceId" />
+          </Key>
+          <Property Name="MaintenanceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VehicleId" Type="Int32" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" />
+          <Property Name="CompletionDate" Type="DateTime" />
+          <Property Name="ServiceRequestNo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="ServicedByTypeId" Type="Boolean" />
+          <Property Name="ServicedBy" Type="Int32" />
+          <Property Name="AccountNo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="ServiceTypeId" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Vendor" Relationship="ClearOffice.Fleet.Business.fk_maintana_reference_vendor" FromRole="maintanance" ToRole="vendor" />
+          <NavigationProperty Name="Vehicle" Relationship="ClearOffice.Fleet.Business.FK_maintanance_vehicle" FromRole="maintanance" ToRole="vehicle" />
+          <NavigationProperty Name="MaintenanceParts" Relationship="ClearOffice.Fleet.Business.fk_maintena_ref_28_maintana" FromRole="maintanance" ToRole="maintenance_part" />
+          <NavigationProperty Name="MaintenanceActivities" Relationship="ClearOffice.Fleet.Business.fk_maintena_reference_maintana" FromRole="maintanance" ToRole="maintenance_activity" />
+          <NavigationProperty Name="Expenses" Relationship="ClearOffice.Fleet.Business.maintenance_expense" FromRole="maintanance" ToRole="expense" />
+          <Property Type="Int32" Name="status" />
+          <Property Type="DateTime" Name="ClosedDate" />
+          <Property Type="String" Name="ClosedBy" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ClosingRemark" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MaintenanceActivity">
+          <Key>
+            <PropertyRef Name="ActivityId" />
+          </Key>
+          <Property Name="ActivityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaintenanceId" Type="Int32" />
+          <Property Name="PerformedBy" Type="Boolean" />
+          <Property Name="Performer" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="LaborUnits" Type="Int32" />
+          <Property Name="UnitCost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ActivityTypeId" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Notes" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="maintanance" Relationship="ClearOffice.Fleet.Business.fk_maintena_reference_maintana" FromRole="maintenance_activity" ToRole="maintanance" />
+        </EntityType>
+        <EntityType Name="MaintenancePart">
+          <Key>
+            <PropertyRef Name="ItemId" />
+          </Key>
+          <Property Name="ItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaintenanceId" Type="Int32" />
+          <Property Name="PartNo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ReplacedDate" Type="DateTime" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="maintanance" Relationship="ClearOffice.Fleet.Business.fk_maintena_ref_28_maintana" FromRole="maintenance_part" ToRole="maintanance" />
+        </EntityType>
+        <EntityType Name="order_type">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="order_name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="data_version" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="fuel_lubricant_purchase" Relationship="ClearOffice.Fleet.Business.fk_fuel_lubricant_purchase_ref_order" FromRole="order_type" ToRole="fuel_lubricant_purchase" />
+        </EntityType>
+        <EntityType Name="Tire">
+          <Key>
+            <PropertyRef Name="TireId" />
+          </Key>
+          <Property Name="TireId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Brand" Type="Int32" />
+          <Property Name="Size" Type="Int32" />
+          <Property Name="TireType" Type="Int32" />
+          <Property Name="SerialNo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="PurchasedDate" Type="DateTime" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Vendor" Type="Int32" />
+          <Property Name="Comment" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="VendorDetail" Relationship="ClearOffice.Fleet.Business.FK_tire_vendor" FromRole="tire" ToRole="vendor" />
+          <NavigationProperty Name="UsageHistory" Relationship="ClearOffice.Fleet.Business.fk_vehicle_tire_tire" FromRole="Tire" ToRole="vehicle_tire" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="VehicleId" />
+          </Key>
+          <Property Name="VehicleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlateNumber" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="MakeId" Type="Int32" />
+          <Property Name="VehicleType" Type="Int32" />
+          <Property Name="ModelId" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="VendorId" Type="Int32" />
+          <Property Name="StatusId" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="OwnershipId" Type="Int32" />
+          <Property Name="ProductionYear" Type="Int32" />
+          <Property Name="PurchasedFrom" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="PurchaseDate" Type="DateTime" />
+          <Property Name="PurchasePrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PurchaseOdometer" Type="Double" />
+          <Property Name="EngineSerial" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="ChasisNo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Cylinders" Type="Int32" />
+          <Property Name="Power" Type="Int32" />
+          <Property Name="FuelTypeId" Type="Int32" />
+          <Property Name="ColorId" Type="Int32" />
+          <Property Name="NoOfTires" Type="Int32" />
+          <Property Name="TyreConfig" Type="Int32" />
+          <Property Name="LibreNo" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="FueltankCapacity" Type="Int32" />
+          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Expenses" Relationship="ClearOffice.Fleet.Business.fk_expense_reference_vehicle" FromRole="vehicle" ToRole="expense" />
+          <NavigationProperty Name="FuelLogs" Relationship="ClearOffice.Fleet.Business.fk_fuel_log_reference_vehicle" FromRole="vehicle" ToRole="fuel_log" />
+          <NavigationProperty Name="InsuranceHistory" Relationship="ClearOffice.Fleet.Business.fk_insuranc_reference_vehicle" FromRole="vehicle" ToRole="insurance_history" />
+          <NavigationProperty Name="Maintanances" Relationship="ClearOffice.Fleet.Business.FK_maintanance_vehicle" FromRole="vehicle" ToRole="maintanance" />
+          <NavigationProperty Name="coupon_transaction" Relationship="ClearOffice.Fleet.Business.FK_coupon_transaction_vehicle" FromRole="Vehicle" ToRole="coupon_transaction" />
+          <NavigationProperty Name="TireUsage" Relationship="ClearOffice.Fleet.Business.fk_tire_reference_vehicle" FromRole="Vehicle" ToRole="vehicle_tire" />
+        </EntityType>
+        <EntityType Name="Vendor">
+          <Key>
+            <PropertyRef Name="VendorId" />
+          </Key>
+          <Property Name="VendorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Service" Type="Boolean" />
+          <Property Name="Dealer" Type="Boolean" />
+          <Property Name="Parts" Type="Boolean" />
+        </EntityType>
+        <Association Name="fk_fuel_lubricant_purchase_ref_driver">
+          <End Role="driver" Type="ClearOffice.Fleet.Business.driver" Multiplicity="0..1" />
+          <End Role="fuel_lubricant_purchase" Type="ClearOffice.Fleet.Business.fuel_lubricant_purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="driver">
+              <PropertyRef Name="driver_id" />
+            </Principal>
+            <Dependent Role="fuel_lubricant_purchase">
+              <PropertyRef Name="driver_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_expense_reference_vehicle">
+          <End Role="vehicle" Type="ClearOffice.Fleet.Business.Vehicle" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="expense" Type="ClearOffice.Fleet.Business.Expense" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle">
+              <PropertyRef Name="VehicleId" />
+            </Principal>
+            <Dependent Role="expense">
+              <PropertyRef Name="VehicleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_fuel_log_reference_vehicle">
+          <End Role="vehicle" Type="ClearOffice.Fleet.Business.Vehicle" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="fuel_log" Type="ClearOffice.Fleet.Business.FuelLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle">
+              <PropertyRef Name="VehicleId" />
+            </Principal>
+            <Dependent Role="fuel_log">
+              <PropertyRef Name="VehicleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_fuel_lubricant_purchase_ref_order">
+          <End Role="order_type" Type="ClearOffice.Fleet.Business.order_type" Multiplicity="0..1" />
+          <End Role="fuel_lubricant_purchase" Type="ClearOffice.Fleet.Business.fuel_lubricant_purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order_type">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="fuel_lubricant_purchase">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_fuel_lubricant_purchase_ref_station">
+          <End Role="fuel_station" Type="ClearOffice.Fleet.Business.fuel_station" Multiplicity="0..1" />
+          <End Role="fuel_lubricant_purchase" Type="ClearOffice.Fleet.Business.fuel_lubricant_purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fuel_station">
+              <PropertyRef Name="fuel_station_id" />
+            </Principal>
+            <Dependent Role="fuel_lubricant_purchase">
+              <PropertyRef Name="fuel_station_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_fuel_lubricant_purchase_ref_vehicle">
+          <End Role="vehicle" Type="ClearOffice.Fleet.Business.Vehicle" Multiplicity="0..1" />
+          <End Role="fuel_lubricant_purchase" Type="ClearOffice.Fleet.Business.fuel_lubricant_purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle">
+              <PropertyRef Name="VehicleId" />
+            </Principal>
+            <Dependent Role="fuel_lubricant_purchase">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_insuranc_reference_vehicle">
+          <End Role="vehicle" Type="ClearOffice.Fleet.Business.Vehicle" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="insurance_history" Type="ClearOffice.Fleet.Business.InsurancePolicy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle">
+              <PropertyRef Name="VehicleId" />
+            </Principal>
+            <Dependent Role="insurance_history">
+              <PropertyRef Name="VehicleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lookup_item_lookup">
+          <End Role="lookup" Type="ClearOffice.Fleet.Business.Lookup" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="lookup_item" Type="ClearOffice.Fleet.Business.LookupItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lookup">
+              <PropertyRef Name="LookupId" />
+            </Principal>
+            <Dependent Role="lookup_item">
+              <PropertyRef Name="LookupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_maintana_reference_vendor">
+          <End Role="vendor" Type="ClearOffice.Fleet.Business.Vendor" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="maintanance" Type="ClearOffice.Fleet.Business.Maintanance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vendor">
+              <PropertyRef Name="VendorId" />
+            </Principal>
+            <Dependent Role="maintanance">
+              <PropertyRef Name="ServicedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_maintanance_vehicle">
+          <End Role="vehicle" Type="ClearOffice.Fleet.Business.Vehicle" Multiplicity="1" />
+          <End Role="maintanance" Type="ClearOffice.Fleet.Business.Maintanance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle">
+              <PropertyRef Name="VehicleId" />
+            </Principal>
+            <Dependent Role="maintanance">
+              <PropertyRef Name="VehicleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_maintena_ref_28_maintana">
+          <End Role="maintanance" Type="ClearOffice.Fleet.Business.Maintanance" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="maintenance_part" Type="ClearOffice.Fleet.Business.MaintenancePart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maintanance">
+              <PropertyRef Name="MaintenanceId" />
+            </Principal>
+            <Dependent Role="maintenance_part">
+              <PropertyRef Name="MaintenanceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_maintena_reference_maintana">
+          <End Role="maintanance" Type="ClearOffice.Fleet.Business.Maintanance" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="maintenance_activity" Type="ClearOffice.Fleet.Business.MaintenanceActivity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maintanance">
+              <PropertyRef Name="MaintenanceId" />
+            </Principal>
+            <Dependent Role="maintenance_activity">
+              <PropertyRef Name="MaintenanceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tire_vendor">
+          <End Role="vendor" Type="ClearOffice.Fleet.Business.Vendor" Multiplicity="0..1" />
+          <End Role="tire" Type="ClearOffice.Fleet.Business.Tire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vendor">
+              <PropertyRef Name="VendorId" />
+            </Principal>
+            <Dependent Role="tire">
+              <PropertyRef Name="Vendor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="maintenance_expense">
+          <End Role="maintanance" Type="ClearOffice.Fleet.Business.Maintanance" Multiplicity="*" />
+          <End Role="expense" Type="ClearOffice.Fleet.Business.Expense" Multiplicity="*" />
+        </Association>
+        <EntityType Name="MaintenanceInfo">
+          <Key>
+            <PropertyRef Name="MaintenanceId" />
+            <PropertyRef Name="VehicleId" />
+          </Key>
+          <Property Type="Int32" Name="MaintenanceId" Nullable="false" />
+          <Property Type="Int32" Name="VehicleId" Nullable="false" />
+          <Property Type="String" Name="PlateNumber" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ServiceRequestNo" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreationDate" />
+          <Property Type="DateTime" Name="CompletionDate" />
+          <Property Type="Decimal" Name="TotalPartPrice" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="TotalActivityPrice" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="TotalExpenseAmount" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="Coupon">
+          <Key>
+            <PropertyRef Name="CouponId" />
+          </Key>
+          <Property Type="Int32" Name="CouponId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CouponLabel" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PurchasedFrom" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DatePurchased" />
+          <Property Type="Double" Name="CashValue" />
+          <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CouponTransaction" Relationship="ClearOffice.Fleet.Business.FK_coupon_transaction_coupon" FromRole="coupon" ToRole="coupon_transaction" />
+        </EntityType>
+        <EntityType Name="CouponTransaction">
+          <Key>
+            <PropertyRef Name="CouponTransactionId" />
+          </Key>
+          <Property Type="Int32" Name="CouponTransactionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="CouponId" />
+          <Property Type="Int32" Name="VehicleId" />
+          <Property Type="Int32" Name="FuelTypeId" />
+          <Property Type="String" Name="LeafNo" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="CashAmount" />
+          <Property Type="Double" Name="ValueAmount" />
+          <Property Type="DateTime" Name="TransactionDate" />
+          <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DriverName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Coupon" Relationship="ClearOffice.Fleet.Business.FK_coupon_transaction_coupon" FromRole="coupon_transaction" ToRole="coupon" />
+          <NavigationProperty Name="Vehicle" Relationship="ClearOffice.Fleet.Business.FK_coupon_transaction_vehicle" FromRole="coupon_transaction" ToRole="Vehicle" />
+        </EntityType>
+        <Association Name="FK_coupon_transaction_coupon">
+          <End Type="ClearOffice.Fleet.Business.Coupon" Role="coupon" Multiplicity="0..1" />
+          <End Type="ClearOffice.Fleet.Business.CouponTransaction" Role="coupon_transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="coupon">
+              <PropertyRef Name="CouponId" />
+            </Principal>
+            <Dependent Role="coupon_transaction">
+              <PropertyRef Name="CouponId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_coupon_transaction_vehicle">
+          <End Type="ClearOffice.Fleet.Business.Vehicle" Role="Vehicle" Multiplicity="0..1" />
+          <End Type="ClearOffice.Fleet.Business.CouponTransaction" Role="coupon_transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehicle">
+              <PropertyRef Name="VehicleId" />
+            </Principal>
+            <Dependent Role="coupon_transaction">
+              <PropertyRef Name="VehicleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CouponInfo">
+          <Key>
+            <PropertyRef Name="CouponId" />
+          </Key>
+          <Property Type="Int32" Name="CouponId" Nullable="false" />
+          <Property Type="String" Name="CouponLabel" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PurchasedFrom" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DatePurchased" />
+          <Property Type="Double" Name="CashValue" />
+          <Property Type="Double" Name="ConsumedCashAmount" />
+          <Property Type="Double" Name="ConsumedValueAmount" />
+          <Property Type="Double" Name="RemainingAmount" />
+        </EntityType>
+        <EntityType Name="TireInfo">
+          <Key>
+            <PropertyRef Name="TireId" />
+          </Key>
+          <Property Type="Int32" Name="TireId" Nullable="false" />
+          <Property Type="Int32" Name="Brand" />
+          <Property Type="Int32" Name="Size" />
+          <Property Type="Int32" Name="TireType" />
+          <Property Type="String" Name="SerialNo" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="PurchasedDate" />
+          <Property Type="Int32" Name="Status" />
+          <Property Type="Int32" Name="Vendor" />
+          <Property Type="String" Name="Comment" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SizeName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BrandName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TypeName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StatusName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VendorName" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TireBrandInfo">
+          <Key>
+            <PropertyRef Name="LookupItemId" />
+          </Key>
+          <Property Type="Int32" Name="LookupItemId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="LookupId" />
+          <Property Type="String" Name="ItemName" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TireSizeInfo">
+          <Key>
+            <PropertyRef Name="LookupItemId" />
+          </Key>
+          <Property Type="Int32" Name="LookupItemId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="LookupId" />
+          <Property Type="String" Name="ItemName" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TireStatusInfo">
+          <Key>
+            <PropertyRef Name="LookupItemId" />
+          </Key>
+          <Property Type="Int32" Name="LookupItemId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="LookupId" />
+          <Property Type="String" Name="ItemName" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TireTypeInfo">
+          <Key>
+            <PropertyRef Name="LookupItemId" />
+          </Key>
+          <Property Type="Int32" Name="LookupItemId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="LookupId" />
+          <Property Type="String" Name="ItemName" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VehicleTire">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Type="Int32" Name="TransactionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="TireId" Nullable="false" />
+          <Property Type="Int32" Name="VehicleId" Nullable="false" />
+          <Property Type="String" Name="Position" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Status" />
+          <Property Type="DateTime" Name="MountedDate" />
+          <Property Type="Double" Name="MountedMilage" />
+          <Property Type="DateTime" Name="UnmountedDate" />
+          <Property Type="Double" Name="UnmountMilage" />
+          <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TireDetail" Relationship="ClearOffice.Fleet.Business.fk_vehicle_tire_tire" FromRole="vehicle_tire" ToRole="Tire" />
+          <NavigationProperty Name="VehicleDetail" Relationship="ClearOffice.Fleet.Business.fk_tire_reference_vehicle" FromRole="vehicle_tire" ToRole="Vehicle" />
+        </EntityType>
+        <Association Name="fk_vehicle_tire_tire">
+          <End Type="ClearOffice.Fleet.Business.Tire" Role="Tire" Multiplicity="1" />
+          <End Type="ClearOffice.Fleet.Business.VehicleTire" Role="vehicle_tire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tire">
+              <PropertyRef Name="TireId" />
+            </Principal>
+            <Dependent Role="vehicle_tire">
+              <PropertyRef Name="TireId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tire_reference_vehicle">
+          <End Type="ClearOffice.Fleet.Business.Vehicle" Role="Vehicle" Multiplicity="1" />
+          <End Type="ClearOffice.Fleet.Business.VehicleTire" Role="vehicle_tire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehicle">
+              <PropertyRef Name="VehicleId" />
+            </Principal>
+            <Dependent Role="vehicle_tire">
+              <PropertyRef Name="VehicleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="VehicleInfo">
+          <Key>
+            <PropertyRef Name="VehicleId" />
+          </Key>
+          <Property Type="Int32" Name="VehicleId" Nullable="false" />
+          <Property Type="String" Name="PlateNumber" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="MakeId" />
+          <Property Type="Int32" Name="VehicleType" />
+          <Property Type="Int32" Name="Ownership" />
+          <Property Type="Int32" Name="ProductionYear" />
+          <Property Type="String" Name="ChasisNo" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EngineSerial" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LibreNo" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VehicleMakeName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VehicleOwnershipName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="VehicleTypeName" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FleetModelStoreContainer" CdmEntityContainer="FleetEntities">
+          <EntitySetMapping Name="drivers"><EntityTypeMapping TypeName="ClearOffice.Fleet.Business.driver"><MappingFragment StoreEntitySet="driver">
+            <ScalarProperty Name="driver_id" ColumnName="driver_id" />
+            <ScalarProperty Name="driver_name" ColumnName="driver_name" />
+            <ScalarProperty Name="data_version" ColumnName="data_version" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Expenses1"><EntityTypeMapping TypeName="ClearOffice.Fleet.Business.Expense"><MappingFragment StoreEntitySet="expense">
+            <ScalarProperty Name="ExpenseId" ColumnName="expense_id" />
+            <ScalarProperty Name="VehicleId" ColumnName="vehicle_id" />
+            <ScalarProperty Name="PaymentTypeId" ColumnName="payment_type_id" />
+            <ScalarProperty Name="Amount" ColumnName="amount" />
+            <ScalarProperty Name="PaymentDate" ColumnName="payment_date" />
+            <ScalarProperty Name="Invoice" ColumnName="invoice" />
+            <ScalarProperty Name="Description" ColumnName="description" />
+            <ScalarProperty Name="Remark" ColumnName="remark" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="form_no"><EntityTypeMapping TypeName="ClearOffice.Fleet.Business.form_no"><MappingFragment StoreEntitySet="form_no">
+            <ScalarProperty Name="record_id" ColumnName="record_id" />
+            <ScalarProperty Name="starting_no" ColumnName="starting_no" />
+            <ScalarProperty Name="data_version" ColumnName="data_version" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FuelLogs"><EntityTypeMapping TypeName="ClearOffice.Fleet.Business.FuelLog"><MappingFragment StoreEntitySet="fuel_log">
+            <ScalarProperty Name="TotalCost" ColumnName="total_cost" />
+                <ScalarProperty Name="FuelLogId" ColumnName="fuel_log_id" />
+            <ScalarProperty Name="VehicleId" ColumnName="vehicle_id" />
+            <ScalarProperty Name="FilledDate" ColumnName="filled_date" />
+            <ScalarProperty Name="LastOdometer" ColumnName="last_odometer" />
+            <ScalarProperty Name="CurrentOdometer" ColumnName="current_odometer" />
+            <ScalarProperty Name="DistanceCovered" ColumnName="distance_covered" />
+            <ScalarProperty Name="FuelAmount" ColumnName="fuel_amount" />
+            <ScalarProperty Name="DriverId" ColumnName="driver_id" />
+            <ScalarProperty Name="AccountNo" ColumnName="account_no" />
+            <ScalarProperty Name="Remark" ColumnName="remark" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="fuel_lubricant_purchase"><EntityTypeMapping TypeName="ClearOffice.Fleet.Business.fuel_lubricant_purchase"><MappingFragment StoreEntitySet="fuel_lubricant_purchase">
+            <ScalarProperty Name="fuel_order_id" ColumnName="fuel_order_id" />
+            <ScalarProperty Name="vehicle_id" ColumnName="vehicle_id" />
+            <ScalarProperty Name="fuel_guage_indicator" ColumnName="fuel_guage_indicator" />
+            <ScalarProperty Name="prev_km_reading" ColumnName="prev_km_reading" />
+            <ScalarProperty Name="prev_fuel_purchase" ColumnName="prev_fuel_purchase" />
+            <ScalarProperty Name="current_km_reading" ColumnName="current_km_reading" />
+            <ScalarProperty Name="order_id" ColumnName="order_id" />
+            <ScalarProperty Name="fuel_station_id" ColumnName="fuel_station_id" />
+            <ScalarProperty Name="quantity" ColumnName="quantity" />
+            <ScalarProperty Name="amount" ColumnName="amount" />
+            <ScalarProperty Name="purchase_date" ColumnName="purchase_date" />
+            <ScalarProperty Name="form_no" ColumnName="form_no" />
+            <ScalarProperty Name="difference_km" ColumnName="difference_km" />
+            <ScalarProperty Name="consumption" ColumnName="consumption" />
+            <ScalarProperty Name="isPrevious" ColumnName="isPrevious" />
+            <ScalarProperty Name="driver_id" ColumnName="driver_id" />
+            <ScalarProperty Name="data_version" ColumnName="data_version" />
+            <ScalarProperty Name="reqular_quantity" ColumnName="reqular_quantity" />
+            <ScalarProperty Name="regular_amount" ColumnName="regular_amount" />
+            <ScalarProperty Name="gas_oil_quantity" ColumnName="gas_oil_quantity" />
+            <ScalarProperty Name="gas_oil_amount" ColumnName="gas_oil_amount" />
+            <ScalarProperty Name="engine_oil_quantity" ColumnName="engine_oil_quantity" />
+            <ScalarProperty Name="engine_oil_amount" ColumnName="engine_oil_amount" />
+            <ScalarProperty Name="grease_quantity" ColumnName="grease_quantity" />
+            <ScalarProperty Name="grease_amount" ColumnName="grease_amount" />
+            <ScalarProperty Name="washing_quantity" ColumnName="washing_quantity" />
+            <ScalarProperty Name="washing_amount" ColumnName="washing_amount" />
+            <ScalarProperty Name="order_status" ColumnName="order_status" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="fuel_station"><EntityTypeMapping TypeName="ClearOffice.Fleet.Business.fuel_station"><MappingFragment StoreEntitySet="fuel_station">
+            <ScalarProperty Name="fuel_station_id" ColumnName="fuel_station_id" />
+            <ScalarProperty Name="station_name" ColumnName="station_name" />
+            <ScalarProperty Name="data_version" ColumnName="data_version" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="InsurancePolicies"><EntityTypeMapping TypeName="ClearOffice.Fleet.Business.InsurancePolicy"><MappingFragment StoreEntitySet="insurance_history">
+            <ScalarProperty Name="PolicyType" ColumnName="policy_type" />
+                <ScalarProperty Name="HistoryId" ColumnName="history_id" />
+            <ScalarProperty Name="VehicleId" ColumnName="vehicle_id" />
+            <ScalarProperty Name="CompanyId" ColumnName="company_id" />
+            <ScalarProperty Name="PolicyNo" ColumnName="policy_no" />
+            <ScalarProperty Name="CoverageLimit" ColumnName="coverage_limit" />
+            <ScalarProperty Name="Premium" ColumnName="premium" />
+            <ScalarProperty Name="DateInsured" ColumnName="date_insured" />
+            <ScalarProperty Name="AgentName" ColumnName="agent_name" />
+            <ScalarProperty Name="AgentTelephone" ColumnName="agent_telephone" />
+            <ScalarProperty Name="AgentEmail" ColumnName="agent_email" />
+            <ScalarProperty Name="Remark" ColumnName="remark" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Lookups"><EntityTypeMapping TypeName="ClearOffice.Fleet.Business.Lookup"><MappingFragment StoreEntitySet="lookup">
+            <ScalarProperty Name="LookupId" ColumnName="lookup_id" />
+            <ScalarProperty Name="LookupName" ColumnName="lookup_name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="LookupItems"><EntityTypeMapping TypeName="ClearOffice.Fleet.Business.LookupItem"><MappingFragment StoreEntitySet="lookup_item">
+            <ScalarProperty Name="LookupItemId" ColumnName="lookup_item_id" />
+            <ScalarProperty Name="LookupId" ColumnName="lookup_id" />
+            <ScalarProperty Name="ItemName" ColumnName="item_name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Maintanances"><EntityTypeMapping TypeName="ClearOffice.Fleet.Business.Maintanance"><MappingFragment StoreEntitySet="maintanance">
+            <ScalarProperty Name="ClosingRemark" ColumnName="closing_remark" />
+                <ScalarProperty Name="ClosedBy" ColumnName="closed_by" />
+                <ScalarProperty Name="ClosedDate" ColumnName="closed_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="MaintenanceId" ColumnName="maintenance_id" />
+            <ScalarProperty Name="VehicleId" ColumnName="vehicle_id" />
+            <ScalarProperty Name="CreationDate" ColumnName="creation_date" />
+            <ScalarProperty Name="CompletionDate" ColumnName="completion_date" />
+            <ScalarProperty Name="ServiceRequestNo" ColumnName="service_request_no" />
+            <ScalarProperty Name="ServicedByTypeId" ColumnName="serviced_by_type_id" />
+            <ScalarProperty Name="ServicedBy" ColumnName="serviced_by" />
+            <ScalarProperty Name="AccountNo" ColumnName="account_no" />
+            <ScalarProperty Name="ServiceTypeId" ColumnName="service_type_id" />
+            <ScalarProperty Name="Description" ColumnName="description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="MaintenanceActivities"><EntityTypeMapping TypeName="ClearOffice.Fleet.Business.MaintenanceActivity"><MappingFragment StoreEntitySet="maintenance_activity">
+            <ScalarProperty Name="ActivityId" ColumnName="activity_id" />
+            <ScalarProperty Name="MaintenanceId" ColumnName="maintenance_id" />
+            <ScalarProperty Name="PerformedBy" ColumnName="performed_by" />
+            <ScalarProperty Name="Performer" ColumnName="performer" />
+            <ScalarProperty Name="LaborUnits" ColumnName="labor_units" />
+            <ScalarProperty Name="UnitCost" ColumnName="unit_cost" />
+            <ScalarProperty Name="ActivityTypeId" ColumnName="activity_type_id" />
+            <ScalarProperty Name="Description" ColumnName="description" />
+            <ScalarProperty Name="Notes" ColumnName="notes" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="MaintenanceParts"><EntityTypeMapping TypeName="ClearOffice.Fleet.Business.MaintenancePart"><MappingFragment StoreEntitySet="maintenance_part">
+            <ScalarProperty Name="ItemId" ColumnName="item_id" />
+            <ScalarProperty Name="MaintenanceId" ColumnName="maintenance_id" />
+            <ScalarProperty Name="PartNo" ColumnName="part_no" />
+            <ScalarProperty Name="Quantity" ColumnName="quantity" />
+            <ScalarProperty Name="UnitPrice" ColumnName="unit_price" />
+            <ScalarProperty Name="ReplacedDate" ColumnName="replaced_date" />
+            <ScalarProperty Name="Description" ColumnName="description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="order_type"><EntityTypeMapping TypeName="ClearOffice.Fleet.Business.order_type"><MappingFragment StoreEntitySet="order_type">
+            <ScalarProperty Name="order_id" ColumnName="order_id" />
+            <ScalarProperty Name="order_name" ColumnName="order_name" />
+            <ScalarProperty Name="data_version" ColumnName="data_version" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Tires"><EntityTypeMapping TypeName="ClearOffice.Fleet.Business.Tire"><MappingFragment StoreEntitySet="tire">
+            <ScalarProperty Name="TireId" ColumnName="tire_id" />
+            <ScalarProperty Name="Brand" ColumnName="brand" />
+            <ScalarProperty Name="Size" ColumnName="size" />
+            <ScalarProperty Name="TireType" ColumnName="tire_type" />
+            <ScalarProperty Name="SerialNo" ColumnName="serial_no" />
+            <ScalarProperty Name="PurchasedDate" ColumnName="purchased_date" />
+            <ScalarProperty Name="Status" ColumnName="status" />
+            <ScalarProperty Name="Vendor" ColumnName="vendor" />
+            <ScalarProperty Name="Comment" ColumnName="comment" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Vehicles"><EntityTypeMapping TypeName="ClearOffice.Fleet.Business.Vehicle"><MappingFragment StoreEntitySet="vehicle">
+            <ScalarProperty Name="VehicleId" ColumnName="vehicle_id" />
+            <ScalarProperty Name="PlateNumber" ColumnName="plate_number" />
+            <ScalarProperty Name="MakeId" ColumnName="make_id" />
+            <ScalarProperty Name="VehicleType" ColumnName="vehicle_type" />
+            <ScalarProperty Name="ModelId" ColumnName="model_id" />
+            <ScalarProperty Name="VendorId" ColumnName="vendor_id" />
+            <ScalarProperty Name="StatusId" ColumnName="status_id" />
+            <ScalarProperty Name="OwnershipId" ColumnName="ownership" />
+            <ScalarProperty Name="ProductionYear" ColumnName="production_year" />
+            <ScalarProperty Name="PurchasedFrom" ColumnName="purchased_from" />
+            <ScalarProperty Name="PurchaseDate" ColumnName="purchase_date" />
+            <ScalarProperty Name="PurchasePrice" ColumnName="purchase_price" />
+            <ScalarProperty Name="PurchaseOdometer" ColumnName="purchase_odometer" />
+            <ScalarProperty Name="EngineSerial" ColumnName="engine_serial" />
+            <ScalarProperty Name="ChasisNo" ColumnName="chasis_no" />
+            <ScalarProperty Name="Cylinders" ColumnName="cylinders" />
+            <ScalarProperty Name="Power" ColumnName="power" />
+            <ScalarProperty Name="FuelTypeId" ColumnName="fuel_type_id" />
+            <ScalarProperty Name="ColorId" ColumnName="color_id" />
+            <ScalarProperty Name="NoOfTires" ColumnName="no_of_tires" />
+            <ScalarProperty Name="TyreConfig" ColumnName="tyre_config" />
+            <ScalarProperty Name="LibreNo" ColumnName="libre_no" />
+            <ScalarProperty Name="FueltankCapacity" ColumnName="fueltank_capacity" />
+            <ScalarProperty Name="Picture" ColumnName="picture" />
+            <ScalarProperty Name="Remark" ColumnName="remark" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Vendors"><EntityTypeMapping TypeName="ClearOffice.Fleet.Business.Vendor"><MappingFragment StoreEntitySet="vendor">
+            <ScalarProperty Name="VendorId" ColumnName="id" />
+            <ScalarProperty Name="Name" ColumnName="name" />
+            <ScalarProperty Name="Description" ColumnName="description" />
+            <ScalarProperty Name="Service" ColumnName="service" />
+            <ScalarProperty Name="Dealer" ColumnName="dealer" />
+            <ScalarProperty Name="Parts" ColumnName="parts" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="maintenance_expense" TypeName="ClearOffice.Fleet.Business.maintenance_expense" StoreEntitySet="maintenance_expense">
+            <EndProperty Name="maintanance">
+              <ScalarProperty Name="MaintenanceId" ColumnName="maintenance_id" />
+            </EndProperty>
+            <EndProperty Name="expense">
+              <ScalarProperty Name="ExpenseId" ColumnName="expense_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="MaintenanceInfoes">
+            <EntityTypeMapping TypeName="ClearOffice.Fleet.Business.MaintenanceInfo">
+              <MappingFragment StoreEntitySet="maintenance_info">
+                <ScalarProperty Name="TotalExpenseAmount" ColumnName="total_expense_amount" />
+                <ScalarProperty Name="TotalActivityPrice" ColumnName="total_activity_price" />
+                <ScalarProperty Name="TotalPartPrice" ColumnName="total_part_price" />
+                <ScalarProperty Name="CompletionDate" ColumnName="completion_date" />
+                <ScalarProperty Name="CreationDate" ColumnName="creation_date" />
+                <ScalarProperty Name="ServiceRequestNo" ColumnName="service_request_no" />
+                <ScalarProperty Name="PlateNumber" ColumnName="plate_number" />
+                <ScalarProperty Name="VehicleId" ColumnName="vehicle_id" />
+                <ScalarProperty Name="MaintenanceId" ColumnName="maintenance_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Coupons">
+            <EntityTypeMapping TypeName="ClearOffice.Fleet.Business.Coupon">
+              <MappingFragment StoreEntitySet="coupon">
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+                <ScalarProperty Name="CashValue" ColumnName="cash_value" />
+                <ScalarProperty Name="DatePurchased" ColumnName="date_purchased" />
+                <ScalarProperty Name="PurchasedFrom" ColumnName="purchased_from" />
+                <ScalarProperty Name="CouponLabel" ColumnName="coupon_label" />
+                <ScalarProperty Name="CouponId" ColumnName="coupon_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CouponTransactions">
+            <EntityTypeMapping TypeName="ClearOffice.Fleet.Business.CouponTransaction">
+              <MappingFragment StoreEntitySet="coupon_transaction">
+                <ScalarProperty Name="DriverName" ColumnName="driver_name" />
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+                <ScalarProperty Name="TransactionDate" ColumnName="transaction_date" />
+                <ScalarProperty Name="ValueAmount" ColumnName="value_amount" />
+                <ScalarProperty Name="CashAmount" ColumnName="cash_amount" />
+                <ScalarProperty Name="LeafNo" ColumnName="leaf_no" />
+                <ScalarProperty Name="FuelTypeId" ColumnName="fuel_type_id" />
+                <ScalarProperty Name="VehicleId" ColumnName="vehicle_id" />
+                <ScalarProperty Name="CouponId" ColumnName="coupon_id" />
+                <ScalarProperty Name="CouponTransactionId" ColumnName="coupon_transaction_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CouponInfoes">
+            <EntityTypeMapping TypeName="ClearOffice.Fleet.Business.CouponInfo">
+              <MappingFragment StoreEntitySet="coupon_info">
+                <ScalarProperty Name="RemainingAmount" ColumnName="remaining_amount" />
+                <ScalarProperty Name="ConsumedValueAmount" ColumnName="consumed_value_amount" />
+                <ScalarProperty Name="ConsumedCashAmount" ColumnName="consumed_cash_amount" />
+                <ScalarProperty Name="CashValue" ColumnName="cash_value" />
+                <ScalarProperty Name="DatePurchased" ColumnName="date_purchased" />
+                <ScalarProperty Name="PurchasedFrom" ColumnName="purchased_from" />
+                <ScalarProperty Name="CouponLabel" ColumnName="coupon_label" />
+                <ScalarProperty Name="CouponId" ColumnName="coupon_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TireInfoes">
+            <EntityTypeMapping TypeName="ClearOffice.Fleet.Business.TireInfo">
+              <MappingFragment StoreEntitySet="tire_info">
+                <ScalarProperty Name="VendorName" ColumnName="vendor_name" />
+                <ScalarProperty Name="StatusName" ColumnName="tire_status_name" />
+                <ScalarProperty Name="TypeName" ColumnName="tire_type_name" />
+                <ScalarProperty Name="BrandName" ColumnName="tire_brand_name" />
+                <ScalarProperty Name="SizeName" ColumnName="tire_size_name" />
+                <ScalarProperty Name="Comment" ColumnName="comment" />
+                <ScalarProperty Name="Vendor" ColumnName="vendor" />
+                <ScalarProperty Name="Status" ColumnName="status" />
+                <ScalarProperty Name="PurchasedDate" ColumnName="purchased_date" />
+                <ScalarProperty Name="SerialNo" ColumnName="serial_no" />
+                <ScalarProperty Name="TireType" ColumnName="tire_type" />
+                <ScalarProperty Name="Size" ColumnName="size" />
+                <ScalarProperty Name="Brand" ColumnName="brand" />
+                <ScalarProperty Name="TireId" ColumnName="tire_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TireBrandInfoes">
+            <EntityTypeMapping TypeName="ClearOffice.Fleet.Business.TireBrandInfo">
+              <MappingFragment StoreEntitySet="tire_brand_info">
+                <ScalarProperty Name="ItemName" ColumnName="item_name" />
+                <ScalarProperty Name="LookupId" ColumnName="lookup_id" />
+                <ScalarProperty Name="LookupItemId" ColumnName="lookup_item_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TireSizeInfoes">
+            <EntityTypeMapping TypeName="ClearOffice.Fleet.Business.TireSizeInfo">
+              <MappingFragment StoreEntitySet="tire_size_info">
+                <ScalarProperty Name="ItemName" ColumnName="item_name" />
+                <ScalarProperty Name="LookupId" ColumnName="lookup_id" />
+                <ScalarProperty Name="LookupItemId" ColumnName="lookup_item_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TireStatusInfoes">
+            <EntityTypeMapping TypeName="ClearOffice.Fleet.Business.TireStatusInfo">
+              <MappingFragment StoreEntitySet="tire_status_info">
+                <ScalarProperty Name="ItemName" ColumnName="item_name" />
+                <ScalarProperty Name="LookupId" ColumnName="lookup_id" />
+                <ScalarProperty Name="LookupItemId" ColumnName="lookup_item_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TireTypeInfoes">
+            <EntityTypeMapping TypeName="ClearOffice.Fleet.Business.TireTypeInfo">
+              <MappingFragment StoreEntitySet="tire_type_info">
+                <ScalarProperty Name="ItemName" ColumnName="item_name" />
+                <ScalarProperty Name="LookupId" ColumnName="lookup_id" />
+                <ScalarProperty Name="LookupItemId" ColumnName="lookup_item_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleTires">
+            <EntityTypeMapping TypeName="ClearOffice.Fleet.Business.VehicleTire">
+              <MappingFragment StoreEntitySet="vehicle_tire">
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+                <ScalarProperty Name="UnmountMilage" ColumnName="unmount_milage" />
+                <ScalarProperty Name="UnmountedDate" ColumnName="unmounted_date" />
+                <ScalarProperty Name="MountedMilage" ColumnName="mounted_milage" />
+                <ScalarProperty Name="MountedDate" ColumnName="mounted_date" />
+                <ScalarProperty Name="Status" ColumnName="status" />
+                <ScalarProperty Name="Position" ColumnName="position" />
+                <ScalarProperty Name="VehicleId" ColumnName="vehicle_id" />
+                <ScalarProperty Name="TireId" ColumnName="tire_id" />
+                <ScalarProperty Name="TransactionId" ColumnName="transaction_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleInfoes">
+            <EntityTypeMapping TypeName="ClearOffice.Fleet.Business.VehicleInfo">
+              <MappingFragment StoreEntitySet="vehicle_info">
+                <ScalarProperty Name="VehicleTypeName" ColumnName="vehicle_type_name" />
+                <ScalarProperty Name="VehicleOwnershipName" ColumnName="vehicle_ownership_name" />
+                <ScalarProperty Name="VehicleMakeName" ColumnName="vehicle_make_name" />
+                <ScalarProperty Name="LibreNo" ColumnName="libre_no" />
+                <ScalarProperty Name="EngineSerial" ColumnName="engine_serial" />
+                <ScalarProperty Name="ChasisNo" ColumnName="chasis_no" />
+                <ScalarProperty Name="ProductionYear" ColumnName="production_year" />
+                <ScalarProperty Name="Ownership" ColumnName="ownership" />
+                <ScalarProperty Name="VehicleType" ColumnName="vehicle_type" />
+                <ScalarProperty Name="MakeId" ColumnName="make_id" />
+                <ScalarProperty Name="PlateNumber" ColumnName="plate_number" />
+                <ScalarProperty Name="VehicleId" ColumnName="vehicle_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="FleetModel" ZoomLevel="89">
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.driver" Width="1.5" PointX="3.75" PointY="9.25" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.Expense" Width="1.5" PointX="5.75" PointY="17.5" Height="2.5571907552083353" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.form_no" Width="1.5" PointX="7.75" PointY="10.5" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.FuelLog" Width="1.5" PointX="2.875" PointY="35.5" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.fuel_lubricant_purchase" Width="1.5" PointX="7.75" PointY="20.625" Height="7.1724251302083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.fuel_station" Width="1.5" PointX="3.75" PointY="28.875" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.InsurancePolicy" Width="1.5" PointX="3" PointY="23" Height="3.3263964843750031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.Lookup" Width="1.5" PointX="5.75" PointY="7.75" Height="1.5956835937500022" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.LookupItem" Width="1.5" PointX="8" PointY="7.625" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.Maintanance" Width="1.5" PointX="3" PointY="17.75" Height="3.903300781249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.MaintenanceActivity" Width="2" PointX="5.375" PointY="21" Height="2.941793619791671" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.MaintenancePart" Width="1.875" PointX="5" PointY="11.75" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.order_type" Width="1.5" PointX="3.75" PointY="31.375" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.Tire" Width="1.5" PointX="0.75" PointY="7.75" Height="2.9417936197916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.Vehicle" Width="1.5" PointX="0.75" PointY="16.375" Height="6.787822265624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.Vendor" Width="1.5" PointX="1" PointY="4.125" Height="2.1725878906249996" IsExpanded="true" />
+        <AssociationConnector Association="ClearOffice.Fleet.Business.fk_fuel_lubricant_purchase_ref_driver" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.75" PointY="11.037985026041667" />
+          <ConnectorPoint PointX="4.75" PointY="26.723223137207029" />
+          <ConnectorPoint PointX="7.75" PointY="26.723223137207029" />
+        </AssociationConnector>
+        <AssociationConnector Association="ClearOffice.Fleet.Business.fk_expense_reference_vehicle" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="17.59375" />
+          <ConnectorPoint PointX="3.2604166666666665" PointY="17.59375" />
+          <ConnectorPoint PointX="3.4270833333333335" PointY="17.59375" />
+          <ConnectorPoint PointX="3.8697941666666664" PointY="17.59375" />
+          <ConnectorPoint PointX="4.0364608333333329" PointY="17.59375" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="17.59375" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="17.59375" />
+          <ConnectorPoint PointX="5.75" PointY="17.59375" />
+        </AssociationConnector>
+        <AssociationConnector Association="ClearOffice.Fleet.Business.fk_fuel_log_reference_vehicle" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.25671470703125" PointY="23.355123697916667" />
+          <ConnectorPoint PointX="1.25671470703125" PointY="37.067047526041662" />
+          <ConnectorPoint PointX="2.875" PointY="37.067047526041662" />
+        </AssociationConnector>
+        <AssociationConnector Association="ClearOffice.Fleet.Business.fk_fuel_lubricant_purchase_ref_order" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="32.268992513020834" />
+          <ConnectorPoint PointX="8.5" PointY="32.268992513020834" />
+          <ConnectorPoint PointX="8.5" PointY="27.797425130208332" />
+        </AssociationConnector>
+        <AssociationConnector Association="ClearOffice.Fleet.Business.fk_fuel_lubricant_purchase_ref_station" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.0625" PointY="28.875" />
+          <ConnectorPoint PointX="5.0625" PointY="27.476545468749993" />
+          <ConnectorPoint PointX="7.75" PointY="27.476545468749993" />
+        </AssociationConnector>
+        <AssociationConnector Association="ClearOffice.Fleet.Business.fk_fuel_lubricant_purchase_ref_vehicle" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.67859345703125" PointY="23.355123697916667" />
+          <ConnectorPoint PointX="1.67859345703125" PointY="27.099884302978509" />
+          <ConnectorPoint PointX="7.75" PointY="27.099884302978509" />
+        </AssociationConnector>
+        <AssociationConnector Association="ClearOffice.Fleet.Business.fk_insuranc_reference_vehicle" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="23.177561848958334" />
+          <ConnectorPoint PointX="3" PointY="23.177561848958334" />
+        </AssociationConnector>
+        <AssociationConnector Association="ClearOffice.Fleet.Business.FK_lookup_item_lookup" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.25" PointY="8.485341796875" />
+          <ConnectorPoint PointX="8" PointY="8.485341796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="ClearOffice.Fleet.Business.fk_maintana_reference_vendor" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.5" PointY="5.2112939453125" />
+          <ConnectorPoint PointX="3.34375" PointY="5.2112939453125" />
+          <ConnectorPoint PointX="3.34375" PointY="17.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="ClearOffice.Fleet.Business.FK_maintanance_vehicle" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="20.086253255208334" />
+          <ConnectorPoint PointX="3" PointY="20.086253255208334" />
+        </AssociationConnector>
+        <AssociationConnector Association="ClearOffice.Fleet.Business.fk_maintena_ref_28_maintana" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.9531275" PointY="17.75" />
+          <ConnectorPoint PointX="3.9531275" PointY="13.028595377604166" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="13.028595377604166" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="13.028595377604166" />
+          <ConnectorPoint PointX="5" PointY="13.028595377604166" />
+        </AssociationConnector>
+        <AssociationConnector Association="ClearOffice.Fleet.Business.fk_maintena_reference_maintana" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="21.711253255208334" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="21.711253255208334" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="21.711253255208334" />
+          <ConnectorPoint PointX="5.375" PointY="21.711253255208334" />
+        </AssociationConnector>
+        <AssociationConnector Association="ClearOffice.Fleet.Business.FK_tire_vendor" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.625" PointY="6.297587890625" />
+          <ConnectorPoint PointX="1.625" PointY="7.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="ClearOffice.Fleet.Business.maintenance_expense" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="18.903595377604169" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="18.903595377604169" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="18.903595377604169" />
+          <ConnectorPoint PointX="5.75" PointY="18.903595377604169" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.MaintenanceInfo" Width="2.125" PointX="10.375" PointY="12.75" Height="2.7494921875000102" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.Coupon" Width="1.75" PointX="10.375" PointY="16.125" Height="2.364889322916671" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.CouponTransaction" Width="1.75" PointX="7.5" PointY="13.25" Height="3.3263964843750102" />
+        <AssociationConnector Association="ClearOffice.Fleet.Business.FK_coupon_transaction_coupon">
+          <ConnectorPoint PointX="10.375" PointY="16.350698242187505" />
+          <ConnectorPoint PointX="9.25" PointY="16.350698242187505" />
+        </AssociationConnector>
+        <AssociationConnector Association="ClearOffice.Fleet.Business.FK_coupon_transaction_vehicle">
+          <ConnectorPoint PointX="2.25" PointY="17.006948742187507" />
+          <ConnectorPoint PointX="3.2604166666666665" PointY="17.006948742187507" />
+          <ConnectorPoint PointX="3.4270833333333335" PointY="17.006948742187507" />
+          <ConnectorPoint PointX="3.8697941666666664" PointY="17.006948742187507" />
+          <ConnectorPoint PointX="4.0364608333333329" PointY="17.006948742187507" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="17.006948742187507" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="17.006948742187507" />
+          <ConnectorPoint PointX="7.59375" PointY="17.006948742187507" />
+          <ConnectorPoint PointX="7.59375" PointY="16.57639648437501" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.CouponInfo" Width="2.125" PointX="1.375" PointY="0.5" Height="2.5571907552083331" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.TireInfo" Width="2.125" PointX="5" PointY="0.5" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.TireBrandInfo" Width="1.5" PointX="8.375" PointY="0.75" Height="1.5956835937500102" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.TireSizeInfo" Width="1.5" PointX="8.375" PointY="3.75" Height="1.5956835937500102" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.TireStatusInfo" Width="1.5" PointX="10.375" PointY="0.75" Height="1.5956835937500102" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.TireTypeInfo" Width="1.5" PointX="10.375" PointY="3.75" Height="1.5956835937500102" />
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.VehicleTire" Width="1.5" PointX="0.875" PointY="11.875" Height="3.3263964843750102" />
+        <AssociationConnector Association="ClearOffice.Fleet.Business.fk_vehicle_tire_tire">
+          <ConnectorPoint PointX="1.5625" PointY="10.884095052083334" />
+          <ConnectorPoint PointX="1.5625" PointY="11.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="ClearOffice.Fleet.Business.fk_tire_reference_vehicle">
+          <ConnectorPoint PointX="1.5625" PointY="16.375" />
+          <ConnectorPoint PointX="1.5625" PointY="15.20139648437501" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ClearOffice.Fleet.Business.VehicleInfo" Width="1.5" PointX="10.375" PointY="6.75" Height="3.3263964843750102" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

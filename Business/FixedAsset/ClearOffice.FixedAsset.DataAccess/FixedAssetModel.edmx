@@ -1,0 +1,1031 @@
+﻿
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FixedAssetModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="FixedAssetModelStoreContainer">
+          <EntitySet Name="adjustment" EntityType="FixedAssetModel.Store.adjustment" store:Type="Tables" Schema="fixedasset" />
+          <EntitySet Name="application_setting" EntityType="FixedAssetModel.Store.application_setting" store:Type="Tables" Schema="fixedasset" />
+          <EntitySet Name="asset" EntityType="FixedAssetModel.Store.asset" store:Type="Tables" Schema="fixedasset" />
+          <EntitySet Name="asset_category" EntityType="FixedAssetModel.Store.asset_category" store:Type="Tables" Schema="fixedasset" />
+          <EntitySet Name="custodian" EntityType="FixedAssetModel.Store.custodian" store:Type="Tables" Schema="fixedasset" />
+          <EntitySet Name="custodian_asset" EntityType="FixedAssetModel.Store.custodian_asset" store:Type="Tables" Schema="fixedasset" />
+          <EntitySet Name="depreciation" EntityType="FixedAssetModel.Store.depreciation" store:Type="Tables" Schema="fixedasset" />
+          <EntitySet Name="disposal" EntityType="FixedAssetModel.Store.disposal" store:Type="Tables" Schema="fixedasset" />
+          <EntitySet Name="lookup" EntityType="FixedAssetModel.Store.lookup" store:Type="Tables" Schema="fixedasset" />
+          <EntitySet Name="lookup_item" EntityType="FixedAssetModel.Store.lookup_item" store:Type="Tables" Schema="fixedasset" />
+          <EntitySet Name="active_custodian_status" EntityType="FixedAssetModel.Store.active_custodian_status" store:Type="Views" store:Schema="fixedasset" store:Name="active_custodian_status">
+            <DefiningQuery>SELECT 
+      [active_custodian_status].[custodian_id] AS [custodian_id], 
+      [active_custodian_status].[badge_no] AS [badge_no], 
+      [active_custodian_status].[first_name] AS [first_name], 
+      [active_custodian_status].[last_name] AS [last_name], 
+      [active_custodian_status].[status_text] AS [status_text], 
+      [active_custodian_status].[location] AS [location], 
+      [active_custodian_status].[remark] AS [remark], 
+      [active_custodian_status].[item_name] AS [item_name]
+      FROM [fixedasset].[active_custodian_status] AS [active_custodian_status]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="asset_list_info" EntityType="FixedAssetModel.Store.asset_list_info" store:Type="Views" store:Schema="fixedasset" store:Name="asset_list_info">
+            <DefiningQuery>SELECT 
+      [asset_list_info].[asset_number] AS [asset_number], 
+      [asset_list_info].[status] AS [status], 
+      [asset_list_info].[depreciation_method] AS [depreciation_method], 
+      [asset_list_info].[asset_value] AS [asset_value], 
+      [asset_list_info].[asset_id] AS [asset_id], 
+      [asset_list_info].[group_id] AS [group_id], 
+      [asset_list_info].[group_text] AS [group_text], 
+      [asset_list_info].[status_text] AS [status_text], 
+      [asset_list_info].[depreciation_method_text] AS [depreciation_method_text], 
+      [asset_list_info].[depreciation_to_date] AS [depreciation_to_date], 
+      [asset_list_info].[current_book_value] AS [current_book_value], 
+      [asset_list_info].[category] AS [category], 
+      [asset_list_info].[catagory_text] AS [catagory_text], 
+      [asset_list_info].[document_number] AS [document_number], 
+      [asset_list_info].[location_name] AS [location_name]
+      FROM [fixedasset].[asset_list_info] AS [asset_list_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="custodian_asset_info" EntityType="FixedAssetModel.Store.custodian_asset_info" store:Type="Views" store:Schema="fixedasset" store:Name="custodian_asset_info">
+            <DefiningQuery>SELECT 
+      [custodian_asset_info].[record_id] AS [record_id], 
+      [custodian_asset_info].[custodian_id] AS [custodian_id], 
+      [custodian_asset_info].[asset_id] AS [asset_id], 
+      [custodian_asset_info].[date_from] AS [date_from], 
+      [custodian_asset_info].[date_to] AS [date_to], 
+      [custodian_asset_info].[remark] AS [remark], 
+      [custodian_asset_info].[first_name] AS [first_name], 
+      [custodian_asset_info].[last_name] AS [last_name], 
+      [custodian_asset_info].[badge_no] AS [badge_no], 
+      [custodian_asset_info].[item_name] AS [item_name], 
+      [custodian_asset_info].[status] AS [status]
+      FROM [fixedasset].[custodian_asset_info] AS [custodian_asset_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="custodian_assets_list" EntityType="FixedAssetModel.Store.custodian_assets_list" store:Type="Views" store:Schema="fixedasset" store:Name="custodian_assets_list">
+            <DefiningQuery>SELECT 
+      [custodian_assets_list].[item_name] AS [item_name], 
+      [custodian_assets_list].[record_id] AS [record_id], 
+      [custodian_assets_list].[custodian_id] AS [custodian_id], 
+      [custodian_assets_list].[asset_id] AS [asset_id], 
+      [custodian_assets_list].[date_from] AS [date_from], 
+      [custodian_assets_list].[date_to] AS [date_to], 
+      [custodian_assets_list].[remark] AS [remark], 
+      [custodian_assets_list].[status] AS [status], 
+      [custodian_assets_list].[asset_number] AS [asset_number]
+      FROM [fixedasset].[custodian_assets_list] AS [custodian_assets_list]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="custodian_info" EntityType="FixedAssetModel.Store.custodian_info" store:Type="Views" store:Schema="fixedasset" store:Name="custodian_info">
+            <DefiningQuery>SELECT 
+      [custodian_info].[custodian_id] AS [custodian_id], 
+      [custodian_info].[badge_no] AS [badge_no], 
+      [custodian_info].[first_name] AS [first_name], 
+      [custodian_info].[last_name] AS [last_name], 
+      [custodian_info].[status_text] AS [status_text], 
+      [custodian_info].[location] AS [location], 
+      [custodian_info].[department] AS [department], 
+      [custodian_info].[remark] AS [remark], 
+      [custodian_info].[departement_text] AS [departement_text]
+      FROM [fixedasset].[custodian_info] AS [custodian_info]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="fk_adjustme_reference_item" Association="FixedAssetModel.Store.fk_adjustme_reference_item">
+            <End Role="asset" EntitySet="asset" />
+            <End Role="adjustment" EntitySet="adjustment" />
+          </AssociationSet>
+          <AssociationSet Name="fk_assign_c_reference_item" Association="FixedAssetModel.Store.fk_assign_c_reference_item">
+            <End Role="asset" EntitySet="asset" />
+            <End Role="custodian_asset" EntitySet="custodian_asset" />
+          </AssociationSet>
+          <AssociationSet Name="fk_assign_custodian_custodian" Association="FixedAssetModel.Store.fk_assign_custodian_custodian">
+            <End Role="custodian" EntitySet="custodian" />
+            <End Role="custodian_asset" EntitySet="custodian_asset" />
+          </AssociationSet>
+          <AssociationSet Name="fk_deprecia_reference_item" Association="FixedAssetModel.Store.fk_deprecia_reference_item">
+            <End Role="asset" EntitySet="asset" />
+            <End Role="depreciation" EntitySet="depreciation" />
+          </AssociationSet>
+          <AssociationSet Name="fk_disposal_reference_item" Association="FixedAssetModel.Store.fk_disposal_reference_item">
+            <End Role="asset" EntitySet="asset" />
+            <End Role="disposal" EntitySet="disposal" />
+          </AssociationSet>
+          <AssociationSet Name="fk_lookup_i_reference_lookup" Association="FixedAssetModel.Store.fk_lookup_i_reference_lookup">
+            <End Role="lookup" EntitySet="lookup" />
+            <End Role="lookup_item" EntitySet="lookup_item" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="adjustment">
+          <Key>
+            <PropertyRef Name="adjustment_id" />
+          </Key>
+          <Property Name="adjustment_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="document_number" Type="varchar" MaxLength="50" />
+          <Property Name="document_date" Type="datetime" />
+          <Property Name="adjustment_type" Type="int" />
+          <Property Name="asset_id" Type="int" />
+          <Property Name="fiscal_period" Type="int" />
+          <Property Name="fiscal_year" Type="int" />
+          <Property Name="previous_value" Type="decimal" Scale="2" />
+          <Property Name="adjusted_value" Type="decimal" Scale="2" />
+          <Property Name="status" Type="int" />
+          <Property Name="remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="application_setting">
+          <Key>
+            <PropertyRef Name="setting_id" />
+          </Key>
+          <Property Name="setting_id" Type="int" Nullable="false" />
+          <Property Name="fiscal_year_start" Type="date" />
+          <Property Name="fiscal_year_end" Type="date" />
+          <Property Name="default_method" Type="int" />
+        </EntityType>
+        <EntityType Name="asset">
+          <Key>
+            <PropertyRef Name="asset_id" />
+          </Key>
+          <Property Name="asset_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="asset_number" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="category" Type="int" Nullable="false" />
+          <Property Name="vendor" Type="int" />
+          <Property Name="group_id" Type="int" />
+          <Property Name="cost_center_id" Type="int" />
+          <Property Name="location_id" Type="int" />
+          <Property Name="physical_condition" Type="int" />
+          <Property Name="document_number" Type="nvarchar" MaxLength="200" />
+          <Property Name="status" Type="int" Nullable="false" />
+          <Property Name="purchase_date" Type="date" />
+          <Property Name="useful_life" Type="int" />
+          <Property Name="depreciation_method" Type="int" />
+          <Property Name="asset_value" Type="decimal" Scale="2" />
+          <Property Name="salvage_value" Type="decimal" Scale="2" />
+          <Property Name="image" Type="image" />
+          <Property Name="remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="asset_category">
+          <Key>
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Name="category_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="category_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="depreciation_rate" Type="decimal" Precision="4" Scale="2" />
+        </EntityType>
+        <EntityType Name="custodian">
+          <Key>
+            <PropertyRef Name="custodian_id" />
+          </Key>
+          <Property Name="custodian_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="badge_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="first_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="last_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="status" Type="bit" />
+          <Property Name="location" Type="nvarchar" MaxLength="200" />
+          <Property Name="department" Type="int" />
+          <Property Name="remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="custodian_asset">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="custodian_id" Type="int" />
+          <Property Name="asset_id" Type="int" />
+          <Property Name="date_from" Type="date" />
+          <Property Name="date_to" Type="date" />
+          <Property Name="remark" Type="nvarchar(max)" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="depreciation">
+          <Key>
+            <PropertyRef Name="depreciation_id" />
+          </Key>
+          <Property Name="depreciation_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="asset_id" Type="int" />
+          <Property Name="fiscal_year" Type="char" MaxLength="4" />
+          <Property Name="fiscal_period" Type="int" />
+          <Property Name="book_value_at_beginning_of_year" Type="decimal" Scale="2" />
+          <Property Name="book_value_at_end_of_year" Type="decimal" Scale="2" />
+          <Property Name="total_depreciation_cost" Type="decimal" Scale="2" />
+          <Property Name="depreciation_rate" Type="decimal" Scale="2" />
+          <Property Name="deprecation_expense" Type="decimal" Scale="2" />
+          <Property Name="accumulated_depreciation" Type="decimal" Scale="2" />
+          <Property Name="year" Type="int" />
+          <Property Name="month" Type="int" />
+        </EntityType>
+        <EntityType Name="disposal">
+          <Key>
+            <PropertyRef Name="disposal_id" />
+          </Key>
+          <Property Name="disposal_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="asset_id" Type="int" />
+          <Property Name="disposal_date" Type="datetime" />
+          <Property Name="document_number" Type="varchar" MaxLength="50" />
+          <Property Name="document_date" Type="datetime" />
+          <Property Name="fiscal_year" Type="int" />
+          <Property Name="amount" Type="decimal" Scale="4" />
+          <Property Name="remark" Type="nvarchar(max)" />
+          <Property Name="disposal_type" Type="int" />
+        </EntityType>
+        <EntityType Name="lookup">
+          <Key>
+            <PropertyRef Name="lookup_id" />
+          </Key>
+          <Property Name="lookup_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" MaxLength="200" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="visible" Type="bit" />
+        </EntityType>
+        <EntityType Name="lookup_item">
+          <Key>
+            <PropertyRef Name="lookup_item_id" />
+          </Key>
+          <Property Name="lookup_item_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="lookup_id" Type="int" />
+          <Property Name="item_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="description" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.fixedasset.active_custodian_status' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="active_custodian_status">
+          <Key>
+            <PropertyRef Name="custodian_id" />
+            
+          </Key>
+          <Property Name="custodian_id" Type="int" Nullable="false" />
+          <Property Name="badge_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="first_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="last_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="status_text" Type="varchar" Nullable="false" MaxLength="9" />
+          <Property Name="location" Type="nvarchar" MaxLength="200" />
+          <Property Name="remark" Type="nvarchar(max)" />
+          <Property Name="item_name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.fixedasset.asset_list_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="asset_list_info">
+          <Key>
+            <PropertyRef Name="asset_number" />
+            <PropertyRef Name="status" />
+            <PropertyRef Name="asset_id" />
+            <PropertyRef Name="category" />
+          </Key>
+          <Property Name="asset_number" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="status" Type="int" Nullable="false" />
+          <Property Name="depreciation_method" Type="int" />
+          <Property Name="asset_value" Type="decimal" Scale="2" />
+          <Property Name="asset_id" Type="int" Nullable="false" />
+          <Property Name="group_id" Type="int" />
+          <Property Name="group_text" Type="nvarchar" MaxLength="200" />
+          <Property Name="status_text" Type="nvarchar" MaxLength="200" />
+          <Property Name="depreciation_method_text" Type="nvarchar" MaxLength="200" />
+          <Property Name="depreciation_to_date" Type="decimal" Scale="2" />
+          <Property Name="current_book_value" Type="decimal" Scale="2" />
+          <Property Name="category" Type="int" Nullable="false" />
+          <Property Name="catagory_text" Type="nvarchar" MaxLength="200" />
+          <Property Name="document_number" Type="nvarchar" MaxLength="200" />
+          <Property Name="location_name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.fixedasset.custodian_asset_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="custodian_asset_info">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="int" Nullable="false" />
+          <Property Name="custodian_id" Type="int" />
+          <Property Name="asset_id" Type="int" />
+          <Property Name="date_from" Type="date" />
+          <Property Name="date_to" Type="date" />
+          <Property Name="remark" Type="nvarchar(max)" />
+          <Property Name="first_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="last_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="badge_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="item_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.fixedasset.custodian_assets_list' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="custodian_assets_list">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="item_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="record_id" Type="int" Nullable="false" />
+          <Property Name="custodian_id" Type="int" />
+          <Property Name="asset_id" Type="int" />
+          <Property Name="date_from" Type="date" />
+          <Property Name="date_to" Type="date" />
+          <Property Name="remark" Type="nvarchar(max)" />
+          <Property Name="status" Type="int" />
+          <Property Name="asset_number" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ClearOffice.fixedasset.custodian_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="custodian_info">
+          <Key>
+            <PropertyRef Name="custodian_id" />
+            <PropertyRef Name="status_text" />
+          </Key>
+          <Property Name="custodian_id" Type="int" Nullable="false" />
+          <Property Name="badge_no" Type="nvarchar" MaxLength="200" />
+          <Property Name="first_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="last_name" Type="nvarchar" MaxLength="200" />
+          <Property Name="status_text" Type="varchar" Nullable="false" MaxLength="9" />
+          <Property Name="location" Type="nvarchar" MaxLength="200" />
+          <Property Name="department" Type="int" />
+          <Property Name="remark" Type="nvarchar(max)" />
+          <Property Name="departement_text" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <Association Name="fk_adjustme_reference_item">
+          <End Role="asset" Type="FixedAssetModel.Store.asset" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="adjustment" Type="FixedAssetModel.Store.adjustment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="asset">
+              <PropertyRef Name="asset_id" />
+            </Principal>
+            <Dependent Role="adjustment">
+              <PropertyRef Name="asset_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_assign_c_reference_item">
+          <End Role="asset" Type="FixedAssetModel.Store.asset" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="custodian_asset" Type="FixedAssetModel.Store.custodian_asset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="asset">
+              <PropertyRef Name="asset_id" />
+            </Principal>
+            <Dependent Role="custodian_asset">
+              <PropertyRef Name="asset_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_assign_custodian_custodian">
+          <End Role="custodian" Type="FixedAssetModel.Store.custodian" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="custodian_asset" Type="FixedAssetModel.Store.custodian_asset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="custodian">
+              <PropertyRef Name="custodian_id" />
+            </Principal>
+            <Dependent Role="custodian_asset">
+              <PropertyRef Name="custodian_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_deprecia_reference_item">
+          <End Role="asset" Type="FixedAssetModel.Store.asset" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="depreciation" Type="FixedAssetModel.Store.depreciation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="asset">
+              <PropertyRef Name="asset_id" />
+            </Principal>
+            <Dependent Role="depreciation">
+              <PropertyRef Name="asset_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_disposal_reference_item">
+          <End Role="asset" Type="FixedAssetModel.Store.asset" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="disposal" Type="FixedAssetModel.Store.disposal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="asset">
+              <PropertyRef Name="asset_id" />
+            </Principal>
+            <Dependent Role="disposal">
+              <PropertyRef Name="asset_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_lookup_i_reference_lookup">
+          <End Role="lookup" Type="FixedAssetModel.Store.lookup" Multiplicity="0..1" />
+          <End Role="lookup_item" Type="FixedAssetModel.Store.lookup_item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lookup">
+              <PropertyRef Name="lookup_id" />
+            </Principal>
+            <Dependent Role="lookup_item">
+              <PropertyRef Name="lookup_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FixedAssetModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="FixedAssetEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Adjustments" EntityType="FixedAssetModel.Adjustment" />
+          <EntitySet Name="ApplicationSettings" EntityType="FixedAssetModel.ApplicationSetting" />
+          <EntitySet Name="Custodians" EntityType="FixedAssetModel.Custodian" />
+          <EntitySet Name="CustodianAssets" EntityType="FixedAssetModel.CustodianAsset" />
+          <EntitySet Name="Depreciations" EntityType="FixedAssetModel.Depreciation" />
+          <EntitySet Name="Disposals" EntityType="FixedAssetModel.Disposal" />
+          <EntitySet Name="Lookups" EntityType="FixedAssetModel.Lookup" />
+          <EntitySet Name="LookupItems" EntityType="FixedAssetModel.LookupItem" />
+          <AssociationSet Name="fk_assign_custodian_custodian" Association="FixedAssetModel.fk_assign_custodian_custodian">
+            <End Role="custodian" EntitySet="Custodians" />
+            <End Role="custodian_asset" EntitySet="CustodianAssets" />
+          </AssociationSet>
+          <AssociationSet Name="fk_lookup_i_reference_lookup" Association="FixedAssetModel.fk_lookup_i_reference_lookup">
+            <End Role="lookup" EntitySet="Lookups" />
+            <End Role="lookup_item" EntitySet="LookupItems" />
+          </AssociationSet>
+          <EntitySet Name="CustodianInfoes" EntityType="FixedAssetModel.CustodianInfo" />
+          <EntitySet Name="Assets" EntityType="FixedAssetModel.Asset" />
+          <AssociationSet Name="fk_adjustme_reference_item" Association="FixedAssetModel.fk_adjustme_reference_item">
+            <End Role="asset" EntitySet="Assets" />
+            <End Role="Adjustment" EntitySet="Adjustments" />
+          </AssociationSet>
+          <AssociationSet Name="fk_assign_c_reference_item" Association="FixedAssetModel.fk_assign_c_reference_item">
+            <End Role="asset" EntitySet="Assets" />
+            <End Role="CustodianAsset" EntitySet="CustodianAssets" />
+          </AssociationSet>
+          <AssociationSet Name="fk_deprecia_reference_item" Association="FixedAssetModel.fk_deprecia_reference_item">
+            <End Role="asset" EntitySet="Assets" />
+            <End Role="Depreciation" EntitySet="Depreciations" />
+          </AssociationSet>
+          <AssociationSet Name="fk_disposal_reference_item" Association="FixedAssetModel.fk_disposal_reference_item">
+            <End Role="asset" EntitySet="Assets" />
+            <End Role="Disposal" EntitySet="Disposals" />
+          </AssociationSet>
+          <EntitySet Name="CustodianAssetInfoes" EntityType="FixedAssetModel.CustodianAssetInfo" />
+          <EntitySet Name="CustodianAssetsLists" EntityType="FixedAssetModel.CustodianAssetsList" />
+          <EntitySet Name="ActiveCustodianStatuses" EntityType="FixedAssetModel.ActiveCustodianStatus" />
+          <EntitySet Name="AssetCategories" EntityType="FixedAssetModel.AssetCategory" />
+          <EntitySet Name="AssetListInfoes" EntityType="FixedAssetModel.AssetListInfo" />
+        </EntityContainer>
+        <EntityType Name="Adjustment">
+          <Key>
+            <PropertyRef Name="AdjustmentId" />
+          </Key>
+          <Property Name="AdjustmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DocumentNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DocumentDate" Type="DateTime" Precision="3" />
+          <Property Name="AdjustmentType" Type="Int32" />
+          <Property Name="AssetId" Type="Int32" />
+          <Property Name="FiscalPeriod" Type="Int32" />
+          <Property Name="FiscalYear" Type="Int32" />
+          <Property Name="PreviousValue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="AdjustedValue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="asset" Relationship="FixedAssetModel.fk_adjustme_reference_item" FromRole="Adjustment" ToRole="asset" />
+        </EntityType>
+        <EntityType Name="ApplicationSetting">
+          <Key>
+            <PropertyRef Name="SettingId" />
+          </Key>
+          <Property Name="SettingId" Type="Int32" Nullable="false" />
+          <Property Name="FiscalYearStart" Type="DateTime" Precision="0" />
+          <Property Name="FiscalYearEnd" Type="DateTime" Precision="0" />
+          <Property Name="DefaultMethod" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Custodian">
+          <Key>
+            <PropertyRef Name="CustodianId" />
+          </Key>
+          <Property Name="CustodianId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BadgeNo" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="FirstName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="Location" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Department" Type="Int32" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="CustodianAsset" Relationship="FixedAssetModel.fk_assign_custodian_custodian" FromRole="custodian" ToRole="custodian_asset" />
+        </EntityType>
+        <EntityType Name="CustodianAsset">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustodianId" Type="Int32" />
+          <Property Name="AssetId" Type="Int32" />
+          <Property Name="DateFrom" Type="DateTime" Precision="0" />
+          <Property Name="DateTo" Type="DateTime" Precision="0" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="Custodian" Relationship="FixedAssetModel.fk_assign_custodian_custodian" FromRole="custodian_asset" ToRole="custodian" />
+          <NavigationProperty Name="asset" Relationship="FixedAssetModel.fk_assign_c_reference_item" FromRole="CustodianAsset" ToRole="asset" />
+        </EntityType>
+        <EntityType Name="Depreciation">
+          <Key>
+            <PropertyRef Name="DepreciationId" />
+          </Key>
+          <Property Name="DepreciationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AssetId" Type="Int32" />
+          <Property Name="Fiscalyear" Type="String" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="BookValueAtBeginningOfYear" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BookValueAtEndOfYear" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="totalDepreciationCost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DepreciationRate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DeprecationExpense" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="AccumulatedDepreciation" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="asset" Relationship="FixedAssetModel.fk_deprecia_reference_item" FromRole="Depreciation" ToRole="asset" />
+          <Property Type="Int32" Name="FiscalPeriod" />
+          <Property Type="Int32" Name="Year" />
+          <Property Type="Int32" Name="Month" />
+        </EntityType>
+        <EntityType Name="Disposal">
+          <Key>
+            <PropertyRef Name="DisposalId" />
+          </Key>
+          <Property Name="DisposalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AssetId" Type="Int32" />
+          <Property Name="Disposaldate" Type="DateTime" Precision="3" />
+          <Property Name="DocumentNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DocumentDate" Type="DateTime" Precision="3" />
+          <Property Name="FiscalYear" Type="Int32" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DisposalType" Type="Int32" />
+          <NavigationProperty Name="asset" Relationship="FixedAssetModel.fk_disposal_reference_item" FromRole="Disposal" ToRole="asset" />
+        </EntityType>
+        <EntityType Name="Lookup">
+          <Key>
+            <PropertyRef Name="LookupId" />
+          </Key>
+          <Property Name="LookupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="IookupItem" Relationship="FixedAssetModel.fk_lookup_i_reference_lookup" FromRole="lookup" ToRole="lookup_item" />
+          <Property Type="Boolean" Name="Visible" />
+        </EntityType>
+        <EntityType Name="LookupItem">
+          <Key>
+            <PropertyRef Name="LookupItemId" />
+          </Key>
+          <Property Name="LookupItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LookupId" Type="Int32" />
+          <Property Name="ItemName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="lookup" Relationship="FixedAssetModel.fk_lookup_i_reference_lookup" FromRole="lookup_item" ToRole="lookup" />
+        </EntityType>
+        <Association Name="fk_assign_custodian_custodian">
+          <End Role="custodian" Type="FixedAssetModel.Custodian" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="custodian_asset" Type="FixedAssetModel.CustodianAsset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="custodian">
+              <PropertyRef Name="CustodianId" />
+            </Principal>
+            <Dependent Role="custodian_asset">
+              <PropertyRef Name="CustodianId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_lookup_i_reference_lookup">
+          <End Role="lookup" Type="FixedAssetModel.Lookup" Multiplicity="0..1" />
+          <End Role="lookup_item" Type="FixedAssetModel.LookupItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lookup">
+              <PropertyRef Name="LookupId" />
+            </Principal>
+            <Dependent Role="lookup_item">
+              <PropertyRef Name="LookupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CustodianInfo">
+          <Key>
+            <PropertyRef Name="CustodianId" />
+            <PropertyRef Name="StatusText" />
+          </Key>
+          <Property Type="Int32" Name="CustodianId" Nullable="false" />
+          <Property Type="String" Name="BadgeNo" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FirstName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StatusText" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Location" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Department" />
+          <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DepartementText" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Asset">
+          <Key>
+            <PropertyRef Name="AssetId" />
+          </Key>
+          <Property Type="Int32" Name="AssetId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="AssetNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Category" Nullable="false" />
+          <Property Type="Int32" Name="Vendor" />
+          <Property Type="Int32" Name="GroupId" />
+          <Property Type="Int32" Name="CostCenterId" />
+          <Property Type="Int32" Name="LocationId" />
+          <Property Type="Int32" Name="PhysicalCondition" />
+          <Property Type="String" Name="DocumentNumber" MaxLength="200" FixedLength="false" Unicode="true" Nullable="true" />
+          <Property Type="Int32" Name="Status" Nullable="false" />
+          <Property Type="DateTime" Name="PurchaseDate" Precision="0" />
+          <Property Type="Int32" Name="UsefulLife" />
+          <Property Type="Int32" Name="DepreciationMethod" />
+          <Property Type="Decimal" Name="AssetValue" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="SalvageValue" Precision="18" Scale="2" />
+          <Property Type="Binary" Name="Image" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Adjustments" Relationship="FixedAssetModel.fk_adjustme_reference_item" FromRole="asset" ToRole="Adjustment" />
+          <NavigationProperty Name="CustodianAsset" Relationship="FixedAssetModel.fk_assign_c_reference_item" FromRole="asset" ToRole="CustodianAsset" />
+          <NavigationProperty Name="Depreciations" Relationship="FixedAssetModel.fk_deprecia_reference_item" FromRole="asset" ToRole="Depreciation" />
+          <NavigationProperty Name="Disposals" Relationship="FixedAssetModel.fk_disposal_reference_item" FromRole="asset" ToRole="Disposal" />
+        </EntityType>
+        <Association Name="fk_adjustme_reference_item">
+          <End Type="FixedAssetModel.Asset" Role="asset" Multiplicity="0..1" />
+          <End Type="FixedAssetModel.Adjustment" Role="Adjustment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="asset">
+              <PropertyRef Name="AssetId" />
+            </Principal>
+            <Dependent Role="Adjustment">
+              <PropertyRef Name="AssetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_assign_c_reference_item">
+          <End Type="FixedAssetModel.Asset" Role="asset" Multiplicity="0..1" />
+          <End Type="FixedAssetModel.CustodianAsset" Role="CustodianAsset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="asset">
+              <PropertyRef Name="AssetId" />
+            </Principal>
+            <Dependent Role="CustodianAsset">
+              <PropertyRef Name="AssetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_deprecia_reference_item">
+          <End Type="FixedAssetModel.Asset" Role="asset" Multiplicity="0..1" />
+          <End Type="FixedAssetModel.Depreciation" Role="Depreciation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="asset">
+              <PropertyRef Name="AssetId" />
+            </Principal>
+            <Dependent Role="Depreciation">
+              <PropertyRef Name="AssetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_disposal_reference_item">
+          <End Type="FixedAssetModel.Asset" Role="asset" Multiplicity="0..1" />
+          <End Type="FixedAssetModel.Disposal" Role="Disposal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="asset">
+              <PropertyRef Name="AssetId" />
+            </Principal>
+            <Dependent Role="Disposal">
+              <PropertyRef Name="AssetId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CustodianAssetInfo">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Type="Int32" Name="RecordId" Nullable="false" />
+          <Property Type="Int32" Name="CustodianId" />
+          <Property Type="Int32" Name="AssetId" />
+          <Property Type="DateTime" Name="DateFrom" Precision="0" />
+          <Property Type="DateTime" Name="DateTo" Precision="0" />
+          <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Status" />
+          <Property Type="String" Name="FirstName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BadgeNo" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ItemName" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CustodianAssetsList">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Type="String" Name="ItemName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="RecordId" Nullable="false" />
+          <Property Type="Int32" Name="CustodianId" />
+          <Property Type="Int32" Name="AssetId" />
+          <Property Type="DateTime" Name="DateFrom" Precision="0" />
+          <Property Type="DateTime" Name="DateTo" Precision="0" />
+          <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Status" />
+          <Property Type="String" Name="AssetNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ActiveCustodianStatus">
+          <Key>
+            <PropertyRef Name="CustodianId" />
+          </Key>
+          <Property Type="Int32" Name="CustodianId" Nullable="false" />
+          <Property Type="String" Name="BadgeNo" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FirstName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StatusText" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Location" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ItemName" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AssetCategory">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Type="Int32" Name="CategoryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CategoryName" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="DepreciationRate" Precision="4" Scale="2" />
+        </EntityType>
+        <EntityType Name="AssetListInfo">
+          <Key>
+            <PropertyRef Name="AssetNumber" />
+            <PropertyRef Name="Status" />
+            <PropertyRef Name="AssetId" />
+            <PropertyRef Name="Category" />
+          </Key>
+          <Property Type="String" Name="AssetNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Status" Nullable="false" />
+          <Property Type="Int32" Name="DepreciationMethod" />
+          <Property Type="Decimal" Name="AssetValue" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="AssetId" Nullable="false" />
+          <Property Type="Int32" Name="GroupId" />
+          <Property Type="String" Name="GroupText" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StatusText" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DepreciationMethodText" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="DepreciationToDate" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="CurrentBookValue" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="Category" Nullable="false" />
+          <Property Type="String" Name="CatagoryText" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DocumentNumber" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LocationName" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FixedAssetModelStoreContainer" CdmEntityContainer="FixedAssetEntities">
+          <EntitySetMapping Name="Adjustments"><EntityTypeMapping TypeName="FixedAssetModel.Adjustment"><MappingFragment StoreEntitySet="adjustment">
+            <ScalarProperty Name="AdjustmentId" ColumnName="adjustment_id" />
+            <ScalarProperty Name="DocumentNumber" ColumnName="document_number" />
+            <ScalarProperty Name="DocumentDate" ColumnName="document_date" />
+            <ScalarProperty Name="AdjustmentType" ColumnName="adjustment_type" />
+            <ScalarProperty Name="AssetId" ColumnName="asset_id" />
+            <ScalarProperty Name="FiscalPeriod" ColumnName="fiscal_period" />
+            <ScalarProperty Name="FiscalYear" ColumnName="fiscal_year" />
+            <ScalarProperty Name="PreviousValue" ColumnName="previous_value" />
+            <ScalarProperty Name="AdjustedValue" ColumnName="adjusted_value" />
+            <ScalarProperty Name="Status" ColumnName="status" />
+            <ScalarProperty Name="Remark" ColumnName="remark" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ApplicationSettings"><EntityTypeMapping TypeName="FixedAssetModel.ApplicationSetting"><MappingFragment StoreEntitySet="application_setting">
+            <ScalarProperty Name="SettingId" ColumnName="setting_id" />
+            <ScalarProperty Name="FiscalYearStart" ColumnName="fiscal_year_start" />
+            <ScalarProperty Name="FiscalYearEnd" ColumnName="fiscal_year_end" />
+            <ScalarProperty Name="DefaultMethod" ColumnName="default_method" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Custodians"><EntityTypeMapping TypeName="FixedAssetModel.Custodian"><MappingFragment StoreEntitySet="custodian">
+            <ScalarProperty Name="CustodianId" ColumnName="custodian_id" />
+            <ScalarProperty Name="BadgeNo" ColumnName="badge_no" />
+            <ScalarProperty Name="FirstName" ColumnName="first_name" />
+            <ScalarProperty Name="LastName" ColumnName="last_name" />
+            <ScalarProperty Name="Status" ColumnName="status" />
+            <ScalarProperty Name="Location" ColumnName="location" />
+            <ScalarProperty Name="Department" ColumnName="department" />
+            <ScalarProperty Name="Remark" ColumnName="remark" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CustodianAssets"><EntityTypeMapping TypeName="FixedAssetModel.CustodianAsset"><MappingFragment StoreEntitySet="custodian_asset">
+            <ScalarProperty Name="RecordId" ColumnName="record_id" />
+            <ScalarProperty Name="CustodianId" ColumnName="custodian_id" />
+            <ScalarProperty Name="AssetId" ColumnName="asset_id" />
+            <ScalarProperty Name="DateFrom" ColumnName="date_from" />
+            <ScalarProperty Name="DateTo" ColumnName="date_to" />
+            <ScalarProperty Name="Remark" ColumnName="remark" />
+            <ScalarProperty Name="Status" ColumnName="status" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Depreciations"><EntityTypeMapping TypeName="FixedAssetModel.Depreciation"><MappingFragment StoreEntitySet="depreciation">
+            <ScalarProperty Name="Month" ColumnName="month" />
+                <ScalarProperty Name="Year" ColumnName="year" />
+                <ScalarProperty Name="FiscalPeriod" ColumnName="fiscal_period" />
+                <ScalarProperty Name="DepreciationId" ColumnName="depreciation_id" />
+            <ScalarProperty Name="AssetId" ColumnName="asset_id" />
+            <ScalarProperty Name="Fiscalyear" ColumnName="fiscal_year" />
+            <ScalarProperty Name="BookValueAtBeginningOfYear" ColumnName="book_value_at_beginning_of_year" />
+            <ScalarProperty Name="BookValueAtEndOfYear" ColumnName="book_value_at_end_of_year" />
+            <ScalarProperty Name="totalDepreciationCost" ColumnName="total_depreciation_cost" />
+            <ScalarProperty Name="DepreciationRate" ColumnName="depreciation_rate" />
+            <ScalarProperty Name="DeprecationExpense" ColumnName="deprecation_expense" />
+            <ScalarProperty Name="AccumulatedDepreciation" ColumnName="accumulated_depreciation" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Disposals"><EntityTypeMapping TypeName="FixedAssetModel.Disposal"><MappingFragment StoreEntitySet="disposal">
+            <ScalarProperty Name="DisposalId" ColumnName="disposal_id" />
+            <ScalarProperty Name="AssetId" ColumnName="asset_id" />
+            <ScalarProperty Name="Disposaldate" ColumnName="disposal_date" />
+            <ScalarProperty Name="DocumentNumber" ColumnName="document_number" />
+            <ScalarProperty Name="DocumentDate" ColumnName="document_date" />
+            <ScalarProperty Name="FiscalYear" ColumnName="fiscal_year" />
+            <ScalarProperty Name="Amount" ColumnName="amount" />
+            <ScalarProperty Name="Remark" ColumnName="remark" />
+            <ScalarProperty Name="DisposalType" ColumnName="disposal_type" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Lookups"><EntityTypeMapping TypeName="FixedAssetModel.Lookup"><MappingFragment StoreEntitySet="lookup">
+                <ScalarProperty Name="Visible" ColumnName="visible" />
+                <ScalarProperty Name="LookupId" ColumnName="lookup_id" />
+            <ScalarProperty Name="Name" ColumnName="name" />
+            <ScalarProperty Name="Description" ColumnName="description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="LookupItems"><EntityTypeMapping TypeName="FixedAssetModel.LookupItem"><MappingFragment StoreEntitySet="lookup_item">
+            <ScalarProperty Name="LookupItemId" ColumnName="lookup_item_id" />
+            <ScalarProperty Name="LookupId" ColumnName="lookup_id" />
+            <ScalarProperty Name="ItemName" ColumnName="item_name" />
+            <ScalarProperty Name="Description" ColumnName="description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CustodianInfoes">
+            <EntityTypeMapping TypeName="FixedAssetModel.CustodianInfo">
+              <MappingFragment StoreEntitySet="custodian_info">
+                <ScalarProperty Name="DepartementText" ColumnName="departement_text" />
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+                <ScalarProperty Name="Department" ColumnName="department" />
+                <ScalarProperty Name="Location" ColumnName="location" />
+                <ScalarProperty Name="StatusText" ColumnName="status_text" />
+                <ScalarProperty Name="LastName" ColumnName="last_name" />
+                <ScalarProperty Name="FirstName" ColumnName="first_name" />
+                <ScalarProperty Name="BadgeNo" ColumnName="badge_no" />
+                <ScalarProperty Name="CustodianId" ColumnName="custodian_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Assets">
+            <EntityTypeMapping TypeName="FixedAssetModel.Asset">
+              <MappingFragment StoreEntitySet="asset">
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+                <ScalarProperty Name="Image" ColumnName="image" />
+                <ScalarProperty Name="SalvageValue" ColumnName="salvage_value" />
+                <ScalarProperty Name="AssetValue" ColumnName="asset_value" />
+                <ScalarProperty Name="DepreciationMethod" ColumnName="depreciation_method" />
+                <ScalarProperty Name="UsefulLife" ColumnName="useful_life" />
+                <ScalarProperty Name="PurchaseDate" ColumnName="purchase_date" />
+                <ScalarProperty Name="Status" ColumnName="status" />
+                <ScalarProperty Name="DocumentNumber" ColumnName="document_number" />
+                <ScalarProperty Name="PhysicalCondition" ColumnName="physical_condition" />
+                <ScalarProperty Name="LocationId" ColumnName="location_id" />
+                <ScalarProperty Name="CostCenterId" ColumnName="cost_center_id" />
+                <ScalarProperty Name="GroupId" ColumnName="group_id" />
+                <ScalarProperty Name="Vendor" ColumnName="vendor" />
+                <ScalarProperty Name="Category" ColumnName="category" />
+                <ScalarProperty Name="Description" ColumnName="description" />
+                <ScalarProperty Name="AssetNumber" ColumnName="asset_number" />
+                <ScalarProperty Name="AssetId" ColumnName="asset_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustodianAssetInfoes">
+            <EntityTypeMapping TypeName="FixedAssetModel.CustodianAssetInfo">
+              <MappingFragment StoreEntitySet="custodian_asset_info">
+                <ScalarProperty Name="ItemName" ColumnName="item_name" />
+                <ScalarProperty Name="BadgeNo" ColumnName="badge_no" />
+                <ScalarProperty Name="LastName" ColumnName="last_name" />
+                <ScalarProperty Name="FirstName" ColumnName="first_name" />
+                <ScalarProperty Name="Status" ColumnName="status" />
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+                <ScalarProperty Name="DateTo" ColumnName="date_to" />
+                <ScalarProperty Name="DateFrom" ColumnName="date_from" />
+                <ScalarProperty Name="AssetId" ColumnName="asset_id" />
+                <ScalarProperty Name="CustodianId" ColumnName="custodian_id" />
+                <ScalarProperty Name="RecordId" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustodianAssetsLists">
+            <EntityTypeMapping TypeName="FixedAssetModel.CustodianAssetsList">
+              <MappingFragment StoreEntitySet="custodian_assets_list">
+                <ScalarProperty Name="AssetNumber" ColumnName="asset_number" />
+                <ScalarProperty Name="Status" ColumnName="status" />
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+                <ScalarProperty Name="DateTo" ColumnName="date_to" />
+                <ScalarProperty Name="DateFrom" ColumnName="date_from" />
+                <ScalarProperty Name="AssetId" ColumnName="asset_id" />
+                <ScalarProperty Name="CustodianId" ColumnName="custodian_id" />
+                <ScalarProperty Name="RecordId" ColumnName="record_id" />
+                <ScalarProperty Name="ItemName" ColumnName="item_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActiveCustodianStatuses">
+            <EntityTypeMapping TypeName="FixedAssetModel.ActiveCustodianStatus">
+              <MappingFragment StoreEntitySet="active_custodian_status">
+                <ScalarProperty Name="ItemName" ColumnName="item_name" />
+                <ScalarProperty Name="Remark" ColumnName="remark" />
+                <ScalarProperty Name="Location" ColumnName="location" />
+                <ScalarProperty Name="StatusText" ColumnName="status_text" />
+                <ScalarProperty Name="LastName" ColumnName="last_name" />
+                <ScalarProperty Name="FirstName" ColumnName="first_name" />
+                <ScalarProperty Name="BadgeNo" ColumnName="badge_no" />
+                <ScalarProperty Name="CustodianId" ColumnName="custodian_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AssetCategories">
+            <EntityTypeMapping TypeName="FixedAssetModel.AssetCategory">
+              <MappingFragment StoreEntitySet="asset_category">
+                <ScalarProperty Name="DepreciationRate" ColumnName="depreciation_rate" />
+                <ScalarProperty Name="CategoryName" ColumnName="category_name" />
+                <ScalarProperty Name="CategoryId" ColumnName="category_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AssetListInfoes">
+            <EntityTypeMapping TypeName="FixedAssetModel.AssetListInfo">
+              <MappingFragment StoreEntitySet="asset_list_info">
+                <ScalarProperty Name="LocationName" ColumnName="location_name" />
+                <ScalarProperty Name="DocumentNumber" ColumnName="document_number" />
+                <ScalarProperty Name="CatagoryText" ColumnName="catagory_text" />
+                <ScalarProperty Name="Category" ColumnName="category" />
+                <ScalarProperty Name="CurrentBookValue" ColumnName="current_book_value" />
+                <ScalarProperty Name="DepreciationToDate" ColumnName="depreciation_to_date" />
+                <ScalarProperty Name="DepreciationMethodText" ColumnName="depreciation_method_text" />
+                <ScalarProperty Name="StatusText" ColumnName="status_text" />
+                <ScalarProperty Name="GroupText" ColumnName="group_text" />
+                <ScalarProperty Name="GroupId" ColumnName="group_id" />
+                <ScalarProperty Name="AssetId" ColumnName="asset_id" />
+                <ScalarProperty Name="AssetValue" ColumnName="asset_value" />
+                <ScalarProperty Name="DepreciationMethod" ColumnName="depreciation_method" />
+                <ScalarProperty Name="Status" ColumnName="status" />
+                <ScalarProperty Name="AssetNumber" ColumnName="asset_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="FixedAssetModel">
+        <EntityTypeShape EntityType="FixedAssetModel.Adjustment" Width="1.5" PointX="3" PointY="4.75" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="FixedAssetModel.ApplicationSetting" Width="1.5" PointX="5.75" PointY="5.25" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="FixedAssetModel.Custodian" Width="1.5" PointX="1.25" PointY="0.625" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="FixedAssetModel.CustodianAsset" Width="1.5" PointX="6" PointY="8.75" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="FixedAssetModel.Depreciation" Width="1.5" PointX="3.375" PointY="12" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="FixedAssetModel.Disposal" Width="1.5" PointX="3" PointY="16" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="FixedAssetModel.Lookup" Width="1.5" PointX="4.25" PointY="2.375" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="FixedAssetModel.LookupItem" Width="1.5" PointX="6.25" PointY="2" Height="1.9802864583333317" IsExpanded="true" />
+        <AssociationConnector Association="FixedAssetModel.fk_assign_custodian_custodian" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.53125" PointY="3.3744921874999996" />
+          <ConnectorPoint PointX="2.53125" PointY="8.96875" />
+          <ConnectorPoint PointX="6" PointY="8.96875" />
+        </AssociationConnector>
+        <AssociationConnector Association="FixedAssetModel.fk_lookup_i_reference_lookup" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.75" PointY="3.1776432291666659" />
+          <ConnectorPoint PointX="6.25" PointY="3.1776432291666659" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="FixedAssetModel.CustodianInfo" Width="1.5" PointX="8.375" PointY="5.75" Height="2.7494921875000031" />
+        <EntityTypeShape EntityType="FixedAssetModel.Asset" Width="1.5" PointX="0.75" PointY="9.25" Height="5.2494108072916674" />
+        <AssociationConnector Association="FixedAssetModel.fk_adjustme_reference_item">
+          <ConnectorPoint PointX="1.5" PointY="9.25" />
+          <ConnectorPoint PointX="1.5" PointY="6.4131982421875" />
+          <ConnectorPoint PointX="2.4479166666666665" PointY="6.4131982421874989" />
+          <ConnectorPoint PointX="2.6145833333333335" PointY="6.4131982421875" />
+          <ConnectorPoint PointX="3" PointY="6.4131982421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="FixedAssetModel.fk_assign_c_reference_item">
+          <ConnectorPoint PointX="2.25" PointY="10.37474609375" />
+          <ConnectorPoint PointX="6" PointY="10.37474609375" />
+        </AssociationConnector>
+        <AssociationConnector Association="FixedAssetModel.fk_deprecia_reference_item">
+          <ConnectorPoint PointX="2.25" PointY="13.249705403645834" />
+          <ConnectorPoint PointX="3.375" PointY="13.249705403645834" />
+        </AssociationConnector>
+        <AssociationConnector Association="FixedAssetModel.fk_disposal_reference_item">
+          <ConnectorPoint PointX="1.5" PointY="14.499410807291667" />
+          <ConnectorPoint PointX="1.5" PointY="17.470896809895834" />
+          <ConnectorPoint PointX="3" PointY="17.470896809895834" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="FixedAssetModel.CustodianAssetInfo" Width="2.625" PointX="10.625" PointY="4.375" Height="3.1340950520833335" />
+        <EntityTypeShape EntityType="FixedAssetModel.CustodianAssetsList" Width="1.5" PointX="6" PointY="12.375" Height="2.7494921875000031" />
+        <EntityTypeShape EntityType="FixedAssetModel.ActiveCustodianStatus" Width="2" PointX="12.375" PointY="0.75" Height="2.5571907552083388" />
+        <EntityTypeShape EntityType="FixedAssetModel.AssetCategory" Width="1.5" PointX="8.375" PointY="9.75" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="FixedAssetModel.AssetListInfo" Width="1.5" PointX="8.375" PointY="0.75" Height="3.5186979166666674" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

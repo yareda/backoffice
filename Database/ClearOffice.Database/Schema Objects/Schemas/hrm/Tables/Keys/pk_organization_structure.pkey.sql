@@ -1,0 +1,3 @@
+﻿/*ALTER TABLE [hrm].[organization_structure]
+    ADD CONSTRAINT [pk_organization_structure] PRIMARY KEY CLUSTERED ([struct_id] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF);*/
+

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{323D4981-DF3F-42B3-98B9-AE37F93D70EA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClearOffice.Hrm.Business</RootNamespace>
+    <AssemblyName>ClearOffice.Hrm.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\BankBranch.cs" />
+    <Compile Include="Data\BenefitType.cs" />
+    <Compile Include="Data\CompetencyType.cs" />
+    <Compile Include="Data\ContactAddress.cs" />
+    <Compile Include="Data\EmployeeAccident.cs" />
+    <Compile Include="Data\Employee.cs" />
+    <Compile Include="Data\EmployeeBenefit.cs" />
+    <Compile Include="Data\EmployeeDependant.cs" />
+    <Compile Include="Data\EmployeeEducationalHistory.cs" />
+    <Compile Include="Data\EmployeeInfo.cs" />
+    <Compile Include="Data\EmployeeInfoTraining.cs" />
+    <Compile Include="Data\EmployeeLeave.cs" />
+    <Compile Include="Data\EmployeeMedicalRecord.cs" />
+    <Compile Include="Data\EmployeePromotion.cs" />
+    <Compile Include="Data\EmployeePto.cs" />
+    <Compile Include="Data\EmployeeSkill.cs" />
+    <Compile Include="Data\EmployeeSkillType.cs" />
+    <Compile Include="Data\EmployeeStatus.cs" />
+    <Compile Include="Data\EmployeeTermination.cs" />
+    <Compile Include="Data\EmployeeTransfer.cs" />
+    <Compile Include="Data\EmployeeType.cs" />
+    <Compile Include="Data\Country.cs" />
+    <Compile Include="Data\DeductionCondition.cs" />
+    <Compile Include="Data\DependantType.cs" />
+    <Compile Include="Data\EducationLevel.cs" />
+    <Compile Include="Data\EducationType.cs" />
+    <Compile Include="Data\EmployeeWarning.cs" />
+    <Compile Include="Data\EmployeeWorkExperiance.cs" />
+    <Compile Include="Data\Ethnicity.cs" />
+    <Compile Include="Data\Gender.cs" />
+    <Compile Include="Data\HrmModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HrmModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\InsurancePolicyType.cs" />
+    <Compile Include="Data\Job.cs" />
+    <Compile Include="Data\JobSkillType.cs" />
+    <Compile Include="Data\Language.cs" />
+    <Compile Include="Data\MaritalStatus.cs" />
+    <Compile Include="Data\MeasureType.cs" />
+    <Compile Include="Data\Nationality.cs" />
+    <Compile Include="Data\Organization.cs" />
+    <Compile Include="Data\OrganizationNodeType.cs" />
+    <Compile Include="Data\Person.cs" />
+    <Compile Include="Data\PromotionType.cs" />
+    <Compile Include="Data\Religion.cs" />
+    <Compile Include="Data\Sex.cs" />
+    <Compile Include="Data\Training.cs" />
+    <Compile Include="Data\TrainingAttendance.cs" />
+    <Compile Include="Data\TrainingCategory.cs" />
+    <Compile Include="Data\TrainingRequest.cs" />
+    <Compile Include="Data\TrainingStatus.cs" />
+    <Compile Include="JobProxy.cs" />
+    <Compile Include="LeaveProxy.cs" />
+    <Compile Include="LookupProxy.cs" />
+    <Compile Include="ProfileProxy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrainingProxy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Data\HrmModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HrmModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="Properties\DataSources\ClearOffice.Hrm.Business.Data.HrmEntities.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Source\ClearOffice.Infrastructure\ClearOffice.Infrastructure.csproj">
+      <Project>{64079208-38D3-4985-829E-9FA95D54D4B4}</Project>
+      <Name>ClearOffice.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

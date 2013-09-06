@@ -1,0 +1,3 @@
+﻿ALTER TABLE [stock].[transaction_status]
+    ADD CONSTRAINT [pk_transaction_status] PRIMARY KEY CLUSTERED ([status_id] ASC) WITH (ALLOW_PAGE_LOCKS = ON, ALLOW_ROW_LOCKS = ON, PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF);
+

@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BEFAC6A9-578B-4720-A8BB-32D71D9B9968}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClearOffice.FixedAsset</RootNamespace>
+    <AssemblyName>ClearOffice.FixedAsset</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v10.2.Core, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.2, Version=10.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DepereciationHelper.cs" />
+    <Compile Include="FixedAssetModuleManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdjustementEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AdjustementEdit.Designer.cs">
+      <DependentUpon>AdjustementEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ApplicationSettingView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ApplicationSettingView.Designer.cs">
+      <DependentUpon>ApplicationSettingView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssetCategoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AssetCategoryList.Designer.cs">
+      <DependentUpon>AssetCategoryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssetDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AssetDetail.Designer.cs">
+      <DependentUpon>AssetDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssetDisposal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AssetDisposal.Designer.cs">
+      <DependentUpon>AssetDisposal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssetList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AssetList.Designer.cs">
+      <DependentUpon>AssetList.cs</DependentUpon>
+    </Compile>
+    <!--<Compile Include="Views\CustodianListView.cs">-->
+    <Compile Include="Views\CustodianAssetView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustodianAssetView.Designer.cs">
+      <DependentUpon>CustodianAssetView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustodianDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustodianDetail.Designer.cs">
+      <DependentUpon>CustodianDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustodianList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustodianList.Designer.cs">
+      <DependentUpon>CustodianList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AssetCategoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AssetCategoryView.Designer.cs">
+      <DependentUpon>AssetCategoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LookUpList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LookUpList.Designer.cs">
+      <DependentUpon>LookUpList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewCustodian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewCustodian.Designer.cs">
+      <DependentUpon>NewCustodian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewAsset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewAsset.Designer.cs">
+      <DependentUpon>NewAsset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LookUpItemView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LookUpItemView.Designer.cs">
+      <DependentUpon>LookUpItemView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransferAsset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TransferAsset.Designer.cs">
+      <DependentUpon>TransferAsset.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Source\ClearOffice.Infrastructure\ClearOffice.Infrastructure.csproj">
+      <Project>{64079208-38D3-4985-829E-9FA95D54D4B4}</Project>
+      <Name>ClearOffice.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Source\ClearOffice.Security\ClearOffice.Security.csproj">
+      <Project>{19F6B825-2B82-43A0-9267-67BADEDFC6A6}</Project>
+      <Name>ClearOffice.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClearOffice.FixedAsset.DataAccess\ClearOffice.FixedAsset.DataAccess.csproj">
+      <Project>{E34E6DD1-3156-4571-9E46-9D23AB6FDD86}</Project>
+      <Name>ClearOffice.FixedAsset.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Workflows\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AdjustementEdit.resx">
+      <DependentUpon>AdjustementEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ApplicationSettingView.resx">
+      <DependentUpon>ApplicationSettingView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AssetCategoryList.resx">
+      <DependentUpon>AssetCategoryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AssetDetail.resx">
+      <DependentUpon>AssetDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AssetDisposal.resx">
+      <DependentUpon>AssetDisposal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AssetList.resx">
+      <DependentUpon>AssetList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustodianAssetView.resx">
+      <DependentUpon>CustodianAssetView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustodianDetail.resx">
+      <DependentUpon>CustodianDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustodianList.resx">
+      <DependentUpon>CustodianList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AssetCategoryView.resx">
+      <DependentUpon>AssetCategoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LookUpList.resx">
+      <DependentUpon>LookUpList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewCustodian.resx">
+      <DependentUpon>NewCustodian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewAsset.resx">
+      <DependentUpon>NewAsset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LookUpItemView.resx">
+      <DependentUpon>LookUpItemView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TransferAsset.resx">
+      <DependentUpon>TransferAsset.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ClearOffice.FixedAsset.DataAccess.ActiveCustodianStatus.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.FixedAsset.DataAccess.Adjustment.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.FixedAsset.DataAccess.ApplicationSetting.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.FixedAsset.DataAccess.Asset.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.FixedAsset.DataAccess.AssetCategory.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.FixedAsset.DataAccess.AssetListInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.FixedAsset.DataAccess.Custodian.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.FixedAsset.DataAccess.CustodianAssetInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.FixedAsset.DataAccess.Depreciation.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.FixedAsset.DataAccess.Disposal.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.FixedAsset.DataAccess.CustodianAssetInfos.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.FixedAsset.DataAccess.FixedAssetEntities.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.FixedAsset.DataAccess.CustodianAsset.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.FixedAsset.DataAccess.CustodianInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.FixedAsset.DataAccess.LookupItem.datasource" />
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_form_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CustomersByDate_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_explore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuBar_Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-as-16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveTool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table_gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basket_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thumb_up.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

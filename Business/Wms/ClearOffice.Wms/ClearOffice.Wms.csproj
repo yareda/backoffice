@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0EB24956-5DA2-4867-9F36-E3C8868E8AA9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClearOffice.Wms</RootNamespace>
+    <AssemblyName>ClearOffice.Wms</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContractDetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ContractDetailView.Designer.cs">
+      <DependentUpon>ContractDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContractListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ContractListView.Designer.cs">
+      <DependentUpon>ContractListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContractRenewView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ContractRenewView.Designer.cs">
+      <DependentUpon>ContractRenewView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerDetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerDetailView.Designer.cs">
+      <DependentUpon>CustomerDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerListView.Designer.cs">
+      <DependentUpon>CustomerListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomersView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CustomersView.Designer.cs">
+      <DependentUpon>CustomersView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EquipmentAttachmentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EquipmentAttachmentView.Designer.cs">
+      <DependentUpon>EquipmentAttachmentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EquipmentDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EquipmentDetail.Designer.cs">
+      <DependentUpon>EquipmentDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EquipmentsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EquipmentsView.Designer.cs">
+      <DependentUpon>EquipmentsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InsuranceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\InsuranceView.Designer.cs">
+      <DependentUpon>InsuranceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InvoiceListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\InvoiceListView.Designer.cs">
+      <DependentUpon>InvoiceListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LookUpDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LookUpDetail.Designer.cs">
+      <DependentUpon>LookUpDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LookupEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LookupEdit.Designer.cs">
+      <DependentUpon>LookupEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LookupView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LookupView.Designer.cs">
+      <DependentUpon>LookupView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MaintainceLabourView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MaintainceLabourView.Designer.cs">
+      <DependentUpon>MaintainceLabourView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MaintenacePartView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MaintenacePartView.Designer.cs">
+      <DependentUpon>MaintenacePartView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MaintenaceTaskView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MaintenaceTaskView.Designer.cs">
+      <DependentUpon>MaintenaceTaskView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MicilaneousView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MicilaneousView.Designer.cs">
+      <DependentUpon>MicilaneousView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InvoiceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\InvoiceView.Designer.cs">
+      <DependentUpon>InvoiceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewContractView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewContractView.Designer.cs">
+      <DependentUpon>NewContractView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewCustomersView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewCustomersView.Designer.cs">
+      <DependentUpon>NewCustomersView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewEquipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewEquipment.Designer.cs">
+      <DependentUpon>NewEquipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewPayment.Designer.cs">
+      <DependentUpon>NewPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewVendor.Designer.cs">
+      <DependentUpon>NewVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PaymentsView.Designer.cs">
+      <DependentUpon>PaymentsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PMServiceListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PMServiceListView.Designer.cs">
+      <DependentUpon>PMServiceListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PMServiceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PMServiceView.Designer.cs">
+      <DependentUpon>PMServiceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VendorDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VendorDetail.Designer.cs">
+      <DependentUpon>VendorDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VendorListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VendorListView.Designer.cs">
+      <DependentUpon>VendorListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkOrderListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\WorkOrderListView.Designer.cs">
+      <DependentUpon>WorkOrderListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkOrderView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\WorkOrderView.Designer.cs">
+      <DependentUpon>WorkOrderView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WmsModuleManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Source\ClearOffice.Infrastructure\ClearOffice.Infrastructure.csproj">
+      <Project>{64079208-38D3-4985-829E-9FA95D54D4B4}</Project>
+      <Name>ClearOffice.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Source\ClearOffice.Security\ClearOffice.Security.csproj">
+      <Project>{19F6B825-2B82-43A0-9267-67BADEDFC6A6}</Project>
+      <Name>ClearOffice.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClearOffice.Wms.DataAccess\ClearOffice.Wms.Business.csproj">
+      <Project>{E91840B5-DA8E-42FB-95B4-F6D1A2C0287B}</Project>
+      <Name>ClearOffice.Wms.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\" />
+    <Folder Include="Workflows\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ContractDetailView.resx">
+      <DependentUpon>ContractDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ContractListView.resx">
+      <DependentUpon>ContractListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ContractRenewView.resx">
+      <DependentUpon>ContractRenewView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerDetailView.resx">
+      <DependentUpon>CustomerDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomerListView.resx">
+      <DependentUpon>CustomerListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomersView.resx">
+      <DependentUpon>CustomersView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EquipmentAttachmentView.resx">
+      <DependentUpon>EquipmentAttachmentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EquipmentDetail.resx">
+      <DependentUpon>EquipmentDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EquipmentsView.resx">
+      <DependentUpon>EquipmentsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InsuranceView.resx">
+      <DependentUpon>InsuranceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InvoiceListView.resx">
+      <DependentUpon>InvoiceListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LookUpDetail.resx">
+      <DependentUpon>LookUpDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LookupEdit.resx">
+      <DependentUpon>LookupEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LookupView.resx">
+      <DependentUpon>LookupView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MaintainceLabourView.resx">
+      <DependentUpon>MaintainceLabourView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MaintenacePartView.resx">
+      <DependentUpon>MaintenacePartView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MaintenaceTaskView.resx">
+      <DependentUpon>MaintenaceTaskView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MicilaneousView.resx">
+      <DependentUpon>MicilaneousView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InvoiceView.resx">
+      <DependentUpon>InvoiceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewContractView.resx">
+      <DependentUpon>NewContractView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewCustomersView.resx">
+      <DependentUpon>NewCustomersView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewEquipment.resx">
+      <DependentUpon>NewEquipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewPayment.resx">
+      <DependentUpon>NewPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewVendor.resx">
+      <DependentUpon>NewVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PaymentsView.resx">
+      <DependentUpon>PaymentsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PMServiceListView.resx">
+      <DependentUpon>PMServiceListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PMServiceView.resx">
+      <DependentUpon>PMServiceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VendorDetail.resx">
+      <DependentUpon>VendorDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VendorListView.resx">
+      <DependentUpon>VendorListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WorkOrderListView.resx">
+      <DependentUpon>WorkOrderListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WorkOrderView.resx">
+      <DependentUpon>WorkOrderView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.Contract.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.ContractInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.ContractRenewal.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.ContractRenewalInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.Country.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.Customer.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.CustomerInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.CustomerListInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.Equipment.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.EquipmentAttachment.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.EquipmentExpiration.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.EquipmentExpirationInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.EquipmentInsurance.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.EquipmentInsuranceInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.EquipmentListInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.EquipmentPurchase.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.Lookup.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.LookupItem.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.MaintainanceLabourInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.MaintenanceLabour.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.MaintenancePart.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.MaintenanceTask.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.MaintenanceTaskListInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.MiscellaneousItems1.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.PartInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.PartListInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.PaymentListInfo1.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.PaymentRecord1.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.PmService.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.PmServiceInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.Vendor.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.VendorInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.VendorTypeInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.WorkOrder.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.WorkOrderInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.WorkshopEmployeesAndVendors.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.WorkOrderValueTotal1.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Business.WorkshopEmployeesInfo.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Views.DurationType.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Views.PaymentMethod.datasource" />
+    <None Include="Properties\DataSources\ClearOffice.Wms.Views.RenwalDurationTypes.datasource" />
+    <None Include="Resources\page_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-as-16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuBar_Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveTool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table_gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_form_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_explore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CustomersByDate_16x16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

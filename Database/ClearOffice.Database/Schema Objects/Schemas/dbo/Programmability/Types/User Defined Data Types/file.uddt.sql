@@ -1,0 +1,3 @@
+﻿CREATE TYPE [dbo].[file]
+    FROM VARBINARY (MAX) NULL;
+
